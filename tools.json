@@ -1,0 +1,38 @@
+{
+  "Domain & IP": [
+    {
+      "name": "ViewDNS",
+      "url": "https://viewdns.info/",
+      "description": "Perform WHOIS, DNS, IP geolocation and more."
+    },
+    {
+      "name": "SecurityTrails",
+      "url": "https://securitytrails.com/",
+      "description": "Explore DNS history, IP data, and domain intelligence."
+    }
+  ],
+  "Image Tools": [
+    {
+      "name": "TinEye",
+      "url": "https://tineye.com/",
+      "description": "Reverse image search engine."
+    },
+    {
+      "name": "EXIF.tools",
+      "url": "https://exif.tools/",
+      "description": "View image metadata (EXIF) directly in the browser."
+    }
+  ],
+  "Social Media": [
+    {
+      "name": "WhatsMyName",
+      "url": "https://github.com/WebBreacher/WhatsMyName",
+      "description": "Find usernames across many websites."
+    },
+    {
+      "name": "Sherlock",
+      "url": "https://github.com/sherlock-project/sherlock",
+      "description": "Hunt down social media accounts by username."
+    }
+  ]
+}
