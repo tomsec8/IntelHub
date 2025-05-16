@@ -79,15 +79,17 @@
     }
   ],
   "Social Media": [
-    {
-      "name": "WhatsMyName",
-      "url": "https://github.com/WebBreacher/WhatsMyName",
-      "description": "Find usernames across many websites."
-    },
-    {
-      "name": "Sherlock",
-      "url": "https://github.com/sherlock-project/sherlock",
-      "description": "Hunt down social media accounts by username."
+    "test": [
+      {
+        "name": "WhatsMyName",
+        "url": "https://github.com/WebBreacher/WhatsMyName",
+        "description": "Find usernames across many websites."
+      },
+      {
+        "name": "Sherlock",
+        "url": "https://github.com/sherlock-project/sherlock",
+        "description": "Hunt down social media accounts by username."
+        ]
     }
   ]
 }
