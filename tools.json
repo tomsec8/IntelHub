@@ -1,15 +1,30 @@
 {
-  "Domain & IP": [
+  "Useful Chrome Extensions": [
     {
-      "name": "ViewDNS",
-      "url": "https://viewdns.info/",
-      "description": "Perform WHOIS, DNS, IP geolocation and more."
+      "name": "Search by Image",
+      "url": "https://chromewebstore.google.com/detail/search-by-image/cnojnbdhbhnkbcieeekonklommdnndci?hl=en-GB&utm_source=ext_sidebar",
+      "description": "Extension for searching across multiple image search engines"
     },
     {
-      "name": "SecurityTrails",
-      "url": "https://securitytrails.com/",
-      "description": "Explore DNS history, IP data, and domain intelligence."
-    }
+      "name": "Web Archives",
+      "url": "https://chromewebstore.google.com/detail/web-archives/hkligngkgcpcolhcnkgccglchdafcnao?hl=en-GB&utm_source=ext_sidebar",
+      "description": "Extension that allows searching across multiple archives simultaneously"
+    },
+    {
+      "name": "Email Hunter",
+      "url": "https://chromewebstore.google.com/detail/email-hunter/mbindhfolmpijhodmgkloeeppmkhpmhc?hl=en-GB&utm_source=ext_sidebar",
+      "description": "Locates emails across websites and social platforms"
+    },
+    {
+      "name": "Hunter.io",
+      "url": "https://chromewebstore.google.com/detail/hunter-email-finder-exten/hgmhmanijnjhaffoampdlllchpolkdnj?hl=en-GB&utm_source=ext_sidebar",
+      "description": "Finds email addresses linked to domains for contact research"
+    },
+    {
+      "name": "Wappalyzer",
+      "url": "https://chromewebstore.google.com/detail/wappalyzer-technology-pro/gppongmhjkpfnbhagpmjfkannfbllamg?hl=en-GB&utm_source=ext_sidebar",
+      "description": "Identifies technologies used by websites, like CMS and analytics"
+    },
   ],
   "Image Tools": [
     {
