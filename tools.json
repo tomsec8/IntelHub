@@ -2,27 +2,27 @@
   "Useful Chrome Extensions": [
     {
       "name": "Search by Image",
-      "url": "https://chromewebstore.google.com/detail/search-by-image/cnojnbdhbhnkbcieeekonklommdnndci?hl=en-GB&utm_source=ext_sidebar",
+      "url": "https://chromewebstore.google.com/detail/search-by-image/cnojnbdhbhnkbcieeekonklommdnndci",
       "description": "Extension for searching across multiple image search engines"
     },
     {
       "name": "Web Archives",
-      "url": "https://chromewebstore.google.com/detail/web-archives/hkligngkgcpcolhcnkgccglchdafcnao?hl=en-GB&utm_source=ext_sidebar",
+      "url": "https://chromewebstore.google.com/detail/web-archives/hkligngkgcpcolhcnkgccglchdafcnao",
       "description": "Extension that allows searching across multiple archives simultaneously"
     },
     {
       "name": "Email Hunter",
-      "url": "https://chromewebstore.google.com/detail/email-hunter/mbindhfolmpijhodmgkloeeppmkhpmhc?hl=en-GB&utm_source=ext_sidebar",
+      "url": "https://chromewebstore.google.com/detail/email-hunter/mbindhfolmpijhodmgkloeeppmkhpmhc",
       "description": "Locates emails across websites and social platforms"
     },
     {
       "name": "Hunter.io",
-      "url": "https://chromewebstore.google.com/detail/hunter-email-finder-exten/hgmhmanijnjhaffoampdlllchpolkdnj?hl=en-GB&utm_source=ext_sidebar",
+      "url": "https://chromewebstore.google.com/detail/hunter-email-finder-exten/hgmhmanijnjhaffoampdlllchpolkdnj",
       "description": "Finds email addresses linked to domains for contact research"
     },
     {
       "name": "Wappalyzer",
-      "url": "https://chromewebstore.google.com/detail/wappalyzer-technology-pro/gppongmhjkpfnbhagpmjfkannfbllamg?hl=en-GB&utm_source=ext_sidebar",
+      "url": "https://chromewebstore.google.com/detail/wappalyzer-technology-pro/gppongmhjkpfnbhagpmjfkannfbllamg",
       "description": "Identifies technologies used by websites, like CMS and analytics"
     }
   ],
