@@ -79,7 +79,7 @@
     }
   ],
   "Social Media": [
-    "test": [
+    
       {
         "name": "WhatsMyName",
         "url": "https://github.com/WebBreacher/WhatsMyName",
@@ -89,7 +89,7 @@
         "name": "Sherlock",
         "url": "https://github.com/sherlock-project/sherlock",
         "description": "Hunt down social media accounts by username."
-        ]
+        
     }
   ]
 }
