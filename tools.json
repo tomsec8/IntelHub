@@ -33,6 +33,46 @@
       "description": "Reverse image search engine."
     },
     {
+      "name": "facecheck.id",
+      "url": "https://facecheck.id/",
+      "description": "Reverse face search engine to find people online using photos."
+    },
+    {
+      "name": "pimeyes",
+      "url": "https://pimeyes.com/en",
+      "description": "Facial recognition search engine to find where your face appears online"
+    },
+    {
+      "name": "duplichecker",
+      "url": "https://www.duplichecker.com/face-search.php",
+      "description": "Free online plagiarism checker with grammar tools and reverse image search"
+    },
+    {
+      "name": "lenso.ai",
+      "url": "https://lenso.ai/en",
+      "description": "AI-powered reverse search including faces, with clear UI"
+    },
+    {
+      "name": "Google Images",
+      "url": "https://images.google.com",
+      "description": "Standard reverse image search engine"
+    },
+    {
+      "name": "Yandex Images",
+      "url": "https://yandex.com/images/",
+      "description": "Often better than Google for face matching."
+    },
+    {
+      "name": "Bing Visual Search",
+      "url": "https://www.bing.com/visualsearch",
+      "description": "Microsoft's reverse image tool with object/face suggestions"
+    },
+    {
+      "name": "faceonlive",
+      "url": "https://faceonlive.com/face-search-online",
+      "description": "Track your online presence with AI-Powered Reverse Face Search"
+    },
+    {
       "name": "EXIF.tools",
       "url": "https://exif.tools/",
       "description": "View image metadata (EXIF) directly in the browser."
