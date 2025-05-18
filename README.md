@@ -1,75 +1,84 @@
----
+# 🧠 IntelHub – OSINT Toolkit for Chrome
 
-# 🧠 IntelHub – OSINT Chrome Extension
-
-A modular and beginner-friendly OSINT toolkit inside your browser – built as a Chrome extension to empower investigators, cybersecurity professionals, and intelligence analysts.
+A modern and intuitive Chrome extension that brings your favorite OSINT tools, metadata analyzers, and Google Dorking assistants right into your browser.
 
 ---
 
 ## 📋 Project Overview
 
-**IntelHub** is a browser extension that provides a centralized interface for various OSINT tools, metadata analyzers, Google Dork generators, and more.  
-Whether you're researching domains, analyzing files, or hunting usernames – this tool saves you time and simplifies your workflow.
+**IntelHub** is a modular Open Source Intelligence (OSINT) Chrome extension designed for investigators, analysts, and cybersecurity professionals.  
+It centralizes critical tools, metadata analysis features, and advanced Google search utilities — all accessible in one click.
 
 ---
 
 ## ✅ System Requirements
 
-Before using this extension, make sure your system meets the following:
+To use this extension, you’ll need:
 
-- 🧩 **Browser:** Chrome or any Chromium-based browser (e.g. Edge, Brave)  
-- 🧱 **Storage:** Minimal – used to store favorites and user preferences  
-- 🌐 **Internet Connection:** Required for accessing OSINT tools online  
-- 🛠️ **Permissions:** Requires `"scripting"` and `"activeTab"` permissions
+- 🖥️ **Browser**: Chrome or any Chromium-based browser (e.g., Brave, Edge)  
+- 📦 **Storage**: Minimal – used only to save preferences and favorites  
+- 🌐 **Internet Access**: Required for launching online OSINT tools  
+- 🧩 **Permissions**: Extension requires scripting and tab access for certain features  
 
 ---
 
 ## 🚀 Installation
 
-To install the extension locally for development:
+You can load the extension manually during development:
 
 ```bash
-# 1. Clone the repository
 git clone https://github.com/tomsec8/IntelHub.git
+```
 
-# 2. Open Chrome and navigate to:
-chrome://extensions/
+1. Open `chrome://extensions/` in your browser  
+2. Enable **Developer mode** (top-right corner)  
+3. Click **"Load unpacked"** and select the `IntelHub` folder  
 
-# 3. Enable "Developer mode" (top right corner)
+---
 
-# 4. Click "Load unpacked" and select the IntelHub project folder
+## 🧠 Features & Categories
 
-## 🧠 Available Categories
+| Category               | Description                                                                 |
+|------------------------|-----------------------------------------------------------------------------|
+| ⭐ **Favorites**        | Mark any OSINT tool and access it quickly from the favorites tab            |
+| 🕵️ **OSINT Tools**     | Domain, IP, image analysis, social media, and more organized by category     |
+| 📊 **Metadata Analyzer** | Upload images, PDFs, or Office files and extract metadata locally           |
+| 🔎 **Google Dorks**     | Easily build advanced Google queries with support for multiple operators     |
+| 📷 **Reverse Image**    | (Optional) Search across reverse image engines (Google, Yandex, TinEye etc.) |
 
-| Category                   | Description                                                                  |
-|----------------------------|------------------------------------------------------------------------------|
-| ⭐ **Favorites**            | Save tools you use often and access them quickly                             |
-| 🕵️ **OSINT Tools**         | Curated tools for domain, IP, image, and social media investigation          |
-| 📊 **Metadata Analyzer**   | Analyze metadata from image, PDF, and Office files locally                   |
-| 🔍 **Google Dorks**         | Build complex search queries using multiple operators (site, filetype, etc.) |
-| 📷 **Reverse Image Search** | Upload or paste an image and search across multiple engines (Google, Yandex, etc.) |
+---
+
+## 📦 Folder Structure
+
+```
+IntelHub/
+├── icons/
+├── popup.html
+├── popup.js
+├── style.css
+├── tools.json
+├── manifest.json
+├── README.md
+```
 
 ---
 
 ## 👨‍💻 Maintainer
 
-Project by **[TomSec8](https://github.com/tomsec8)**  
-Feel free to open issues or pull requests with suggestions or fixes.
+Built with care by **TomSec8**  
+Pull requests and suggestions are welcome!
 
 ---
 
 ## 🙏 Credits
 
-This project includes or is inspired by work from:
-
-- [ExifReader](https://github.com/mattiasw/ExifReader) – for client-side EXIF parsing  
-- [PDFLib.js](https://github.com/Hopding/pdf-lib) – for PDF metadata extraction  
-- [JSZip](https://stuk.github.io/jszip/) – for Office document metadata extraction
+- **ExifReader** – For reading EXIF data  
+- **pdf-lib** – PDF metadata parsing  
+- **JSZip** – For reading Office file metadata  
+- Public OSINT tools sourced and organized for accessibility  
 
 ---
 
 ## 📜 License
 
 This project is licensed under the **MIT License** – see the [LICENSE](LICENSE) file for details.
-
----
