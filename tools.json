@@ -1,5 +1,5 @@
 {
-  "Useful Chrome Extensions": [
+  "Recommended OSINT Extensions": [
     {
       "name": "Search by Image",
       "url": "https://chromewebstore.google.com/detail/search-by-image/cnojnbdhbhnkbcieeekonklommdnndci",
@@ -26,32 +26,113 @@
       "description": "Identifies technologies used by websites, like CMS and analytics"
     }
   ],
-  "Image Tools": [
+  "Search Engines": [
+    {
+      "name": "Google Search",
+      "url": "https://www.google.com/",
+      "description": "Standard web search engine"
+    },
+    {
+      "name": "Google Advanced Search",
+      "url": "https://www.google.com/advanced_search",
+      "description": "Precise searching with filters"
+    },
+    {
+      "name": "Bing",
+      "url": "https://www.bing.com/",
+      "description": "Microsoft's search engine"
+    },
+    {
+      "name": "Yahoo",
+      "url": "https://www.yahoo.com/",
+      "description": "Yahoo web and image search"
+    },
+    {
+      "name": "Yandex",
+      "url": "https://yandex.com/",
+      "description": "Russian search engine with strong image tools"
+    },
+    {
+      "name": "Baidu",
+      "url": "https://www.baidu.com/",
+      "description": "Chinese search engine"
+    },
+    {
+      "name": "Searx",
+      "url": "https://searx.space/",
+      "description": "Privacy-respecting metasearch engine"
+    },
+    {
+      "name": "Social Searcher",
+      "url": "https://www.social-searcher.com/",
+      "description": "Search social networks in real-time"
+    }
+  ],
+  "Face Recognition": [
     {
       "name": "TinEye",
       "url": "https://tineye.com/",
-      "description": "Reverse image search engine."
+      "description": "Reverse image search engine"
     },
     {
       "name": "facecheck.id",
       "url": "https://facecheck.id/",
-      "description": "Reverse face search engine to find people online using photos."
+      "description": "Find people using facial recognition"
     },
     {
       "name": "pimeyes",
       "url": "https://pimeyes.com/en",
-      "description": "Facial recognition search engine to find where your face appears online"
+      "description": "Facial recognition engine to find faces online"
     },
     {
       "name": "duplichecker",
       "url": "https://www.duplichecker.com/face-search.php",
-      "description": "Free online plagiarism checker with grammar tools and reverse image search"
+      "description": "Plagiarism and face search engine"
     },
     {
       "name": "lenso.ai",
       "url": "https://lenso.ai/en",
-      "description": "AI-powered reverse search including faces, with clear UI"
+      "description": "AI-based reverse face search"
     },
+    {
+      "name": "faceonlive",
+      "url": "https://faceonlive.com/face-search-online",
+      "description": "Track presence with reverse face search"
+    }
+  ],
+  "Geolocation and Data Extraction": [
+    {
+      "name": "EXIF.tools",
+      "url": "https://exif.tools/",
+      "description": "View image metadata (EXIF) directly in the browser"
+    },
+    {
+      "name": "AI OR NOT",
+      "url": "https://aiornot.com/",
+      "description": "Detect whether an image is AI generated"
+    },
+    {
+      "name": "Google Maps",
+      "url": "https://maps.google.com/",
+      "description": "Global map and satellite imagery"
+    },
+    {
+      "name": "Picarta.ai",
+      "url": "https://www.picarta.ai/",
+      "description": "Geolocation using image context"
+    },
+    {
+      "name": "Suncalc",
+      "url": "https://www.suncalc.org/",
+      "description": "Analyze sun position to infer time/location"
+    },
+    {
+      "name": "geospy.ai",
+      "url": "https://geospy.ai/",
+      "description": "AI-based geolocation analysis"
+    }
+  ],
+  "Reverse Image Search": [
     {
       "name": "Google Images",
       "url": "https://images.google.com",
@@ -60,36 +141,231 @@
     {
       "name": "Yandex Images",
       "url": "https://yandex.com/images/",
-      "description": "Often better than Google for face matching."
+      "description": "Strong face matching engine"
     },
     {
       "name": "Bing Visual Search",
       "url": "https://www.bing.com/visualsearch",
-      "description": "Microsoft's reverse image tool with object/face suggestions"
+      "description": "Microsoft\u2019s reverse image tool"
     },
     {
-      "name": "faceonlive",
-      "url": "https://faceonlive.com/face-search-online",
-      "description": "Track your online presence with AI-Powered Reverse Face Search"
+      "name": "Baidu Images",
+      "url": "https://image.baidu.com",
+      "description": "Chinese reverse image search engine"
     },
     {
-      "name": "EXIF.tools",
-      "url": "https://exif.tools/",
-      "description": "View image metadata (EXIF) directly in the browser."
+      "name": "Yahoo Image Search",
+      "url": "https://images.search.yahoo.com/",
+      "description": "Yahoo\u2019s image search engine"
     }
   ],
-  "Social Media": [
-    
-      {
-        "name": "WhatsMyName",
-        "url": "https://github.com/WebBreacher/WhatsMyName",
-        "description": "Find usernames across many websites."
-      },
-      {
-        "name": "Sherlock",
-        "url": "https://github.com/sherlock-project/sherlock",
-        "description": "Hunt down social media accounts by username."
-        
+  "Username Search": [
+    {
+      "name": "WhatsMyName",
+      "url": "https://github.com/WebBreacher/WhatsMyName",
+      "description": "Find usernames across many websites"
+    },
+    {
+      "name": "Checkuser",
+      "url": "https://checkusernames.com/",
+      "description": "Search username availability on social platforms"
+    },
+    {
+      "name": "Idcrawl",
+      "url": "https://idcrawl.com/",
+      "description": "Search people and usernames on the web"
+    },
+    {
+      "name": "Namecheckr",
+      "url": "https://namecheckr.com/",
+      "description": "Check domain and social username availability"
+    },
+    {
+      "name": "Namecheckup",
+      "url": "https://namecheckup.com/",
+      "description": "Find username availability across services"
+    },
+    {
+      "name": "Usersearch",
+      "url": "https://usersearch.org/",
+      "description": "Search users across forums and platforms"
+    },
+    {
+      "name": "user-searcher",
+      "url": "https://github.com/Anon-Exploiter/SocialBox-Termux",
+      "description": "Username enumeration tool for Linux"
+    }
+  ],
+  "Email Investigation Tools": [
+    {
+      "name": "Dehashed",
+      "url": "https://www.dehashed.com/",
+      "description": "Search leaked databases for email addresses"
+    },
+    {
+      "name": "Epieos",
+      "url": "https://epieos.com/",
+      "description": "Search emails, phone numbers and usernames"
+    },
+    {
+      "name": "Hunter.io",
+      "url": "https://hunter.io/",
+      "description": "Find email addresses related to domains"
+    },
+    {
+      "name": "Emailhippo",
+      "url": "https://tools.verifyemailaddress.io/",
+      "description": "Verify email address validity"
+    },
+    {
+      "name": "HaveIBeenPwned",
+      "url": "https://haveibeenpwned.com/",
+      "description": "Check if an email was part of a data breach"
+    }
+  ],
+  "Phone Number Lookup": [
+    {
+      "name": "Truecaller",
+      "url": "https://www.truecaller.com/",
+      "description": "Global phone number identification"
+    },
+    {
+      "name": "Me",
+      "url": "https://me.app/",
+      "description": "Caller ID and spam blocker"
+    },
+    {
+      "name": "Numbuster",
+      "url": "https://numbuster.com/",
+      "description": "Caller identification and social rating"
+    },
+    {
+      "name": "Eycon",
+      "url": "https://www.eycon-app.com/",
+      "description": "Visual caller ID and sync with social"
+    },
+    {
+      "name": "Sync.me",
+      "url": "https://sync.me/",
+      "description": "Caller ID and reverse lookup"
+    },
+    {
+      "name": "Getcontact",
+      "url": "https://getcontact.com/",
+      "description": "Caller ID and spam protection"
+    },
+    {
+      "name": "Caller ID",
+      "url": "https://play.google.com/store/apps/details?id=caller.id.app",
+      "description": "General caller ID app"
+    },
+    {
+      "name": "Freecarrierlookup",
+      "url": "https://freecarrierlookup.com/",
+      "description": "Find carrier information for a phone number"
+    },
+    {
+      "name": "phonenumber.co.il",
+      "url": "https://phonenumber.co.il/",
+      "description": "Israeli phone number directory"
+    },
+    {
+      "name": "441",
+      "url": "https://441.co.il/",
+      "description": "Another Israeli phone lookup site"
+    },
+    {
+      "name": "Phoneindex",
+      "url": "https://www.phoneindex.co.il/",
+      "description": "Israel phone search engine"
+    },
+    {
+      "name": "B144",
+      "url": "https://www.b144.co.il/",
+      "description": "Bezeq Israeli phone directory"
+    },
+    {
+      "name": "Callapp",
+      "url": "https://callapp.com/",
+      "description": "Smart caller ID and call blocker"
+    },
+    {
+      "name": "Drupe",
+      "url": "https://www.getdrupe.com/",
+      "description": "Contact-based dialer and caller ID"
+    }
+  ],
+  "Tools for Twitter": [
+    {
+      "name": "OneMillionTweetMap",
+      "url": "https://onemilliontweetmap.com/",
+      "description": "Map tweets in real time"
+    },
+    {
+      "name": "Tagdef",
+      "url": "https://tagdef.com/",
+      "description": "Define hashtags"
+    },
+    {
+      "name": "Twitter Advanced Search",
+      "url": "https://twitter.com/search-advanced",
+      "description": "Advanced Twitter query tool"
+    },
+    {
+      "name": "TweeterID",
+      "url": "https://tweeterid.com/",
+      "description": "Convert Twitter usernames to numeric IDs"
+    }
+  ],
+  "Tools for Facebook": [
+    {
+      "name": "randomtools.io",
+      "url": "https://randomtools.io/",
+      "description": "General OSINT tools including FB links"
+    },
+    {
+      "name": "lookup-id",
+      "url": "https://lookup-id.com/",
+      "description": "Find Facebook user ID by URL"
+    },
+    {
+      "name": "WolframAlpha",
+      "url": "https://www.wolframalpha.com/",
+      "description": "Knowledge engine for people and entities"
+    }
+  ],
+  "Tools for Instagram": [],
+  "Tools for Telegram": [],
+  "Internet Archives": [],
+  "Crypto": [],
+  "Domain, IP, and DNS Research": [],
+  "General OSINT Tools": [],
+  "Sources for Recommended Tools": [],
+  "OSINT Tools for Linux": [
+    {
+      "name": "Blackbird",
+      "url": "https://github.com/p1ngul1n0/blackbird",
+      "description": "Search for social media accounts by username"
+    },
+    {
+      "name": "Sherlock",
+      "url": "https://github.com/sherlock-project/sherlock",
+      "description": "Hunt down social media accounts by username"
+    },
+    {
+      "name": "Recon-ng",
+      "url": "https://github.com/lanmaster53/recon-ng",
+      "description": "Recon framework with modules"
+    },
+    {
+      "name": "Spiderfoot",
+      "url": "https://github.com/smicallef/spiderfoot",
+      "description": "Automated OSINT tool"
+    },
+    {
+      "name": "Maltego",
+      "url": "https://www.maltego.com/",
+      "description": "Data mining and link analysis tool"
     }
   ]
 }
