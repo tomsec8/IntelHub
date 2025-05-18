@@ -44,7 +44,6 @@ git clone https://github.com/tomsec8/IntelHub.git
 | 🕵️ **OSINT Tools**     | Domain, IP, image analysis, social media, and more organized by category     |
 | 📊 **Metadata Analyzer** | Upload images, PDFs, or Office files and extract metadata locally           |
 | 🔎 **Google Dorks**     | Easily build advanced Google queries with support for multiple operators     |
-| 📷 **Reverse Image**    | (Optional) Search across reverse image engines (Google, Yandex, TinEye etc.) |
 
 ---
 
