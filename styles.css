@@ -1,0 +1,175 @@
+/* === Base Styles === */
+html, body {
+  margin: 0;
+  background-color: #1a132b;
+  font-family: 'Segoe UI', sans-serif;
+  color: #fff;
+  width: 360px;
+  height: 540px;
+  overflow: hidden;
+  border-radius: 16px;
+}
+
+/* Main content container */
+.container {
+  padding: 20px 10px;
+  box-sizing: border-box;
+  height: 100%;
+  overflow-y: auto;
+  text-align: center;
+}
+
+/* Logo image */
+.logo {
+  width: 80px;
+  margin-bottom: 10px;
+  border-radius: 12px;
+}
+
+/* Title heading */
+h1 {
+  font-size: 20px;
+  margin: 10px 0 20px;
+  text-align: center;
+  font-weight: bold;
+  color: #ffffff;
+}
+
+/* Search input */
+#searchBox {
+  width: 90%;
+  padding: 10px;
+  border-radius: 25px;
+  border: none;
+  margin-bottom: 20px;
+  text-align: center;
+  font-size: 14px;
+  transition: box-shadow 0.3s ease;
+}
+
+#searchBox:hover {
+  box-shadow: 0 0 5px #b388ff;
+}
+
+/* Interactable elements */
+.category-button,
+.sub-category-button,
+.tool-card {
+  cursor: pointer;
+}
+
+/* Focus outline for accessibility */
+button:focus {
+  outline: 2px solid #b388ff;
+  outline-offset: 2px;
+}
+
+/* Main category button */
+.category-button {
+  background-color: transparent;
+  color: #ff8c42;
+  border: 2px solid #ff8c42;
+  border-radius: 25px;
+  padding: 10px 20px;
+  margin: 8px auto;
+  font-size: 15px;
+  font-weight: bold;
+  width: 90%;
+  transition: all 0.3s ease;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* Sub-category button */
+.sub-category-button {
+  background-color: transparent;
+  color: #b388ff;
+  border: 1px solid #b388ff;
+  border-radius: 20px;
+  padding: 8px 18px;
+  margin: 2px auto;
+  font-size: 14px;
+  width: 85%;
+  transition: all 0.3s ease;
+  text-align: center;
+}
+
+/* Hover styles for buttons */
+.category-button:hover,
+.sub-category-button:hover {
+  background-color: #ff8c42;
+  color: #1a132b;
+}
+
+/* Tool list collapsible container */
+.tool-list {
+  max-height: 0;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+  transition: max-height 0.3s ease;
+}
+
+/* Expanded tool list */
+.tool-list.open {
+  max-height: 1000px;
+}
+
+/* Individual tool card */
+.tool-card {
+  background-color: #2c1e3f;
+  color: #ffffff;
+  padding: 8px;
+  margin: 8px auto;
+  border-radius: 16px;
+  width: 85%;
+  font-size: 14px;
+  transition: background-color 0.3s ease;
+  position: relative;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.2);
+}
+
+.tool-card:hover {
+  background-color: #3d2956;
+  z-index: 10;
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #1a132b;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #ff8c42;
+  border-radius: 10px;
+}
+
+/* Reverse image search option styling */
+.reverse-engine-option {
+  display: flex;
+  align-items: center;
+  background-color: #2c1e3f;
+  padding: 6px 10px;
+  border-radius: 8px;
+  margin: 6px auto;
+  width: 85%;
+  color: #fff;
+  font-size: 14px;
+  transition: background-color 0.3s;
+  cursor: pointer;
+}
+
+.reverse-engine-option:hover {
+  background-color: #3d2956;
+}
+
+.reverse-engine-option input[type="checkbox"] {
+  margin-right: 10px;
+  transform: scale(1.1);
+}

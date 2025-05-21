@@ -1,0 +1,21 @@
+{
+  "manifest_version": 3,
+  "name": "IntelHub",
+  "description": "Your personal OSINT toolkit inside the browser.",
+  "version": "1.0",
+  "icons": {
+    "128": "icons/icon.png"
+  },
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "128": "icons/icon.png"
+    }
+  },
+  "permissions": [
+    "storage"
+  ],
+  "host_permissions": [
+    "https://raw.githubusercontent.com/tomsec8/IntelHub/main/tools.json"
+  ]
+}
