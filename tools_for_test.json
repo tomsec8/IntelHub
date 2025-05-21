@@ -334,10 +334,139 @@
       "description": "Knowledge engine for people and entities"
     }
   ],
-  "Tools for Instagram": [],
-  "Tools for Telegram": [],
-  "Internet Archives": [],
-  "Crypto": [],
+  "Tools for Instagram": [
+    {
+      "name": "Inflact Profile Analyzer",
+      "url": "https://inflact.com/tools/profile-analyzer",
+      "description": "Analyze Instagram profiles for public data and engagement"
+    },
+    {
+      "name": "Toolzu Instagram Photo Downloader",
+      "url": "https://toolzu.com/downloader/instagram/photo/",
+      "description": "Download public Instagram photos anonymously"
+    },
+    {
+      "name": "Imginn",
+      "url": "https://imginn.com/",
+      "description": "View and download public Instagram stories, posts, and highlights anonymously"
+    }
+  ],
+  "Tools for Telegram": [
+    {
+      "name": "Telegram Group and Channel Search",
+      "url": "https://chromewebstore.google.com/detail/telegram-group-and-channe/ilpgiemienkecbgdhdbgdjkafodgfojl",
+      "description": "Chrome extension for searching public Telegram groups and channels"
+    },
+    {
+      "name": "TGStat",
+      "url": "https://tgstat.com/",
+      "description": "Analytics and search platform for Telegram channels, bots, and posts"
+    },
+    {
+      "name": "Lyzem",
+      "url": "https://lyzem.com/",
+      "description": "AI-powered analytics and search for Telegram user profiles and channels"
+    },
+    {
+      "name": "AllInOneLeaksBOT",
+      "url": "https://t.me/AllInOneLeaksBOT",
+      "description": "Telegram bot for searching leaks, tools, and databases"
+    },
+    {
+      "name": "CreationDateBot",
+      "url": "https://t.me/creationdatebot",
+      "description": "Telegram bot that reveals the creation date of Telegram accounts"
+    },
+    {
+      "name": "SangMata Beta Bot",
+      "url": "https://t.me/SangMata_beta_bot",
+      "description": "Telegram bot that tracks historical usernames and name changes of Telegram users"
+    },
+    {
+      "name": "Blue Iguana Bot",
+      "url": "https://t.me/Blue_iguana_bot",
+      "description": "Telegram bot for gathering info about Telegram users and groups"
+    },
+    {
+      "name": "Username to ID Bot",
+      "url": "https://t.me/username_to_id_bot",
+      "description": "Telegram bot that converts Telegram usernames to numeric user IDs"
+    },
+    {
+      "name": "TgScanRobo Bot",
+      "url": "https://t.me/TgScanRobo_bot",
+      "description": "Telegram bot for scanning user profiles and extracting public information"
+    },
+    {
+      "name": "IntelX Telegram Tools",
+      "url": "https://intelx.io/tools?tab=telegram",
+      "description": "Telegram-focused OSINT tools by IntelligenceX for searching chats, usernames, and messages"
+    },
+    {
+      "name": "Telemetr.io",
+      "url": "https://telemetr.io/en/catalog/global",
+      "description": "Catalog and analytics platform for public Telegram channels and trends"
+    },
+    {
+      "name": "Telemetr.io",
+      "url": "https://telemetr.io/en/catalog/global",
+      "description": "Catalog and analytics platform for public Telegram channels and trends"
+    }
+  ],
+  "Internet Archives": [
+    {
+      "name": "Wayback Machine",
+      "url": "https://archive.org/web/",
+      "description": "Browse historical snapshots of web pages using the Internet Archive"
+    },
+    {
+      "name": "Archive.is",
+      "url": "https://archive.is/",
+      "description": "Take and view permanent snapshots of web pages, even if the original is deleted"
+    },
+    {
+      "name": "Memento",
+      "url": "http://timetravel.mementoweb.org/",
+      "description": "Tool for finding archived versions of a webpage across multiple services"
+    },
+    {
+      "name": "Ghostarchive",
+      "url": "https://ghostarchive.org/",
+      "description": "Archive social media posts and videos, especially YouTube and Twitter content"
+    }
+  ],
+  "Crypto": [
+    {
+      "name": "Blockchain.com Explorer",
+      "url": "https://www.blockchain.com/explorer",
+      "description": "Track Bitcoin addresses, transactions, and block data"
+    },
+    {
+      "name": "Etherscan",
+      "url": "https://etherscan.io/",
+      "description": "Explore Ethereum addresses, smart contracts, and token transfers"
+    },
+    {
+      "name": "BSCScan",
+      "url": "https://bscscan.com/",
+      "description": "Blockchain explorer for Binance Smart Chain (BEP-20 tokens)"
+    },
+    {
+      "name": "Solscan",
+      "url": "https://solscan.io/",
+      "description": "Explorer for the Solana blockchain – wallets, tokens, and transactions"
+    },
+    {
+      "name": "Arkham Intelligence",
+      "url": "https://platform.arkhamintelligence.com/",
+      "description": "Analyze crypto addresses using AI-based entity attribution and transaction graphs"
+    },
+    {
+      "name": "Nansen",
+      "url": "https://www.nansen.ai/",
+      "description": "On-chain analytics platform identifying top wallet movements and trends"
+    }
+  ],
   "Domain, IP, and DNS Research": [],
   "General OSINT Tools": [],
   "Sources for Recommended Tools": [],
