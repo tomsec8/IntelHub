@@ -2,6 +2,9 @@
 
 A modern and intuitive Chrome extension that brings your favorite OSINT tools, metadata analyzers, and Google Dorking assistants right into your browser.
 
+[![Get it on Chrome Web Store](https://img.shields.io/badge/Install%20from-Chrome%20Web%20Store-blue.svg?logo=google-chrome)](https://chromewebstore.google.com/detail/jfjpgfklmjdhabodgghmjclpgnpiejlh)
+
+
 ---
 
 ## 📋 Project Overview
