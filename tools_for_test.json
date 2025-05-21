@@ -383,11 +383,6 @@
       "description": "Telegram bot that tracks historical usernames and name changes of Telegram users"
     },
     {
-      "name": "Blue Iguana Bot",
-      "url": "https://t.me/Blue_iguana_bot",
-      "description": "Telegram bot for gathering info about Telegram users and groups"
-    },
-    {
       "name": "Username to ID Bot",
       "url": "https://t.me/username_to_id_bot",
       "description": "Telegram bot that converts Telegram usernames to numeric user IDs"
@@ -401,11 +396,6 @@
       "name": "IntelX Telegram Tools",
       "url": "https://intelx.io/tools?tab=telegram",
       "description": "Telegram-focused OSINT tools by IntelligenceX for searching chats, usernames, and messages"
-    },
-    {
-      "name": "Telemetr.io",
-      "url": "https://telemetr.io/en/catalog/global",
-      "description": "Catalog and analytics platform for public Telegram channels and trends"
     },
     {
       "name": "Telemetr.io",
