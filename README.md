@@ -60,12 +60,23 @@ git clone https://github.com/tomsec8/IntelHub.git
 ```
 IntelHub/
 ├── icons/
+│ └── logo.png
+├── libs/
+│ ├── ExifReader.js
+│ ├── jszip.min.js
+│ └── pdf-lib.min.js
+├── pages/
+│ └── privacy.html
+├── styles/
+│ └── style.css
+├── tools/
+│ └── tools.json
 ├── popup.html
 ├── popup.js
-├── style.css
-├── tools.json
 ├── manifest.json
 ├── README.md
+├── LICENSE
+
 ```
 
 ---
