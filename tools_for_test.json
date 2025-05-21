@@ -457,7 +457,38 @@
       "description": "On-chain analytics platform identifying top wallet movements and trends"
     }
   ],
-  "Domain, IP, and DNS Research": [],
+  "Domain, IP, and DNS Research": [
+    {
+      "name": "SecurityTrails",
+      "url": "https://securitytrails.com/",
+      "description": "Full DNS and domain history lookup"
+    },
+    {
+      "name": "ViewDNS",
+      "url": "https://viewdns.info/",
+      "description": "Tools for DNS, WHOIS, and geolocation"
+    },
+    {
+      "name": "DNSdumpster",
+      "url": "https://dnsdumpster.com/",
+      "description": "DNS recon and subdomain discovery"
+    },
+    {
+      "name": "Shodan",
+      "url": "https://www.shodan.io/",
+      "description": "Search engine for IPs and connected devices"
+    },
+    {
+      "name": "Censys",
+      "url": "https://search.censys.io/",
+      "description": "Search and analyze IPs, hosts, and certs"
+    },
+    {
+      "name": "IPinfo",
+      "url": "https://ipinfo.io/",
+      "description": "Detailed IP geolocation and ASN data"
+    }
+  ],
   "General OSINT Tools": [],
   "Sources for Recommended Tools": [],
   "OSINT Tools for Linux": [
