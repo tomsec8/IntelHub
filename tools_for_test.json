@@ -489,8 +489,50 @@
       "description": "Detailed IP geolocation and ASN data"
     }
   ],
-  "General OSINT Tools": [],
-  "Sources for Recommended Tools": [],
+  "General OSINT Tools": [
+    {
+      "name": "Aware Online OSINT Tools",
+      "url": "https://www.aware-online.com/en/osint-tools/",
+      "description": "Collection of categorized OSINT tools including domain, social, and financial"
+    }
+  ],
+  "Sources for Recommended Tools": [
+    {
+      "name": "OSINT Framework",
+      "url": "https://osintframework.com/",
+      "description": "Curated OSINT tools organized by category"
+    },
+    {
+      "name": "Start.me OSINT Startpage",
+      "url": "https://start.me/p/DPYPMz/osint",
+      "description": "Personalized dashboard of OSINT tools and links"
+    },
+    {
+      "name": "Aware Online OSINT Tools",
+      "url": "https://www.aware-online.com/en/osint-tools/",
+      "description": "Extensive list of categorized OSINT tools"
+    },
+    {
+      "name": "Telegram OSINT Toolbox",
+      "url": "https://github.com/The-Osint-Toolbox/Telegram-OSINT",
+      "description": "Collection of OSINT tools focused on Telegram investigations"
+    },
+    {
+      "name": "Awesome Telegram OSINT",
+      "url": "https://github.com/ItIsMeCall911/Awesome-Telegram-OSINT",
+      "description": "Curated list of tools and techniques for Telegram OSINT"
+    },
+    {
+      "name": "Awesome OSINT by jivoi",
+      "url": "https://github.com/jivoi/awesome-osint",
+      "description": "Popular GitHub list of OSINT tools across multiple domains"
+    },
+    {
+      "name": "r/OSINT Wiki",
+      "url": "https://www.reddit.com/r/OSINT/wiki/index/",
+      "description": "Reddit's community-curated OSINT resource hub"
+    }
+  ],
   "OSINT Tools for Linux": [
     {
       "name": "Blackbird",
