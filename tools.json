@@ -226,7 +226,7 @@
     },
     {
       "name": "Eycon",
-      "url": "https://www.eycon-app.com/",
+      "url": "https://www.eyecon-app.com/",
       "description": "Visual caller ID and sync with social"
     },
     {
@@ -240,11 +240,6 @@
       "description": "Caller ID and spam protection"
     },
     {
-      "name": "Caller ID",
-      "url": "https://play.google.com/store/apps/details?id=caller.id.app",
-      "description": "General caller ID app"
-    },
-    {
       "name": "Freecarrierlookup",
       "url": "https://freecarrierlookup.com/",
       "description": "Find carrier information for a phone number"
@@ -256,7 +251,7 @@
     },
     {
       "name": "441",
-      "url": "https://441.co.il/",
+      "url": "https://441il.com/",
       "description": "Another Israeli phone lookup site"
     },
     {
@@ -353,11 +348,6 @@
       "description": "AI-powered analytics and search for Telegram user profiles and channels"
     },
     {
-      "name": "AllInOneLeaksBOT",
-      "url": "https://t.me/AllInOneLeaksBOT",
-      "description": "Telegram bot for searching leaks, tools, and databases"
-    },
-    {
       "name": "CreationDateBot",
       "url": "https://t.me/creationdatebot",
       "description": "Telegram bot that reveals the creation date of Telegram accounts"
@@ -403,11 +393,6 @@
       "name": "Memento",
       "url": "http://timetravel.mementoweb.org/",
       "description": "Tool for finding archived versions of a webpage across multiple services"
-    },
-    {
-      "name": "Ghostarchive",
-      "url": "https://ghostarchive.org/",
-      "description": "Archive social media posts and videos, especially YouTube and Twitter content"
     }
   ],
   "Crypto": [
