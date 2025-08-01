@@ -162,23 +162,13 @@
   "Username Search": [
     {
       "name": "WhatsMyName",
-      "url": "https://github.com/WebBreacher/WhatsMyName",
+      "url": "https://whatsmyname.app/",
       "description": "Find usernames across many websites"
-    },
-    {
-      "name": "Checkuser",
-      "url": "https://checkusernames.com/",
-      "description": "Search username availability on social platforms"
     },
     {
       "name": "Idcrawl",
       "url": "https://idcrawl.com/",
       "description": "Search people and usernames on the web"
-    },
-    {
-      "name": "Namecheckr",
-      "url": "https://namecheckr.com/",
-      "description": "Check domain and social username availability"
     },
     {
       "name": "Namecheckup",
@@ -189,11 +179,6 @@
       "name": "Usersearch",
       "url": "https://usersearch.org/",
       "description": "Search users across forums and platforms"
-    },
-    {
-      "name": "user-searcher",
-      "url": "https://github.com/Anon-Exploiter/SocialBox-Termux",
-      "description": "Username enumeration tool for Linux"
     }
   ],
   "Email Investigation Tools": [
