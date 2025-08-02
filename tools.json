@@ -6,6 +6,11 @@
       "description": "Extension for searching across multiple image search engines"
     },
     {
+      "name": "SingleFile",
+      "url": "https://chromewebstore.google.com/detail/mpiodijhokgodhhofbcjdecpffjipkle?utm_source=item-share-cb",
+      "description": "Save a complete page into a single HTML file"
+    },
+    {
       "name": "Web Archives",
       "url": "https://chromewebstore.google.com/detail/web-archives/hkligngkgcpcolhcnkgccglchdafcnao",
       "description": "Extension that allows searching across multiple archives simultaneously"
