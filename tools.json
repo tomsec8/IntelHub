@@ -292,6 +292,11 @@
       "description": "Define hashtags"
     },
     {
+      "name": "twiteridfinder",
+      "url": "https://twiteridfinder.com/",
+      "description": "find twitter id"
+    },
+    {
       "name": "Twitter Advanced Search",
       "url": "https://twitter.com/search-advanced",
       "description": "Advanced Twitter query tool"
