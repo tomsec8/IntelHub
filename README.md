@@ -1,7 +1,7 @@
 # 🧠 IntelHub – OSINT Toolkit for Chrome
 
 <p align="center">
-  <img src="icons/icon.png" alt="IntelHub Logo" width="120" />
+  <img src="intelhub/icons/icon.png" alt="IntelHub Logo" width="120" />
 </p>
 
 
