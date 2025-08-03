@@ -12,6 +12,15 @@ A modern and intuitive Chrome extension that brings your favorite OSINT tools, m
 
 ---
 
+## 🔍 Overview
+
+**IntelHub** turns your browser into a powerful Open-Source Intelligence (OSINT) environment.  
+Perform deep analysis on links, websites, files, and social platforms — all locally, privacy-first, and fast.
+
+> Whether you're a **cyber analyst**, **journalist**, **law enforcement**, or **OSINT enthusiast** – IntelHub is your modular, personal toolkit.
+
+---
+
 ## 📸 Screenshots
 
 | Main Menu | Welcome Screen | OSINT Tools |
@@ -21,16 +30,6 @@ A modern and intuitive Chrome extension that brings your favorite OSINT tools, m
 | Social Tools | Text Profiler | Metadata Analyzer |
 |--------------|----------------|--------------------|
 | ![](screenshots/social-tools.PNG) | ![](screenshots/text-profiler.PNG) | ![](screenshots/metadata-analyzer.PNG) |
-
-
----
-
-## 🔍 Overview
-
-**IntelHub** turns your browser into a powerful Open-Source Intelligence (OSINT) environment.  
-Perform deep analysis on links, websites, files, and social platforms — all locally, privacy-first, and fast.
-
-> Whether you're a **cyber analyst**, **journalist**, **law enforcement**, or **OSINT enthusiast** – IntelHub is your modular, personal toolkit.
 
 ---
 
