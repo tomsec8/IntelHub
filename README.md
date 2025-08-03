@@ -16,11 +16,11 @@ A modern and intuitive Chrome extension that brings your favorite OSINT tools, m
 
 | Main Menu | Welcome Screen | OSINT Tools |
 |-----------|----------------|--------------|
-| ![](screenshots/main-menu.png) | ![](screenshots/welcome-screen.png) | ![](screenshots/osint-tools.png) |
+| ![](screenshots/main-menu.PNG) | ![](screenshots/welcome-screen.PNG) | ![](screenshots/osint-tools.PNG) |
 
 | Social Tools | Text Profiler | Metadata Analyzer |
 |--------------|----------------|--------------------|
-| ![](screenshots/social-tools.png) | ![](screenshots/text-profiler.png) | ![](screenshots/metadata-analyzer.png) |
+| ![](screenshots/social-tools.PNG) | ![](screenshots/text-profiler.PNG) | ![](screenshots/metadata-analyzer.PNG) |
 
 
 ---
