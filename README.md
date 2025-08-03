@@ -12,6 +12,19 @@ A modern and intuitive Chrome extension that brings your favorite OSINT tools, m
 
 ---
 
+## 📸 Screenshots
+
+| Main Menu | Welcome Screen | OSINT Tools |
+|-----------|----------------|--------------|
+| ![](screenshots/main-menu.png) | ![](screenshots/welcome-screen.png) | ![](screenshots/osint-tools.png) |
+
+| Social Tools | Text Profiler | Metadata Analyzer |
+|--------------|----------------|--------------------|
+| ![](screenshots/social-tools.png) | ![](screenshots/text-profiler.png) | ![](screenshots/metadata-analyzer.png) |
+
+
+---
+
 ## 🔍 Overview
 
 **IntelHub** turns your browser into a powerful Open-Source Intelligence (OSINT) environment.  
