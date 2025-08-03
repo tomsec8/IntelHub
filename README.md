@@ -113,7 +113,14 @@ Pull requests and suggestions are welcome!
 - **ZIP Handling**: [jszip](https://github.com/Stuk/jszip)  
 - **Website Snapshot**: [single-file](https://github.com/gildas-lormeau/SingleFile)  
 - **TLD Parsing**: [psl](https://github.com/lupomontero/psl)
- 
+
+### 🌐 APIs:
+- **[Unshorten.me](https://unshorten.me)** – Used to resolve shortened URLs into their original form  
+  > © Unshorten.me – All rights belong to their respective owners.
+
+---
+
+*All trademarks, logos, and brand names are the property of their respective owners.*
 
 ---
 
