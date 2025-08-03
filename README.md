@@ -12,10 +12,12 @@ A modern and intuitive Chrome extension that brings your favorite OSINT tools, m
 
 ---
 
-## 📋 Project Overview
+## 🔍 Overview
 
-**IntelHub** is a modular Open Source Intelligence (OSINT) Chrome extension designed for investigators, analysts, and cybersecurity professionals.  
-It centralizes critical tools, metadata analysis features, and advanced Google search utilities — all accessible in one click.
+**IntelHub** turns your browser into a powerful Open-Source Intelligence (OSINT) environment.  
+Perform deep analysis on links, websites, files, and social platforms — all locally, privacy-first, and fast.
+
+> Whether you're a **cyber analyst**, **journalist**, **law enforcement**, or **OSINT enthusiast** – IntelHub is your modular, personal toolkit.
 
 ---
 
@@ -44,14 +46,19 @@ git clone https://github.com/tomsec8/IntelHub.git
 
 ---
 
-## 🧠 Features & Categories
+## 🚀 Key Features
 
 | Category               | Description                                                                 |
 |------------------------|-----------------------------------------------------------------------------|
-| ⭐ **Favorites**        | Mark any OSINT tool and access it quickly from the favorites tab            |
-| 🕵️ **OSINT Tools**     | Domain, IP, image analysis, social media, and more organized by category     |
-| 📊 **Metadata Analyzer** | Upload images, PDFs, or Office files and extract metadata locally           |
-| 🔎 **Google Dorks**     | Easily build advanced Google queries with support for multiple operators     |
+| 🔎 **Smart Text Profiler** | Extract emails, phones, Israeli IDs, crypto wallets, domains, IPs, names, and more using advanced regex + multilingual NLP |
+| 🧠 **Entity Recognition (NLP)** | Detect people, cities, organizations, and languages – English & Hebrew support |
+| 📷 **Metadata Analyzer**     | Analyze EXIF & metadata from images, PDFs, Office docs – all locally |
+| 🌐 **Website Analyzer**      | Reveal tech stack, WHOIS, fingerprints, and save full offline snapshot |
+| 🧬 **Social ID Extractor**   | Extract usernames from Facebook, Instagram, X, Telegram, TikTok, LinkedIn |
+| 🔗 **Link Analyzer**         | Unmask short URLs + scan with VirusTotal |
+| 🧰 **Curated OSINT Tools**  | Browse categorized tools for reverse image search, domain lookup, breach checks, etc. |
+| ⭐ **Favorites + UI**        | Clean dark mode, filters, favorites – smooth experience |
+
 
 ---
 
@@ -59,25 +66,35 @@ git clone https://github.com/tomsec8/IntelHub.git
 
 ```
 IntelHub/
-├── icons/
-│ └── logo.png
-├── libs/
-│ ├── ExifReader.js
-│ ├── jszip.min.js
-│ └── pdf-lib.min.js
-├── pages/
-│ └── privacy.html
-├── styles/
-│ └── style.css
-├── tools/
-│ └── tools.json
+├── content.js
+├── manifest.json
 ├── popup.html
 ├── popup.js
-├── manifest.json
-├── README.md
-├── LICENSE
+├── styles/
+│   └── styles.css
+├── libs/
+│   ├── compromise.min.js
+│   ├── ExifReader.js
+│   ├── jszip-lib.min.js
+│   ├── pdf-lib.min.js
+│   ├── psl.min.js
+│   └── single-file.js
+├── icons/
+│   └── [icon files]
 
 ```
+
+---
+
+## 🆕 What's New in v2.0
+
+✅ Brand-new dark-mode interface  
+✅ Profiler AI with NLP and multilingual support  
+✅ Local EXIF & Metadata analyzers  
+✅ Full Website Analyzer (tech, WHOIS, snapshot)  
+✅ Favorites system with filterable categories  
+✅ Powerful new regex patterns + Hebrew support  
+✅ Improved performance and modular design  
 
 ---
 
@@ -88,12 +105,15 @@ Pull requests and suggestions are welcome!
 
 ---
 
-## 🙏 Credits
+## 🤝 Credits
 
-- **ExifReader** – For reading EXIF data  
-- **pdf-lib** – PDF metadata parsing  
-- **JSZip** – For reading Office file metadata  
-- Public OSINT tools sourced and organized for accessibility  
+- **Text Entity Extraction**: [Compromise NLP](https://github.com/spencermountain/compromise)  
+- **EXIF Parser**: [ExifReader](https://github.com/mattiasw/ExifReader)  
+- **PDF Parsing**: [pdf-lib](https://github.com/Hopding/pdf-lib)  
+- **ZIP Handling**: [jszip](https://github.com/Stuk/jszip)  
+- **Website Snapshot**: [single-file](https://github.com/gildas-lormeau/SingleFile)  
+- **TLD Parsing**: [psl](https://github.com/lupomontero/psl)
+ 
 
 ---
 
