@@ -1,4 +1,4 @@
-# 🧠 IntelHub – OSINT Toolkit for Chrome
+# IntelHub – OSINT Toolkit for Chrome 🧠
 
 <p align="center">
   <img src="IntelHub/icons/icon.png" alt="IntelHub Logo" width="120" />
@@ -12,7 +12,7 @@ A modern and intuitive Chrome extension that brings your favorite OSINT tools, m
 
 ---
 
-## 🔍 Overview
+## Overview 🔍
 
 **IntelHub** turns your browser into a powerful Open-Source Intelligence (OSINT) environment.  
 Perform deep analysis on links, websites, files, and social platforms — all locally, privacy-first, and fast.
@@ -21,7 +21,7 @@ Perform deep analysis on links, websites, files, and social platforms — all lo
 
 ---
 
-## 📸 Screenshots
+## Screenshots 📸
 
 | Main Menu | Welcome Screen | OSINT Tools |
 |-----------|----------------|--------------|
@@ -33,18 +33,18 @@ Perform deep analysis on links, websites, files, and social platforms — all lo
 
 ---
 
-## ✅ System Requirements
+## System Requirements ✅
 
 To use this extension, you’ll need:
 
-- 🖥️ **Browser**: Chrome or any Chromium-based browser (e.g., Brave, Edge)  
-- 📦 **Storage**: Minimal – used only to save preferences and favorites  
-- 🌐 **Internet Access**: Required for launching online OSINT tools  
-- 🧩 **Permissions**: Extension requires scripting and tab access for certain features  
+- **Browser**: Chrome or any Chromium-based browser (e.g., Brave, Edge) 🖥️ 
+- **Storage**: Minimal – used only to save preferences and favorites  📦
+- **Internet Access**: Required for launching online OSINT tools 🌐 
+- **Permissions**: Extension requires scripting and tab access for certain features 🧩 
 
 ---
 
-## 🚀 Installation
+## Installation 🚀
 
 You can load the extension manually during development:
 
@@ -58,23 +58,23 @@ git clone https://github.com/tomsec8/IntelHub.git
 
 ---
 
-## 🚀 Key Features
+## Key Features 🚀
 
 | Category               | Description                                                                 |
 |------------------------|-----------------------------------------------------------------------------|
-| 🔎 **Smart Text Profiler** | Extract emails, phones, Israeli IDs, crypto wallets, domains, IPs, names, and more using advanced regex + multilingual NLP |
-| 🧠 **Entity Recognition (NLP)** | Detect people, cities, organizations, and languages – English & Hebrew support |
-| 📷 **Metadata Analyzer**     | Analyze EXIF & metadata from images, PDFs, Office docs – all locally |
-| 🌐 **Website Analyzer**      | Reveal tech stack, WHOIS, fingerprints, and save full offline snapshot |
-| 🧬 **Social ID Extractor**   | Extract usernames from Facebook, Instagram, X, Telegram, TikTok, LinkedIn |
-| 🔗 **Link Analyzer**         | Unmask short URLs + scan with VirusTotal |
-| 🧰 **Curated OSINT Tools**  | Browse categorized tools for reverse image search, domain lookup, breach checks, etc. |
-| ⭐ **Favorites + UI**        | Clean dark mode, filters, favorites – smooth experience |
+| **Smart Text Profiler** 🔎 | Extract emails, phones, Israeli IDs, crypto wallets, domains, IPs, names, and more using advanced regex + multilingual NLP |
+| **Entity Recognition (NLP)** 🧠 | Detect people, cities, organizations, and languages – English & Hebrew support |
+| **Metadata Analyzer** 📷     | Analyze EXIF & metadata from images, PDFs, Office docs – all locally |
+| **Website Analyzer** 🌐      | Reveal tech stack, WHOIS, fingerprints, and save full offline snapshot |
+| **Social ID Extractor** 🧬   | Extract usernames from Facebook, Instagram, X, Telegram, TikTok, LinkedIn |
+| **Link Analyzer** 🔗        | Unmask short URLs + scan with VirusTotal |
+| **Curated OSINT Tools** 🧰  | Browse categorized tools for reverse image search, domain lookup, breach checks, etc. |
+| **Favorites + UI** ⭐        | Clean dark mode, filters, favorites – smooth experience |
 
 
 ---
 
-## 📦 Folder Structure
+## Folder Structure  📦
 
 ```
 IntelHub/
@@ -98,7 +98,7 @@ IntelHub/
 
 ---
 
-## 🆕 What's New in v2.0
+## What's New in v2.0 🆕
 
 ✅ Brand-new dark-mode interface  
 ✅ Profiler AI with NLP and multilingual support  
@@ -110,14 +110,14 @@ IntelHub/
 
 ---
 
-## 👨‍💻 Maintainer
+## Maintainer 👨‍💻
 
 Built with care by **TomSec8**  
 Pull requests and suggestions are welcome!
 
 ---
 
-## 🤝 Credits
+## Credits 🤝
 
 - **Text Entity Extraction**: [Compromise NLP](https://github.com/spencermountain/compromise)  
 - **EXIF Parser**: [ExifReader](https://github.com/mattiasw/ExifReader)  
@@ -126,7 +126,7 @@ Pull requests and suggestions are welcome!
 - **Website Snapshot**: [single-file](https://github.com/gildas-lormeau/SingleFile)  
 - **TLD Parsing**: [psl](https://github.com/lupomontero/psl)
 
-### 🌐 APIs:
+### APIs: 🌐
 - **[Unshorten.me](https://unshorten.me)** – Used to resolve shortened URLs into their original form  
   > © Unshorten.me – All rights belong to their respective owners.
 
@@ -136,6 +136,6 @@ Pull requests and suggestions are welcome!
 
 ---
 
-## 📜 License
+## License  📜
 
 This project is licensed under the **MIT License** – see the [LICENSE](LICENSE) file for details.
