@@ -37,10 +37,17 @@ Perform deep analysis on links, websites, files, and social platforms — all lo
 
 To use this extension, you’ll need:
 
-- **Browser**: Chrome or any Chromium-based browser (e.g., Brave, Edge) 🖥️ 
-- **Storage**: Minimal – used only to save preferences and favorites  📦
-- **Internet Access**: Required for launching online OSINT tools 🌐 
-- **Permissions**: Extension requires scripting and tab access for certain features 🧩 
+- **Browser**: Chrome or any Chromium-based browser (e.g., Brave, Edge) 🖥️  
+- **Storage**: Minimal – used only to save preferences and favorites 📦  
+- **Internet Access**: Required for launching online OSINT tools 🌐  
+- **Permissions**:  
+  - `storage` – Save favorites and preferences  
+  - `scripting` – Inject scripts into active tab  
+  - `tabs` – Get information about the current tab  
+  - `clipboardRead` – Allow pasting images from clipboard (for Reverse Image Search)  
+  - `downloads` – Save snapshots and exported files  
+  - `activeTab` – Interact with the current tab when needed  
+
 
 ---
 
