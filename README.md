@@ -69,8 +69,7 @@ git clone https://github.com/tomsec8/IntelHub.git
 
 | Category               | Description                                                                 |
 |------------------------|-----------------------------------------------------------------------------|
-| **Smart Text Profiler** 🔎 | Extract emails, phones, Israeli IDs, crypto wallets, domains, IPs, names, and more using advanced regex + multilingual NLP |
-| **Entity Recognition (NLP)** 🧠 | Detect people, cities, organizations, and languages – English & Hebrew support |
+| **Smart Text Profiler** 🔎 | Extract emails, phones, Israeli IDs, crypto wallets, domains, IPs, names, and more using advanced regex
 | **Metadata Analyzer** 📷     | Analyze EXIF & metadata from images, PDFs, Office docs – all locally |
 | **Website Analyzer** 🌐      | Reveal tech stack, WHOIS, fingerprints, and save full offline snapshot |
 | **Reverse Image Search** 🔍  | Upload or paste images and search them using engines like Google, Yandex, TinEye |
@@ -95,7 +94,6 @@ IntelHub/
 ├── styles/
 │   └── styles.css
 ├── libs/
-│   ├── compromise.min.js
 │   ├── ExifReader.js
 │   ├── jszip-lib.min.js
 │   ├── pdf-lib.min.js
