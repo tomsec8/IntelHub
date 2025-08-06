@@ -66,10 +66,13 @@ git clone https://github.com/tomsec8/IntelHub.git
 | **Entity Recognition (NLP)** 🧠 | Detect people, cities, organizations, and languages – English & Hebrew support |
 | **Metadata Analyzer** 📷     | Analyze EXIF & metadata from images, PDFs, Office docs – all locally |
 | **Website Analyzer** 🌐      | Reveal tech stack, WHOIS, fingerprints, and save full offline snapshot |
+| **Reverse Image Search** 🔍  | Upload or paste images and search them using engines like Google, Yandex, TinEye |
+| **Archive Search** 🕰️       | Check historical versions of any site using Wayback Machine, Archive.today, Ghostarchive, and more |
 | **Social ID Extractor** 🧬   | Extract usernames from Facebook, Instagram, X, Telegram, TikTok, LinkedIn |
 | **Link Analyzer** 🔗        | Unmask short URLs + scan with VirusTotal |
 | **Curated OSINT Tools** 🧰  | Browse categorized tools for reverse image search, domain lookup, breach checks, etc. |
 | **Favorites + UI** ⭐        | Clean dark mode, filters, favorites – smooth experience |
+
 
 
 ---
@@ -98,15 +101,17 @@ IntelHub/
 
 ---
 
-## What's New in v2.0 🆕
+## What's New in v2.1 🆕
 
 ✅ Brand-new dark-mode interface  
 ✅ Profiler AI with NLP and multilingual support  
 ✅ Local EXIF & Metadata analyzers  
 ✅ Full Website Analyzer (tech, WHOIS, snapshot)  
+✅ Reverse Image Search with clipboard and upload support  
+✅ Archive Search with multiple engines (Wayback, Archive.today, Ghostarchive...)  
 ✅ Favorites system with filterable categories  
 ✅ Powerful new regex patterns + Hebrew support  
-✅ Improved performance and modular design  
+✅ Improved performance and modular design   
 
 ---
 
