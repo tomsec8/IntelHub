@@ -8,18 +8,18 @@ A comprehensive Open-Source Intelligence (OSINT) suite that transforms your brow
 
 <p align="center">
   <a href="https://chromewebstore.google.com/detail/jfjpgfklmjdhabodgghmjclpgnpiejlh">
-    <img src="https://img.shields.io/badge/Install%20on-Chrome-4285F4?style=for-the-badge&logo=google-chrome&logoColor=white" alt="Chrome Web Store" />
+    <img src="https://storage.googleapis.com/web-dev-uploads/image/WlD8wC6g8khYWPJUsQceQkhXSlv1/iNEddTyWiMfLSwFD6qGq.png" alt="Available in the Chrome Web Store" height="60" />
   </a>
   <a href="https://addons.mozilla.org/en-US/firefox/addon/intelhub/?utm_source=addons.mozilla.org&utm_medium=referral&utm_content=search">
-    <img src="https://img.shields.io/badge/Install%20on-Firefox-FF7139?style=for-the-badge&logo=firefox&logoColor=white" alt="Firefox Add-ons" />
-  </a>
-  <a href="#opera-addon-link">
-    <img src="https://img.shields.io/badge/Install%20on-Opera-FF1B2D?style=for-the-badge&logo=opera&logoColor=white" alt="Opera Add-ons" />
+    <img src="https://blog.mozilla.org/addons/files/2020/04/get-the-addon-fx-apr-2020.svg" alt="Get the Firefox Add-on" height="60" />
   </a>
   <a href="https://microsoftedge.microsoft.com/addons/detail/intelhub/mllimkjdpgenkhlnpmiploclgponggjg">
-    <img src="https://img.shields.io/badge/Install%20on-Edge-0078D4?style=for-the-badge&logo=microsoft-edge&logoColor=white" alt="Edge Add-ons" />
+    <img src="https://developer.microsoft.com/store/badges/images/English_get-it-from-MS.png" alt="Get it from Microsoft" height="60" />
   </a>
-</p>
+  <a href="#opera-addon-link">
+    <img src="https://dev.opera.com/extensions/branding-guidelines/addons_206x58_en@2x.png" alt="Get it from Opera add-ons" height="60" />
+  </a>
+</p></p>
 
 ---
 
