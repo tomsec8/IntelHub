@@ -7,18 +7,24 @@
 A comprehensive Open-Source Intelligence (OSINT) suite that transforms your browser into a powerful investigation toolkit. Designed for researchers, analysts, and investigators with advanced tools for cryptocurrency analysis, Telegram intelligence, and complete privacy protection.
 
 <p align="center">
+  </br></br>
   <a href="https://chromewebstore.google.com/detail/jfjpgfklmjdhabodgghmjclpgnpiejlh">
-    <img src="https://storage.googleapis.com/web-dev-uploads/image/WlD8wC6g8khYWPJUsQceQkhXSlv1/iNEddTyWiMfLSwFD6qGq.png" alt="Available in the Chrome Web Store" height="60" />
-  </a>
+    <picture>
+      <source srcset="https://i.imgur.com/XBIE9pk.png" media="(prefers-color-scheme: dark)">
+      <img height="58" src="https://i.imgur.com/oGxig2F.png" alt="Chrome Web Store"></picture></a>
   <a href="https://addons.mozilla.org/en-US/firefox/addon/intelhub/?utm_source=addons.mozilla.org&utm_medium=referral&utm_content=search">
-    <img src="https://blog.mozilla.org/addons/files/2020/04/get-the-addon-fx-apr-2020.svg" alt="Get the Firefox Add-on" height="60" />
-  </a>
+    <picture>
+      <source srcset="https://i.imgur.com/ZluoP7T.png" media="(prefers-color-scheme: dark)">
+      <img height="58" src="https://i.imgur.com/4PobQqE.png" alt="Firefox add-ons"></picture></a>
   <a href="https://microsoftedge.microsoft.com/addons/detail/intelhub/mllimkjdpgenkhlnpmiploclgponggjg">
-    <img src="https://developer.microsoft.com/store/badges/images/English_get-it-from-MS.png" alt="Get it from Microsoft" height="60" />
-  </a>
+    <picture>
+      <source srcset="https://i.imgur.com/Jog9cQP.png" media="(prefers-color-scheme: dark)">
+      <img height="58" src="https://i.imgur.com/aiprUt8.png" alt="Microsoft Store"></picture></a>
   <a href="#opera-addon-link">
-    <img src="https://dev.opera.com/extensions/branding-guidelines/addons_206x58_en@2x.png" alt="Get it from Opera add-ons" height="60" />
-  </a>
+    <picture>
+      <source srcset="https://i.imgur.com/ziehy0f.png" media="(prefers-color-scheme: dark)">
+      <img height="58" src="https://i.imgur.com/ytVATu0.png" alt="Opera add-ons"></picture></a>
+  </br></br>
 </p></p>
 
 ---
