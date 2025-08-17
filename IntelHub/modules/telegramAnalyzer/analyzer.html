@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Telegram OSINT Analyzer</title>
+    <script src="../../libs/chart.min.js"></script>
+    <script src="../../libs/date-fns.min.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🔍 Telegram OSINT Analyzer</h1>
+            <p class="subtitle">An advanced tool for analyzing Telegram data for OSINT investigators</p>
+        </div>
+
+        <div class="upload-section">
+            <h2>📁 Upload JSON File</h2>
+            <p>Select a JSON file exported from Telegram or a similar tool</p>
+            <div class="file-input">
+                <label for="fileInput" class="file-label">📤 Select JSON File</label>
+                <input type="file" id="fileInput" accept=".json" />
+            </div>
+        </div>
+
+        <div id="loading" class="loading hidden">
+            <div class="spinner"></div>
+            <p>Processing data...</p>
+        </div>
+
+        <div id="errorAlert" class="alert hidden">
+            Error loading the file. Please ensure it is a valid JSON file.
+        </div>
+
+        <div id="results" class="hidden">
+            <div class="stats-grid">
+                <div class="stat-card"><div id="totalMessages" class="stat-value">0</div><div class="stat-label">Total Messages</div></div>
+                <div class="stat-card"><div id="uniqueChats" class="stat-value">0</div><div class="stat-label">Unique Chats</div></div>
+                <div class="stat-card"><div id="dateRange" class="stat-value">-</div><div class="stat-label">Date Range</div></div>
+                <div class="stat-card"><div id="avgMessagesPerDay" class="stat-value">0</div><div class="stat-label">Avg Messages/Day</div></div>
+            </div>
+
+            <div class="charts-grid">
+                <div class="chart-container"><div class="chart-title">📈 Activity Over Time</div><canvas id="timelineChart"></canvas></div>
+                <div class="chart-container"><div class="chart-title">💬 Activity by Chat</div><canvas id="chatsChart"></canvas></div>
+                <div class="chart-container"><div class="chart-title">🕐 Activity by Hour</div><canvas id="hoursChart"></canvas></div>
+                <div class="chart-container"><div class="chart-title">📅 Activity by Weekday</div><canvas id="weekdayChart"></canvas></div>
+            </div>
+            
+            <div class="insights-section">
+                <h3 class="insights-title">💡 Key Insights</h3>
+                <div id="insightsContainer"></div>
+            </div>
+            
+            <div class="regex-section">
+                <h3 class="regex-title">🎯 Identified Patterns</h3>
+                <div id="regexContainer"></div>
+            </div>
+
+            <div class="group-list-section">
+                 <h3 class="group-list-title">🔗 Group List</h3>
+                 <div id="groupListContainer" class="group-list-container"></div>
+            </div>
+
+            <div class="word-cloud">
+                <h3 class="chart-title">☁️ Common Words</h3>
+                <div id="wordCloudContainer"></div>
+            </div>
+
+            <div class="timeline">
+                <h3 class="chart-title">⏰ Message Explorer</h3>
+                 <div class="timeline-filters">
+                    <select id="chatFilter"></select>
+                    <input type="date" id="startDateFilter" title="Start Date">
+                    <input type="date" id="endDateFilter" title="End Date">
+                    <input type="text" id="searchFilter" placeholder="Search in messages...">
+                    <button id="filterButton">Filter</button>
+                </div>
+                <div id="timelineContainer"></div>
+                <div id="paginationControls" class="pagination-controls"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Import Favorites</title>
+    <link rel="stylesheet" href="../styles/styles.css">
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            text-align: center;
+        }
+        .content-wrapper {
+            background-color: #2c1e3f;
+            padding: 40px;
+            border-radius: 16px;
+        }
+        #status {
+            margin-top: 20px;
+            font-size: 16px;
+            min-height: 24px;
+        }
+    </style>
+</head>
+<body>
+    <div class="content-wrapper">
+        <h1>Import Favorites</h1>
+        <p>Select your `intelhub_favorites.json` file to import.</p>
+        <input type="file" id="importFile" accept=".json" style="display: none;">
+        <button id="selectFileBtn" class="category-button">Select File</button>
+        <p id="status"></p>
+    </div>
+    <script type="module" src="import-favorites.js"></script>
+</body>
+</html>

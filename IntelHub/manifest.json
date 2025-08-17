@@ -1,0 +1,48 @@
+{
+  "manifest_version": 3,
+  "name": "IntelHub",
+  "description": "Your personal OSINT toolkit inside the browser.",
+  "version": "3.0.1",
+  "icons": {
+    "128": "icons/icon.png"
+  },
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "128": "icons/icon.png"
+    }
+  },
+  "permissions": [
+    "storage",
+    "scripting",
+    "tabs",
+    "clipboardRead",
+    "downloads",
+    "activeTab"
+  ],
+  "host_permissions": ["<all_urls>"],
+  "web_accessible_resources": [
+    {
+      "resources": [
+        "libs/single-file.js",
+        "libs/cytoscape.min.js",
+        "libs/chart.min.js",
+        "libs/date-fns.min.js",
+        "firefox/import-favorites.html",
+        "firefox/import-favorites.js",
+        "modules/cryptoAnalyzer/cryptoAnalyzer.html",
+        "modules/cryptoAnalyzer/css/style.css",
+        "modules/cryptoAnalyzer/js/main.js",
+        "modules/telegramAnalyzer/analyzer.html",
+        "modules/telegramAnalyzer/css/style.css",
+        "modules/telegramAnalyzer/js/script.js"
+      ],
+      "matches": ["<all_urls>"]
+    }
+  ],
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "addon@intelhub.osint"
+    }
+  }
+}
