@@ -12,7 +12,7 @@ A comprehensive Open-Source Intelligence (OSINT) suite that transforms your brow
     <picture>
       <source srcset="https://i.imgur.com/XBIE9pk.png" media="(prefers-color-scheme: dark)">
       <img height="58" src="https://i.imgur.com/oGxig2F.png" alt="Chrome Web Store"></picture></a>
-  <a href="https://addons.mozilla.org/en-US/firefox/addon/intelhub/?utm_source=addons.mozilla.org&utm_medium=referral&utm_content=search">
+  <a href="https://addons.mozilla.org/en-US/firefox/addon/intelhub/">
     <picture>
       <source srcset="https://i.imgur.com/ZluoP7T.png" media="(prefers-color-scheme: dark)">
       <img height="58" src="https://i.imgur.com/4PobQqE.png" alt="Firefox add-ons"></picture></a>
@@ -224,6 +224,7 @@ Pull requests and suggestions are welcome!
 - **TLD Parsing**: [psl](https://github.com/lupomontero/psl)
 - **Data Visualization**: [Chart.js](https://github.com/chartjs/Chart.js) & [Cytoscape.js](https://github.com/cytoscape/cytoscape.js)
 - **Date Utilities**: [date-fns](https://github.com/date-fns/date-fns)
+- **Store Badges Design**: Inspired by [Search by Image](https://github.com/dessant/search-by-image) project
 
 ### APIs 🌐
 - **[Unshorten.me](https://unshorten.me)** – Used to resolve shortened URLs into their original form
