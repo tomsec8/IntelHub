@@ -1,23 +1,43 @@
-# IntelHub – OSINT Toolkit for Chrome 🧠
+# IntelHub – OSINT Toolkit 🧠
 
 <p align="center">
   <img src="IntelHub/icons/icon.png" alt="IntelHub Logo" width="120" />
 </p>
 
+A comprehensive Open-Source Intelligence (OSINT) suite that transforms your browser into a powerful investigation toolkit. Designed for researchers, analysts, and investigators with advanced tools for cryptocurrency analysis, Telegram intelligence, and complete privacy protection.
 
-A modern and intuitive Chrome extension that brings your favorite OSINT tools, metadata analyzers, and Google Dorking assistants right into your browser.
-
-[![Get it on Chrome Web Store](https://img.shields.io/badge/Install%20from-Chrome%20Web%20Store-blue.svg?logo=google-chrome)](https://chromewebstore.google.com/detail/jfjpgfklmjdhabodgghmjclpgnpiejlh)
-
+<p align="center">
+  <a href="https://chromewebstore.google.com/detail/intelhub/jfjpgfklmjdhabodgghmjclpgnpiejlh">
+    <img src="https://img.shields.io/badge/Install%20on-Chrome-4285F4?style=for-the-badge&logo=google-chrome&logoColor=white" alt="Chrome Web Store" />
+  </a>
+  <a href="https://addons.mozilla.org/en-US/firefox/addon/intelhub/?utm_source=addons.mozilla.org&utm_medium=referral&utm_content=search">
+    <img src="https://img.shields.io/badge/Install%20on-Firefox-FF7139?style=for-the-badge&logo=firefox&logoColor=white" alt="Firefox Add-ons" />
+  </a>
+  <a href="#opera-addon-link">
+    <img src="https://img.shields.io/badge/Install%20on-Opera-FF1B2D?style=for-the-badge&logo=opera&logoColor=white" alt="Opera Add-ons" />
+  </a>
+  <a href="https://microsoftedge.microsoft.com/addons/detail/intelhub/mllimkjdpgenkhlnpmiploclgponggjg">
+    <img src="https://img.shields.io/badge/Install%20on-Edge-0078D4?style=for-the-badge&logo=microsoft-edge&logoColor=white" alt="Edge Add-ons" />
+  </a>
+</p>
 
 ---
 
-## Overview 🔍
+## IntelHub 3.0.1: Your All-in-One OSINT Toolbox 🚀
 
-**IntelHub** turns your browser into a powerful Open-Source Intelligence (OSINT) environment.  
-Perform deep analysis on links, websites, files, and social platforms — all locally, privacy-first, and fast.
+IntelHub 3.0.1 transforms your browser into a powerful, comprehensive Open-Source Intelligence (OSINT) suite. Designed for researchers, analysts, and investigators, this major update introduces advanced tools for cryptocurrency and Telegram analysis, alongside significant workflow enhancements.
 
-> Whether you're a **cyber analyst**, **journalist**, **law enforcement**, or **OSINT enthusiast** – IntelHub is your modular, personal toolkit.
+**All processing is done locally on your machine, ensuring your investigations remain completely private and secure.**
+
+---
+
+## What's New in Version 3.0.1? ✨
+
+🚀 **Crypto Wallet Analyzer**: A brand-new, powerful module for analyzing Bitcoin and Ethereum wallets. Perform quick lookups directly from the extension, or launch the advanced analyzer to visualize transaction networks, assess risk, and uncover detailed blockchain data.
+
+🕵️‍♂️ **Dedicated Telegram Tools**: Instantly check if a phone number is registered on Telegram. Dive deep into chat history by uploading JSON exports to our new "Funstat Bot Analyzer" to extract insights, statistics, and critical intelligence.
+
+⚙️ **Custom Tools & Backup**: You can now add your own custom tools to your favorites list. Never lose your personalized setup with the new Import/Export feature, allowing you to back up and share your favorite tools.
 
 ---
 
@@ -33,57 +53,94 @@ Perform deep analysis on links, websites, files, and social platforms — all lo
 
 ---
 
+## Key Features 🛠️
+
+### Cryptocurrency & Social Media Intelligence
+
+**Crypto Wallet Analyzer**: Investigate BTC and ETH addresses. The advanced tool provides transaction history, risk analysis, related addresses, and a visual network graph to map out fund flows.
+
+**Telegram Tools**: Look up phone numbers on Telegram and perform in-depth analysis of chat data exports to understand activity patterns, identify key entities, and more.
+
+**Social Identifier Extractor**: Extracts user IDs from various social media profile pages to aid in cross-platform analysis.
+
+### Deep Content Analysis
+
+**Text Profiler**: Automatically extracts valuable identifiers from any text, including emails, phone numbers, crypto wallets, domains, and social media profiles.
+
+**Metadata Analyzer**: Uncovers hidden metadata from uploaded images, PDFs, and Office documents directly on your device.
+
+### Website & Domain Intelligence
+
+**Site Analyzer**: Provides a comprehensive overview of any website, including its technology stack, WHOIS information, and digital fingerprint. Includes an option to save a complete, offline snapshot of any page.
+
+**Archive Search**: Instantly checks for historical versions of a webpage across various archive services.
+
+### Powerful Utility Tools
+
+**Reverse Image Search**: Upload or paste any image to search for it across multiple leading search engines.
+
+**Link Analyzer**: Expands shortened URLs to reveal their final destination and provides quick access to security scans.
+
+### Efficient Workflow
+
+**Curated & Custom Tool Library**: Quick access to a categorized list of essential online OSINT tools, now with the ability to add your own tools to a persistent favorites list.
+
+**Import/Export**: Back up and restore your personalized list of favorite tools at any time.
+
+**User-Friendly Interface**: A clean, dark-mode interface with robust search functionality to help you work faster.
+
+---
+
+## Privacy First: Your Work Stays Yours 🔒
+
+IntelHub performs all its analysis locally on your computer. **No data is ever sent to or stored on our servers.** Your investigations are yours alone.
+
+Whether you're a cybersecurity professional, journalist, researcher, or OSINT enthusiast, IntelHub 3.0.1 provides the critical tools you need to turn open data into actionable intelligence.
+
+---
+
 ## System Requirements ✅
 
-To use this extension, you’ll need:
+To use this extension, you'll need:
 
-- **Browser**: Chrome or any Chromium-based browser (e.g., Brave, Edge) 🖥️  
-- **Storage**: Minimal – used only to save preferences and favorites 📦  
-- **Internet Access**: Required for launching online OSINT tools 🌐  
-- **Permissions**:  
-  - `storage` – Save favorites and preferences  
-  - `scripting` – Inject scripts into active tab  
-  - `tabs` – Get information about the current tab  
-  - `clipboardRead` – Allow pasting images from clipboard (for Reverse Image Search)  
-  - `downloads` – Save snapshots and exported files  
-  - `activeTab` – Interact with the current tab when needed  
-
+- **Browser**: Chrome, Firefox, Opera, Edge, or any Chromium-based browser 🖥️
+- **Storage**: Minimal – used only to save preferences and favorites 📦
+- **Internet Access**: Required for launching online OSINT tools 🌐
+- **Permissions**:
+  - `storage` – Save favorites and preferences
+  - `scripting` – Inject scripts into active tab
+  - `tabs` – Get information about the current tab
+  - `clipboardRead` – Allow pasting images from clipboard (for Reverse Image Search)
+  - `downloads` – Save snapshots and exported files
+  - `activeTab` – Interact with the current tab when needed
 
 ---
 
 ## Installation 🚀
 
-You can load the extension manually during development:
+### From Browser Stores (Recommended)
+
+Choose your browser and click the install button above to get IntelHub from your browser's official store.
+
+### Manual Installation (Development)
+
+You can also load the extension manually during development:
 
 ```bash
 git clone https://github.com/tomsec8/IntelHub.git
 ```
 
-1. Open `chrome://extensions/` in your browser  
-2. Enable **Developer mode** (top-right corner)  
-3. Click **"Load unpacked"** and select the `IntelHub` folder  
+1. Open your browser's extensions page:
+   - Chrome: `chrome://extensions/`
+   - Firefox: `about:addons`
+   - Edge: `edge://extensions/`
+   - Opera: `opera://extensions/`
+2. Enable **Developer mode** (usually in the top-right corner)
+3. Click **"Load unpacked"** and select the `IntelHub` folder
 
 ---
 
-## Key Features 🚀
-
-| Category               | Description                                                                 |
-|------------------------|-----------------------------------------------------------------------------|
-| **Smart Text Profiler** 🔎 | Extract emails, phones, Israeli IDs, crypto wallets, domains, IPs, names, and more using advanced regex
-| **Metadata Analyzer** 📷     | Analyze EXIF & metadata from images, PDFs, Office docs – all locally |
-| **Website Analyzer** 🌐      | Reveal tech stack, WHOIS, fingerprints, and save full offline snapshot |
-| **Reverse Image Search** 🔍  | Upload or paste images and search them using engines like Google, Yandex, TinEye |
-| **Archive Search** 🕰️       | Check historical versions of any site using Wayback Machine, Archive.today, Ghostarchive, and more |
-| **Social ID Extractor** 🧬   | Extract usernames from Facebook, Instagram, X, Telegram, TikTok, LinkedIn |
-| **Link Analyzer** 🔗        | Unmask short URLs + scan with VirusTotal |
-| **Curated OSINT Tools** 🧰  | Browse categorized tools for reverse image search, domain lookup, breach checks, etc. |
-| **Favorites + UI** ⭐        | Clean dark mode, filters, favorites – smooth experience |
-
-
-
----
-
-## Folder Structure  📦
+## Project Structure 📦
 
 ```
 IntelHub/
@@ -91,32 +148,56 @@ IntelHub/
 ├── manifest.json
 ├── popup.html
 ├── popup.js
-├── styles/
-│   └── styles.css
+├── firefox/
+│   ├── import-favorites.html
+│   ├── import-favorites.js
+│   ├── metadata-upload.html
+│   ├── metadata-upload.js
+│   ├── reverse-image-upload.html
+│   ├── reverse-image-upload.js
+│   ├── text-profiler-upload.html
+│   └── text-profiler-upload.js
+├── icons/
+│   └── icon.png
 ├── libs/
+│   ├── chart.min.js
+│   ├── cytoscape.min.js
+│   ├── date-fns.min.js
 │   ├── ExifReader.js
-│   ├── jszip-lib.min.js
+│   ├── jszip.min.js
 │   ├── pdf-lib.min.js
 │   ├── psl.min.js
 │   └── single-file.js
-├── icons/
-│   └── [icon files]
-
+├── modules/
+│   ├── archiveSearch.js
+│   ├── cryptoAnalyzer.js
+│   ├── dorks.js
+│   ├── favorites.js
+│   ├── help.js
+│   ├── linkAnalyzer.js
+│   ├── metadataAnalyzer.js
+│   ├── osintTools.js
+│   ├── reverseImageSearch.js
+│   ├── siteAnalyzer.js
+│   ├── socialIdExtractor.js
+│   ├── telegramAnalyzer.js
+│   ├── textProfiler.js
+│   ├── utils.js
+│   ├── cryptoAnalyzer/
+│   │   ├── cryptoAnalyzer.html
+│   │   ├── css/
+│   │   │   └── style.css
+│   │   └── js/
+│   │       └── main.js
+│   └── telegramAnalyzer/
+│       ├── analyzer.html
+│       ├── css/
+│       │   └── style.css
+│       └── js/
+│           └── script.js
+└── styles/
+    └── styles.css
 ```
-
----
-
-## What's New in v2.1 🆕
-
-✅ Brand-new dark-mode interface  
-✅ Profiler AI with NLP and multilingual support  
-✅ Local EXIF & Metadata analyzers  
-✅ Full Website Analyzer (tech, WHOIS, snapshot)  
-✅ Reverse Image Search with clipboard and upload support  
-✅ Archive Search with multiple engines (Wayback, Archive.today, Ghostarchive...)  
-✅ Favorites system with filterable categories  
-✅ Powerful new regex patterns + Hebrew support  
-✅ Improved performance and modular design   
 
 ---
 
@@ -129,14 +210,16 @@ Pull requests and suggestions are welcome!
 
 ## Credits 🤝
 
-- **Text Entity Extraction**: [Compromise NLP](https://github.com/spencermountain/compromise)  
-- **EXIF Parser**: [ExifReader](https://github.com/mattiasw/ExifReader)  
-- **PDF Parsing**: [pdf-lib](https://github.com/Hopding/pdf-lib)  
-- **ZIP Handling**: [jszip](https://github.com/Stuk/jszip)  
-- **Website Snapshot**: [single-file](https://github.com/gildas-lormeau/SingleFile)  
+- **Text Entity Extraction**: [Compromise NLP](https://github.com/spencermountain/compromise)
+- **EXIF Parser**: [ExifReader](https://github.com/mattiasw/ExifReader)
+- **PDF Parsing**: [pdf-lib](https://github.com/Hopding/pdf-lib)
+- **ZIP Handling**: [jszip](https://github.com/Stuk/jszip)
+- **Website Snapshot**: [single-file](https://github.com/gildas-lormeau/SingleFile)
 - **TLD Parsing**: [psl](https://github.com/lupomontero/psl)
+- **Data Visualization**: [Chart.js](https://github.com/chartjs/Chart.js) & [Cytoscape.js](https://github.com/cytoscape/cytoscape.js)
+- **Date Utilities**: [date-fns](https://github.com/date-fns/date-fns)
 
-### APIs: 🌐
+### APIs 🌐
 - **[Unshorten.me](https://unshorten.me)** – Used to resolve shortened URLs into their original form  
   > © Unshorten.me – All rights belong to their respective owners.
 
@@ -146,6 +229,6 @@ Pull requests and suggestions are welcome!
 
 ---
 
-## License  📜
+## License 📜
 
 This project is licensed under the **MIT License** – see the [LICENSE](LICENSE) file for details.
