@@ -7,7 +7,7 @@
 A comprehensive Open-Source Intelligence (OSINT) suite that transforms your browser into a powerful investigation toolkit. Designed for researchers, analysts, and investigators with advanced tools for cryptocurrency analysis, Telegram intelligence, and complete privacy protection.
 
 <p align="center">
-  <a href="https://chromewebstore.google.com/detail/intelhub/jfjpgfklmjdhabodgghmjclpgnpiejlh">
+  <a href="https://chromewebstore.google.com/detail/jfjpgfklmjdhabodgghmjclpgnpiejlh">
     <img src="https://img.shields.io/badge/Install%20on-Chrome-4285F4?style=for-the-badge&logo=google-chrome&logoColor=white" alt="Chrome Web Store" />
   </a>
   <a href="https://addons.mozilla.org/en-US/firefox/addon/intelhub/?utm_source=addons.mozilla.org&utm_medium=referral&utm_content=search">
@@ -220,8 +220,13 @@ Pull requests and suggestions are welcome!
 - **Date Utilities**: [date-fns](https://github.com/date-fns/date-fns)
 
 ### APIs 🌐
-- **[Unshorten.me](https://unshorten.me)** – Used to resolve shortened URLs into their original form  
-  > © Unshorten.me – All rights belong to their respective owners.
+- **[Unshorten.me](https://unshorten.me)** – Used to resolve shortened URLs into their original form
+- **[corsproxy.io](https://corsproxy.io)** – CORS proxy service that enables secure access to blockchain APIs from browser extensions
+- **[Blockchain.info API](https://blockchain.info)** – Public API service providing comprehensive Bitcoin wallet and transaction data
+- **[Blockscout API](https://eth.blockscout.com)** – Ethereum blockchain explorer API for ETH wallet analysis and token transaction history
+- **[ScamSniffer Database](https://github.com/scamsniffer/scam-database)** – Community-maintained database of known fraudulent crypto addresses for risk assessment
+  
+  > © All APIs and services belong to their respective owners.
 
 ---
 
