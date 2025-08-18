@@ -4,7 +4,7 @@
   <img src="IntelHub/icons/icon.png" alt="IntelHub Logo" width="120" />
 </p>
 <p align="center">
-  <img src="screenshots/Animation.gif" alt="IntelHub Demo" width="600" />
+  <img src="screenshots/Animation.gif" alt="IntelHub Demo" width="300" />
 </p>
 
 A comprehensive Open-Source Intelligence (OSINT) suite that transforms your browser into a powerful investigation toolkit. Designed for researchers, analysts, and investigators with advanced tools for cryptocurrency analysis, Telegram intelligence, and complete privacy protection.
