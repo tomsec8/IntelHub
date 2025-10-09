@@ -95,6 +95,11 @@
       "description": "Plagiarism and face search engine"
     },
     {
+      "name": "facesearchai",
+      "url": "https://www.facesearchai.com",
+      "description": "AI face search engine"
+    },
+    {
       "name": "lenso.ai",
       "url": "https://lenso.ai/en",
       "description": "AI-based reverse face search"
