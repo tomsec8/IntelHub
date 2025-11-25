@@ -27,10 +27,6 @@
     <picture>
       <source srcset="https://i.imgur.com/Jog9cQP.png" media="(prefers-color-scheme: dark)">
       <img height="58" src="https://i.imgur.com/aiprUt8.png" alt="Microsoft Store"></picture></a>
-  <a href="#opera-addon-link">
-    <picture>
-      <source srcset="https://i.imgur.com/ziehy0f.png" media="(prefers-color-scheme: dark)">
-      <img height="58" src="https://i.imgur.com/ytVATu0.png" alt="Opera add-ons"></picture></a>
   </br></br>
 </p>
 
