@@ -1,7 +1,7 @@
 # IntelHub – OSINT Toolkit 🧠
 
 <p align="center">
-  <img src="screenshots/Animation.gif" alt="IntelHub Logo" width="120" />
+  <img src="IntelHub/icons/icon.png" alt="IntelHub Logo" width="120" />
 </p>
 
 <p align="center">
@@ -31,6 +31,10 @@
 </p>
 
 ---
+
+<p align="center">
+  <img src="screenshots/Animation.gif" alt="IntelHub Logo" width="120" />
+</p>
 
 ## 📚 Documentation / Guides
 **Full usage guides are available in the `help` section within the extension or here:**
