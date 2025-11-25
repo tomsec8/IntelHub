@@ -1,7 +1,7 @@
 # IntelHub – OSINT Toolkit 🧠
 
 <p align="center">
-  <img src="icons/icon.png" alt="IntelHub Logo" width="120" />
+  <img src="screenshots/Animation.gif" alt="IntelHub Logo" width="120" />
 </p>
 
 <p align="center">
