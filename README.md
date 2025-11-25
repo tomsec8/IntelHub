@@ -60,9 +60,17 @@ We've merged "Site Analysis", "Link Analysis", and "Archive Search" into one pow
 
 ## 📸 Interface Preview
 
-| **Main Menu** | **OSINT Tools** | **Graph View** |
+| **Main Interface** | **Favorites & Custom Tools** | **OSINT Tools Repository** |
 |:---:|:---:|:---:|
-| <img src="help/images/1.png" width="250" /> | <img src="help/images/8.png" width="250" /> | <img src="help/images/23.png" width="250" /> |
+| <img src="help/images/1.png" width="250" /> | <img src="help/images/3.png" width="250" /> | <img src="help/images/8.png" width="250" /> |
+
+| **Telegram Profiler** | **Investigation Graph** | **Site & Archive Recon** |
+|:---:|:---:|:---:|
+| <img src="help/images/16.png" width="250" /> | <img src="help/images/23.png" width="250" /> | <img src="help/images/17.png" width="250" /> |
+
+| **Google Dorks Builder** | **Metadata Analyzer** | **Text Profiler** |
+|:---:|:---:|:---:|
+| <img src="help/images/13.png" width="250" /> | <img src="help/images/12.png" width="250" /> | <img src="help/images/21.png" width="250" /> |
 
 ---
 
