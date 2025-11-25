@@ -14,12 +14,24 @@
 </p>
 
 <p align="center">
+  </br></br>
   <a href="https://chromewebstore.google.com/detail/jfjpgfklmjdhabodgghmjclpgnpiejlh">
-    <img src="https://img.shields.io/badge/Chrome-Available-4285F4?style=for-the-badge&logo=google-chrome&logoColor=white" alt="Chrome Web Store">
-  </a>
+    <picture>
+      <source srcset="https://i.imgur.com/XBIE9pk.png" media="(prefers-color-scheme: dark)">
+      <img height="58" src="https://i.imgur.com/oGxig2F.png" alt="Chrome Web Store"></picture></a>
   <a href="https://addons.mozilla.org/en-US/firefox/addon/intelhub/">
-    <img src="https://img.shields.io/badge/Firefox-Available-FF7139?style=for-the-badge&logo=firefox-browser&logoColor=white" alt="Firefox Add-ons">
-  </a>
+    <picture>
+      <source srcset="https://i.imgur.com/ZluoP7T.png" media="(prefers-color-scheme: dark)">
+      <img height="58" src="https://i.imgur.com/4PobQqE.png" alt="Firefox add-ons"></picture></a>
+  <a href="https://microsoftedge.microsoft.com/addons/detail/intelhub/mllimkjdpgenkhlnpmiploclgponggjg">
+    <picture>
+      <source srcset="https://i.imgur.com/Jog9cQP.png" media="(prefers-color-scheme: dark)">
+      <img height="58" src="https://i.imgur.com/aiprUt8.png" alt="Microsoft Store"></picture></a>
+  <a href="#opera-addon-link">
+    <picture>
+      <source srcset="https://i.imgur.com/ziehy0f.png" media="(prefers-color-scheme: dark)">
+      <img height="58" src="https://i.imgur.com/ytVATu0.png" alt="Opera add-ons"></picture></a>
+  </br></br>
 </p>
 
 ---
@@ -57,8 +69,8 @@ We've merged "Site Analysis", "Link Analysis", and "Archive Search" into one pow
 ## 🛠️ Key Features
 
 ### 📱 Telegram Intelligence
-* **User & Group Profiler:** Fetch details, profile pictures, and bio from usernames.
-* **Numeric ID Extraction:** Grab unique Numeric IDs for users, groups, and channels.
+* **Deep User Profiler:** Fetch details, profile pictures, and bio from usernames.
+* **Numeric ID Extraction:** Grab unique Numeric IDs for users, groups, and channels (Web login required).
 * **Phone Lookup:** Quick links to check phone number registrations.
 
 ### 🌐 Site, Link & Archive Recon
@@ -68,7 +80,7 @@ We've merged "Site Analysis", "Link Analysis", and "Archive Search" into one pow
 * **Offline Evidence:** Save a perfect local HTML snapshot of any webpage.
 
 ### 🖼️ Media & Metadata
-* **Reverse Image Search:** Upload or paste any image to search for it across Google, Yandex, Bing, and TinEye.
+* **Reverse Image Search:** Upload or paste any image to search for it across Google, Yandex, Bing, and TinEye simultaneously.
 * **Metadata (EXIF) Viewer:** Extract hidden data from Images, PDFs, and Office documents locally.
 
 ### 📝 Text & Social Analysis
@@ -82,15 +94,20 @@ We've merged "Site Analysis", "Link Analysis", and "Archive Search" into one pow
 
 ---
 
-## 📥 Installation (Developer Mode)
+## ✅ System Requirements
 
-Since this is a developer tool, you can install it manually:
+To use this extension, you'll need:
 
-1.  **Download** or **Clone** this repository.
-2.  Open your browser and navigate to `chrome://extensions`.
-3.  Toggle **Developer Mode** (top right corner).
-4.  Click **Load Unpacked**.
-5.  Select the `IntelHub` folder (the one containing `manifest.json`).
+- **Browser**: Chrome, Firefox, Opera, Edge, or any Chromium-based browser 🖥️
+- **Storage**: Minimal – used only to save preferences and favorites 📦
+- **Internet Access**: Required for launching online OSINT tools 🌐
+- **Permissions**:
+  - `storage` – Save favorites and preferences
+  - `scripting` – Inject scripts into active tab (for ID extraction)
+  - `tabs` – Get information about the current tab
+  - `clipboardRead` – Allow pasting images from clipboard
+  - `downloads` – Save snapshots and exported files
+  - `activeTab` – Interact with the current tab when needed
 
 ---
 
