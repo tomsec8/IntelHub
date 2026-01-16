@@ -29,6 +29,41 @@
       "name": "Wappalyzer",
       "url": "https://chromewebstore.google.com/detail/wappalyzer-technology-pro/gppongmhjkpfnbhagpmjfkannfbllamg",
       "description": "Identifies technologies used by websites, like CMS and analytics"
+    },
+    {
+      "name": "Instant Data Scraper",
+      "url": "https://chromewebstore.google.com/detail/instant-data-scraper/ofaokhiedipichpaobibbnahnkdoiiah",
+      "description": "Scrape web tables and lists to Excel/CSV instantly"
+    },
+    {
+      "name": "User-Agent Switcher",
+      "url": "https://chromewebstore.google.com/detail/user-agent-switcher-and-m/bhchdcejhohfmigjafbampogmaanbfkg",
+      "description": "Spoof device ID to access mobile site versions"
+    },
+    {
+      "name": "Copyfish",
+      "url": "https://chromewebstore.google.com/detail/copyfish-%F0%9F%90%9F-free-ocr-soft/eenjdnjldapjajjofmldgmkjaienebbj",
+      "description": "Extract and translate text from images/video (OCR)"
+    },
+    {
+      "name": "InVID / WeVerify",
+      "url": "https://chromewebstore.google.com/detail/fake-news-debunker-by-inv/mhccpoafgdgbhnjfhkcmgknndkeenfhe",
+      "description": "Video verification and keyframe extraction tool"
+    },
+    {
+      "name": "Link Redirect Trace",
+      "url": "https://chromewebstore.google.com/detail/link-redirect-trace/nnpljppamoaalgkieeciijbcccohlpoh",
+      "description": "Trace URL redirects and unshorten links safely"
+    },
+    {
+      "name": "EXIF Viewer Pro",
+      "url": "https://chromewebstore.google.com/detail/exif-viewer-pro/mmbhfeiddhndihdjeganjggkmjapkffm",
+      "description": "View hidden metadata and GPS data in images"
+    },
+    {
+      "name": "Sputnik",
+      "url": "https://chromewebstore.google.com/detail/sputnik/manapjdamopgbpimgojkccikaabhmocd",
+      "description": "Quick lookup for IPs, domains, and hashes"
     }
   ],
   "Search Engines": [
@@ -71,6 +106,31 @@
       "name": "Social Searcher",
       "url": "https://www.social-searcher.com/",
       "description": "Search social networks in real-time"
+    },
+    {
+      "name": "Shodan",
+      "url": "https://www.shodan.io/",
+      "description": "Search engine for IoT devices and servers"
+    },
+    {
+      "name": "Wayback Machine",
+      "url": "https://web.archive.org/",
+      "description": "Search historical versions of websites"
+    },
+    {
+      "name": "GrayhatWarfare",
+      "url": "https://buckets.grayhatwarfare.com/",
+      "description": "Search exposed public cloud buckets"
+    },
+    {
+      "name": "Ahmia",
+      "url": "https://ahmia.fi/",
+      "description": "Search engine for Tor (Dark Web) sites"
+    },
+    {
+      "name": "Carrot2",
+      "url": "https://search.carrot2.org/",
+      "description": "Organizes search results into thematic clusters"
     }
   ],
   "Face Recognition": [
@@ -108,6 +168,11 @@
       "name": "faceonlive",
       "url": "https://faceonlive.com/face-search-online",
       "description": "Track presence with reverse face search"
+    },
+    {
+      "name": "Search4Faces",
+      "url": "https://search4faces.com/",
+      "description": "Specialized AI search for VK and OK.ru profiles"
     }
   ],
   "Geolocation and Data Extraction": [
@@ -140,6 +205,26 @@
       "name": "geospy.ai",
       "url": "https://geospy.ai/",
       "description": "AI-based geolocation analysis"
+    },
+    {
+      "name": "Google Earth Web",
+      "url": "https://earth.google.com/web/",
+      "description": "3D terrain analysis and historical satellite imagery"
+    },
+    {
+      "name": "Sentinel Hub EO Browser",
+      "url": "https://apps.sentinel-hub.com/eo-browser/",
+      "description": "Free, near real-time satellite imagery for timeline analysis"
+    },
+    {
+      "name": "Mapillary",
+      "url": "https://www.mapillary.com/",
+      "description": "Crowdsourced street-level imagery (fills gaps in Google Street View)"
+    },
+    {
+      "name": "Overpass Turbo",
+      "url": "https://overpass-turbo.eu/",
+      "description": "Advanced query tool to find specific map features on OpenStreetMap"
     }
   ],
   "Reverse Image Search": [
@@ -164,10 +249,16 @@
       "description": "Chinese reverse image search engine"
     },
     {
-      "name": "Yahoo Image Search",
-      "url": "https://images.search.yahoo.com/",
-      "description": "Yahoo\u2019s image search engine"
+      "name": "ImgOps",
+      "url": "https://imgops.com/",
+      "description": "Meta-tool: sends image to multiple engines/tools at once"
+    },
+    {
+      "name": "SauceNAO",
+      "url": "https://saucenao.com/",
+      "description": " specialized reverse search for anime and artwork"
     }
+
   ],
   "Username Search": [
     {
@@ -189,6 +280,16 @@
       "name": "Usersearch",
       "url": "https://usersearch.org/",
       "description": "Search users across forums and platforms"
+    },
+    {
+      "name": "Instant Username Search",
+      "url": "https://www.instantusername.com/",
+      "description": "Live results as you type"
+    },
+    {
+      "name": "Namechk",
+      "url": "https://namechk.com/",
+      "description": "Large database of social & domains"
     }
   ],
   "Email Investigation Tools": [
@@ -216,6 +317,16 @@
       "name": "HaveIBeenPwned",
       "url": "https://haveibeenpwned.com/",
       "description": "Check if an email was part of a data breach"
+    },
+    {
+      "name": "EmailRep.io",
+      "url": "https://emailrep.io/",
+      "description": "Risk profile and reputation check"
+    },
+    {
+      "name": "Metric Sparrow Permutator",
+      "url": "https://metricsparrow.com/toolkit/email-permutator/",
+      "description": "Generate email variations from names"
     }
   ],
   "Phone Number Lookup": [
@@ -283,6 +394,31 @@
       "name": "Drupe",
       "url": "https://www.getdrupe.com/",
       "description": "Contact-based dialer and caller ID"
+    },
+    {
+      "name": "FastPeopleSearch",
+      "url": "https://www.fastpeoplesearch.com/",
+      "description": "Best free lookup for US numbers and people"
+    },
+    {
+      "name": "SpyDialer",
+      "url": "https://www.spydialer.com/",
+      "description": "Listen to voicemail stealthily without ringing"
+    },
+    {
+      "name": "EmobileTracker",
+      "url": "https://www.emobiletracker.com/",
+      "description": "Global location and carrier database"
+    },
+    {
+      "name": "Infobel",
+      "url": "https://www.infobel.com/",
+      "description": "International telephone directory for 50+ countries"
+    },
+    {
+      "name": "HLR Lookups",
+      "url": "https://www.hlr-lookups.com/",
+      "description": "Technical check: Is the number active and roaming?"
     }
   ],
   "Tools for Twitter": [
@@ -310,6 +446,26 @@
       "name": "TweeterID",
       "url": "https://tweeterid.com/",
       "description": "Convert Twitter usernames to numeric IDs"
+    },
+    {
+      "name": "Social Blade",
+      "url": "https://socialblade.com/twitter",
+      "description": "Historical stats and follower growth analysis"
+    },
+    {
+      "name": "Spoonbill",
+      "url": "http://spoonbill.io/",
+      "description": "Track changes in bios, names, and locations over time"
+    },
+    {
+      "name": "Shadowban Test",
+      "url": "https://shadowban.yuzurisa.com/",
+      "description": "Check if an account is shadowbanned or invisible"
+    },
+    {
+      "name": "TweetBinder",
+      "url": "https://www.tweetbinder.com/",
+      "description": "Hashtag analytics and tweet counting"
     }
   ],
   "Tools for Facebook": [
@@ -324,9 +480,24 @@
       "description": "Find Facebook user ID by URL"
     },
     {
-      "name": "WolframAlpha",
-      "url": "https://www.wolframalpha.com/",
-      "description": "Knowledge engine for people and entities"
+      "name": "WhoPostedWhat?",
+      "url": "https://whopostedwhat.com/",
+      "description": "Search for posts by specific date and keyword"
+    },
+    {
+      "name": "Sowdust Search Tool",
+      "url": "https://www.sowsearch.info/",
+      "description": "Generate hidden Graph Search URLs"
+    },
+    {
+      "name": "Intelligence X Facebook",
+      "url": "https://intelx.io/tools?tab=facebook",
+      "description": "Deep search for graph data and entities"
+    },
+    {
+      "name": "Facebook Cover Photo Viewer",
+      "url": "https://codeofaninja.com/tools/find-facebook-id/",
+      "description": "View full-size profile/cover photos (even if locked)"
     }
   ],
   "Tools for Instagram": [
@@ -344,6 +515,26 @@
       "name": "Imginn",
       "url": "https://imginn.com/",
       "description": "View and download public Instagram stories, posts, and highlights anonymously"
+    },
+    {
+      "name": "Picuki",
+      "url": "https://www.picuki.com/",
+      "description": "Best editor and viewer without login"
+    },
+    {
+      "name": "story navigation",
+      "url": "https://storynavigation.com/",
+      "description": "View Stories anonymously and track stats"
+    },
+    {
+      "name": "Find Instagram User ID",
+      "url": "https://codeofaninja.com/tools/find-instagram-user-id/",
+      "description": "Get the numeric ID to track username changes"
+    },
+    {
+      "name": "Snapinsta",
+      "url": "https://snapinsta.to/en2",
+      "description": "Download Reels, Photos, and IGTV easily"
     }
   ],
   "Tools for Telegram": [
@@ -408,6 +599,21 @@
       "name": "Memento",
       "url": "http://timetravel.mementoweb.org/",
       "description": "Tool for finding archived versions of a webpage across multiple services"
+    },
+    {
+      "name": "Ghostarchive",
+      "url": "https://ghostarchive.org/",
+      "description": "Best for archiving social media posts and bypassing paywalls"
+    },
+    {
+      "name": "Perma.cc",
+      "url": "https://perma.cc/",
+      "description": "Library-backed archive, used for legal citations and academic reliability"
+    },
+    {
+      "name": "UK Web Archive",
+      "url": "https://www.webarchive.org.uk/",
+      "description": "Deep archive often containing data missed by US-based crawlers"
     }
   ],
   "Crypto": [
@@ -440,6 +646,21 @@
       "name": "Nansen",
       "url": "https://www.nansen.ai/",
       "description": "On-chain analytics platform identifying top wallet movements and trends"
+    },
+    {
+      "name": "Bubblemaps",
+      "url": "https://bubblemaps.io/",
+      "description": "Visualizes token supply & wallet connections to detect manipulation"
+    },
+    {
+      "name": "DeBank",
+      "url": "https://debank.com/",
+      "description": "Multi-chain portfolio tracker and DeFi wallet profiler"
+    },
+    {
+      "name": "Dune Analytics",
+      "url": "https://dune.com/",
+      "description": "Community-driven dashboards for crypto data and protocol metrics"
     }
   ],
   "Domain, IP, and DNS Research": [
@@ -479,23 +700,38 @@
       "name": "Aware Online OSINT Tools",
       "url": "https://www.aware-online.com/en/osint-tools/",
       "description": "Collection of categorized OSINT tools including domain, social, and financial"
+    },
+    {
+      "name": "OSINT Framework",
+      "url": "https://osintframework.com/",
+      "description": "Interactive tree-map of thousands of OSINT tools by category"
+    },
+    {
+      "name": "IntelTechniques Tools",
+      "url": "https://inteltechniques.com/tools/",
+      "description": "Browser-based search forms for people, email, and docs"
+    },
+    {
+      "name": "OhShint!",
+      "url": "https://start.me/p/rx6Qj8/ohshint",
+      "description": "Massive, curated collection of OSINT resources on Start.me"
+    },
+    {
+      "name": "Cylect.io",
+      "url": "https://cylect.io/",
+      "description": "Fast multi-engine search across multiple databases at once"
+    },
+    {
+      "name": "Bellingcat Toolkit",
+      "url": "https://www.bellingcat.com/resources/",
+      "description": "Verified tool list used by professional investigators"
     }
   ],
   "Sources for Recommended Tools": [
     {
-      "name": "OSINT Framework",
-      "url": "https://osintframework.com/",
-      "description": "Curated OSINT tools organized by category"
-    },
-    {
       "name": "Start.me OSINT Startpage",
       "url": "https://start.me/p/DPYPMz/osint",
       "description": "Personalized dashboard of OSINT tools and links"
-    },
-    {
-      "name": "Aware Online OSINT Tools",
-      "url": "https://www.aware-online.com/en/osint-tools/",
-      "description": "Extensive list of categorized OSINT tools"
     },
     {
       "name": "Telegram OSINT Toolbox",
@@ -543,6 +779,31 @@
       "name": "Maltego",
       "url": "https://www.maltego.com/",
       "description": "Data mining and link analysis tool"
+    },
+    {
+      "name": "Maigret",
+      "url": "https://github.com/soxoj/maigret",
+      "description": "Advanced username search with PDF reporting"
+    },
+    {
+      "name": "PhoneInfoga",
+      "url": "https://github.com/sundowndev/phoneinfoga",
+      "description": "Advanced phone number information scanner"
+    },
+    {
+      "name": "theHarvester",
+      "url": "https://github.com/laramies/theHarvester",
+      "description": "Gather emails, subdomains, and hosts"
+    },
+    {
+      "name": "Holehe",
+      "url": "https://github.com/megadose/holehe",
+      "description": "Check if email is registered on sites (no login)"
+    },
+    {
+      "name": "Photon",
+      "url": "https://github.com/s0md3v/Photon",
+      "description": "Incredibly fast website crawler and extractor"
     }
   ]
 }
