@@ -44,17 +44,19 @@
 | [Link](help/guide_en.md) | [Link](help/guide_he.md) | [Link](help/guide_es.md) | [Link](help/guide_fr.md) | [Link](help/guide_de.md) | [Link](help/guide_pt_br.md) | [Link](help/guide_pl.md) |
 
 ---
+✨ What's New in Version 5.0?
 
-## ✨ What's New in Version 4.0?
+🤖 Quad-Engine OSINT AI Assistant A groundbreaking update! We've integrated four powerful, privacy-first AI search engines (Google AI, Brave Search, Phind, and Andi) directly into the extension. Run parallel queries, cross-reference intelligence, and retain chat history across all engines without ever leaving your active tab.
 
-🎨 **UI/UX Overhaul & Themes**
-Switch between the **Modern** and **Classic** themes instantly via the new toggle button. We've also replaced intrusive pop-up alerts with smooth visual feedback.
+👥 Facial Recognition & Comparison New advanced forensic capability! Upload two images to perform local, client-side facial comparison to verify identities securely within your browser.
 
-📊 **Investigation Graph**
-A brand new visualization tool! Map out your investigation entities, connect dots, and create a visual relationship graph directly within the extension.
+🛡️ File Hash Generator & Validator Ensure file integrity with our new offline hashing tool. Generate checksum hashes for any file and compare them instantly to detect tampering or verify authenticity.
 
-🔗 **Unified Site Analysis**
-We've merged "Site Analysis", "Link Analysis", and "Archive Search" into one powerful hub for streamlined domain reconnaissance.
+🎨 Neon Theme & UI Overhaul Introducing a sleek, cyberpunk-inspired Neon theme! Switch between Modern, Classic, and Neon instantly. We've also replaced intrusive pop-up alerts with smooth visual feedback and optimized the interface for our expanding toolkit.
+
+📊 Investigation Graph A brand new visualization tool! Map out your investigation entities, connect dots, and create a visual relationship graph directly within the extension.
+
+🔗 Unified Site Analysis We've merged "Site Analysis", "Link Analysis", and "Archive Search" into one powerful hub for streamlined domain reconnaissance.
 
 ---
 
