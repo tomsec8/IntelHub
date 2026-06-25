@@ -20,39 +20,47 @@
     a {
       color: #3498db;
     }
+    .warning-box {
+      background-color: #fff3cd;
+      border-left: 5px solid #ffecb5;
+      padding: 15px;
+      margin: 15px 0;
+      color: #856404;
+    }
   </style>
 </head>
 <body>
   <h1>Privacy Policy – IntelHub</h1>
-  <p><strong>Effective date:</strong> [Insert Date]</p>
+  <p><strong>Effective Date:</strong> June 25, 2026</p>
 
-  <p>IntelHub is a Chrome extension that helps users access and organize Open Source Intelligence (OSINT) tools directly in their browser. Your privacy is important to us. This page outlines what data we collect and how we use it.</p>
+  <p>IntelHub is an Open Source Intelligence (OSINT) workstation extension designed to help researchers aggregate public tools. Because we serve the investigative community, transparency regarding data transmission is our highest priority.</p>
 
-  <h2>1. Data Collection</h2>
-  <p>IntelHub <strong>does not collect</strong>, <strong>store</strong>, or <strong>transmit</strong> any personal data, browsing history, or user content.</p>
-  <p>All metadata analysis (images, PDF, Office files) is processed <strong>locally</strong> on your device and not uploaded to any server.</p>
+  <h2>1. Data Collection & Processing</h2>
+  <p>IntelHub <strong>does not actively collect, record, or track</strong> your personal data, browsing history, or analytics. The extension operates locally on your machine. However, to provide OSINT functionalities, specific features intentionally transmit user-provided data (e.g., URLs, usernames, or images) to specific third-party services as detailed below.</p>
 
-  <h2>2. Permissions Explanation</h2>
+  <p><strong>Local Processing:</strong> Features like Metadata Extraction (EXIF, PDF, Office) and File Hashing are performed strictly locally on your device without communicating with any external servers.</p>
+
+  <h2>2. Third-Party Data Transmission</h2>
+  <p>If you choose to use the following specific features, IntelHub will transmit your input to the corresponding third-party services:</p>
   <ul>
-    <li><strong>activeTab</strong>: Used to detect the currently active tab when the user interacts with it (e.g., for reverse image search).</li>
-    <li><strong>storage</strong>: Used to save user preferences such as favorites and selected engines <strong>locally</strong>.</li>
-    <li><strong>scripting</strong>: Required for injecting scripts when the user chooses to extract image URLs.</li>
-    <li><strong>host_permissions</strong>: Needed for fetching the tool list from GitHub or analyzing site content.</li>
+    <li><strong>Reverse Image Search (File Upload):</strong> When you choose to upload an image from your computer to run a multi-engine reverse search, the image is temporarily uploaded via POST request to a public anonymous file host (<strong>catbox.moe</strong>) to generate a public URL. This URL is then passed to search engines (Google, Yandex, Bing, TinEye). <em>Users are presented with an explicit consent warning before any image leaves the device.</em></li>
+    <li><strong>Site Analyzer (URL Unshortening):</strong> When you choose to unshorten a link, the extension securely resolves the final destination locally on your device by following HTTP headers. <strong>No third-party proxy or external URL unshortener is used.</strong></li>
+    <li><strong>Quad-Engine AI Assistants:</strong> When you activate and type into the AI tab, your queries are transmitted directly to the respective AI providers (<strong>Google AI, Brave Search, Phind, AndiSearch</strong>) via embedded iframes.</li>
+    <li><strong>DNS & OSINT Lookups:</strong> Resolving IP addresses in the Site Analyzer relies on the <strong>Google DoH API (dns.google)</strong>. Other investigation buttons open new tabs directly to third-party services (e.g., VirusTotal, W3Techs, WHOIS) passing your target domain as a URL parameter.</li>
+    <li><strong>Official Tools List:</strong> The extension occasionally fetches its internal tool directory directly from our official GitHub repository (<strong>raw.githubusercontent.com</strong>).</li>
   </ul>
-  <p>None of these permissions are used to track or profile users.</p>
 
-  <h2>3. No Third-Party Sharing</h2>
-  <p>IntelHub does not share any user data with third parties. It does not use cookies or analytics services.</p>
+  <h2>3. Permissions Explanation</h2>
+  <ul>
+    <li><strong>activeTab</strong>: Used to detect the currently active tab when the user explicitly clicks features like "Save Page Offline" or "Site Analyzer."</li>
+    <li><strong>storage & unlimitedStorage</strong>: Used to save user preferences, custom graph nodes, and UI configurations <strong>locally</strong> in your browser.</li>
+    <li><strong>scripting</strong>: Required to dynamically inject CSS/JS into the AI iframes to provide a clean UI interface.</li>
+    <li><strong>declarativeNetRequest</strong>: Used strictly to allow the embedding of the aforementioned AI search engines within the extension interface.</li>
+    <li><strong>downloads</strong>: Used exclusively to save generated reports, graphs, or offline evidence HTML files directly to your local machine.</li>
+  </ul>
 
-  <h2>4. Security</h2>
-  <p>All processing is done locally on your device. The only external request is to fetch the tool list from the official GitHub repository:</p>
-  <p><a href="https://github.com/tomsec8/IntelHub" target="_blank">https://github.com/tomsec8/IntelHub</a></p>
-
-  <h2>5. Changes to This Policy</h2>
-  <p>Any changes to this privacy policy will be published here and reflected in the GitHub repository and the Chrome Web Store listing.</p>
-
-  <h2>6. Contact</h2>
-  <p>If you have any questions or concerns about this policy, feel free to open an issue on GitHub:</p>
+  <h2>4. Contact & Support</h2>
+  <p>If you have any questions or concerns about this policy or the extension's data flows, please review our open-source code or open an issue on GitHub:</p>
   <p><a href="https://github.com/tomsec8/IntelHub" target="_blank">https://github.com/tomsec8/IntelHub</a></p>
 </body>
 </html>
