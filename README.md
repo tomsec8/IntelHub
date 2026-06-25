@@ -5,7 +5,7 @@
 </p>
 
 <p align="center">
-  <b>Advanced Browser-Based Intelligence Suite v4.0</b>
+  <b>Advanced Browser-Based Intelligence Suite v5.0.1</b>
 </p>
 
 <p align="center">
@@ -44,19 +44,26 @@
 | [Link](help/guide_en.md) | [Link](help/guide_he.md) | [Link](help/guide_es.md) | [Link](help/guide_fr.md) | [Link](help/guide_de.md) | [Link](help/guide_pt_br.md) | [Link](help/guide_pl.md) |
 
 ---
-✨ What's New in Version 5.0?
+## ✨ What's New in Version 5.0.1?
 
-🤖 Quad-Engine OSINT AI Assistant A groundbreaking update! We've integrated four powerful, privacy-first AI search engines (Google AI, Brave Search, Phind, and Andi) directly into the extension. Run parallel queries, cross-reference intelligence, and retain chat history across all engines without ever leaving your active tab.
+**🔒 Secure by Design & Privacy First**
+We've completely overhauled the extension's security architecture. V5.0.1 introduces strict Privacy Consent flows for cross-origin tasks, targeted local network sniffing restricted strictly to target domains, and rigorous HTTPS schema validation for all dynamically loaded tools to prevent XSS.
 
-👥 Facial Recognition & Comparison New advanced forensic capability! Upload two images to perform local, client-side facial comparison to verify identities securely within your browser.
+**🤖 Quad-Engine OSINT AI Assistant** 
+A groundbreaking update! We've integrated four powerful, privacy-first AI search engines (Google AI, Brave Search, Phind, and Andi) directly into the extension. Run parallel queries and cross-reference intelligence instantly.
 
-🛡️ File Hash Generator & Validator Ensure file integrity with our new offline hashing tool. Generate checksum hashes for any file and compare them instantly to detect tampering or verify authenticity.
+**👥 Facial Recognition & Comparison**
+New advanced forensic capability! Upload two images to perform local, client-side facial comparison securely within your browser.
 
-🎨 Neon Theme & UI Overhaul Introducing a sleek, cyberpunk-inspired Neon theme! Switch between Modern, Classic, and Neon instantly. We've also replaced intrusive pop-up alerts with smooth visual feedback and optimized the interface for our expanding toolkit.
+**🛡️ File Hash Generator & Validator**
+Ensure file integrity with our new offline hashing tool. Generate checksum hashes for any file and compare them instantly to detect tampering.
 
-📊 Investigation Graph A brand new visualization tool! Map out your investigation entities, connect dots, and create a visual relationship graph directly within the extension.
+**🎨 Neon Theme & UI Overhaul**
+Introducing a sleek, cyberpunk-inspired Neon theme! Switch between Modern, Classic, and Neon instantly.
 
-🔗 Unified Site Analysis We've merged "Site Analysis", "Link Analysis", and "Archive Search" into one powerful hub for streamlined domain reconnaissance.
+**📊 Investigation Graph**
+A brand new visualization tool! Map out your investigation entities, connect dots, and create a visual relationship graph directly within the extension.
+
 
 ---
 
@@ -158,9 +165,11 @@ IntelHub/
 ---
 
 ## 🔒 Privacy Policy
-* **Local Execution:** All scripts run within your browser (Client-Side).
-* **No Tracking:** We do not collect analytics or user data.
-* **External Requests:** Connections are made only when you explicitly use a tool (e.g., querying VirusTotal or fetching the tool list from GitHub).
+* **Local Execution:** All scripts and forensic analyzers (like EXIF reading and hashing) run purely within your browser (Client-Side).
+* **No Tracking:** We do not collect analytics, telemetry, or user data. Your investigation stays on your machine.
+* **Explicit User Consent:** Features requiring cross-origin requests (such as URL Unshortening or Reverse Image Search) enforce an interactive privacy consent checkpoint before execution.
+* **Strict Network Scoping:** Network sniffing tools (like the Google ID extractor) are strictly scoped to their target domains (e.g., Google APIs) and self-terminate automatically to prevent data leakage.
+* **Secure Remote Fetching:** External OSINT tools fetched from GitHub are strictly verified through schema validation and HTTPS enforcement to neutralize XSS risks.
 
 ---
 
