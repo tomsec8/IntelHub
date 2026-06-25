@@ -1,0 +1,205 @@
+{
+  "manifest_version": 3,
+  "name": "IntelHub",
+  "description": "Your personal OSINT toolkit inside the browser.",
+  "version": "5.0.1",
+  "icons": {
+    "128": "icons/icon.png"
+  },
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "128": "icons/icon.png"
+    }
+  },
+  "side_panel": {
+    "default_path": "popup.html?mode=sidepanel"
+  },
+  "sidebar_action": {
+    "default_panel": "popup.html?mode=sidepanel",
+    "open_at_install": false
+  },
+  "permissions": [
+    "storage",
+    "unlimitedStorage",
+    "scripting",
+    "tabs",
+    "clipboardRead",
+    "downloads",
+    "activeTab",
+    "sidePanel",
+    "declarativeNetRequest",
+    "declarativeNetRequestWithHostAccess"
+  ],
+  "optional_host_permissions": [
+    "<all_urls>"
+  ],
+  "host_permissions": [
+    "https://t.me/*",
+    "https://web.telegram.org/*",
+    "https://mail.google.com/*",
+    "http://127.0.0.1/*",
+    "http://localhost/*",
+    "https://catbox.moe/*",
+    "https://dns.google/*",
+    "https://raw.githubusercontent.com/*",
+    "https://www.youtube.com/*",
+    "https://www.facebook.com/*",
+    "https://www.instagram.com/*",
+    "https://www.pinterest.com/*",
+    "https://www.reddit.com/*",
+    "https://www.snapchat.com/*",
+    "https://shadowban-api.yuzurisa.com/*",
+    "https://www.threads.net/*",
+    "https://www.tiktok.com/*",
+    "https://*.tumblr.com/*",
+    "https://www.twitch.tv/*",
+    "https://github.com/*",
+    "https://www.google.com/*",
+    "https://search.brave.com/*",
+    "https://phindai.org/*",
+    "https://*.phind.com/*",
+    "https://andisearch.com/*"
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": [
+        "libs/single-file.js",
+        "libs/cytoscape.min.js",
+        "libs/chart.min.js",
+        "libs/date-fns.min.js",
+        "firefox/import-favorites.html",
+        "firefox/import-favorites.js",
+        "modules/telegramAnalyzer/analyzer.html",
+        "modules/telegramAnalyzer/css/style.css",
+        "modules/telegramAnalyzer/js/script.js",
+        "modules/telegramScraper.js",
+        "modules/investigationGraph/*",
+        "libs/face_libs/face-api.min.js",
+        "libs/face_libs/tiny_face_detector_model-weights_manifest.json",
+        "libs/face_libs/tiny_face_detector_model-shard1",
+        "libs/face_libs/face_landmark_68_tiny_model-weights_manifest.json",
+        "libs/face_libs/face_landmark_68_tiny_model-shard1",
+        "libs/face_libs/face_recognition_model-weights_manifest.json",
+        "libs/face_libs/face_recognition_model-shard1",
+        "libs/face_libs/face_recognition_model-shard2"
+      ],
+      "matches": [
+        "https://web.telegram.org/*"
+      ]
+    }
+  ],
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "addon@intelhub.osint"
+    }
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "*://*.google.com/*",
+        "*://*.google.co.uk/*",
+        "*://*.google.ca/*",
+        "*://*.google.com.au/*",
+        "*://*.google.co.in/*",
+        "*://*.google.co.jp/*",
+        "*://*.google.de/*",
+        "*://*.google.fr/*",
+        "*://*.google.es/*",
+        "*://*.google.it/*",
+        "*://*.google.com.br/*",
+        "*://*.google.com.mx/*"
+      ],
+      "include_globs": [
+        "*://*.google.com/search*udm=50*",
+        "*://*.google.*/search*udm=50*",
+        "*://*.google.*.*/search*udm=50*"
+      ],
+      "css": [
+        "modules/google_ai/google_ai_cleanup.css"
+      ],
+      "js": [
+        "modules/google_ai/google_ai_resizer.js"
+      ],
+      "run_at": "document_start",
+      "all_frames": true
+    },
+    {
+      "matches": [
+        "*://search.brave.com/*"
+      ],
+      "include_globs": [
+        "*://search.brave.com/ask*"
+      ],
+      "css": [
+        "modules/brave_ai/brave_ai_cleanup.css"
+      ],
+      "js": [
+        "modules/brave_ai/brave_ai_resizer.js"
+      ],
+      "run_at": "document_start",
+      "all_frames": true
+    },
+    {
+      "matches": [
+        "*://phindai.org/*",
+        "*://*.phind.com/*"
+      ],
+      "include_globs": [
+        "*://phindai.org/phind-chat/*",
+        "*://*.phind.com*"
+      ],
+      "css": [
+        "modules/phind_ai/phind_ai_cleanup.css"
+      ],
+      "js": [
+        "modules/phind_ai/phind_ai_resizer.js"
+      ],
+      "run_at": "document_start",
+      "all_frames": true
+    },
+    {
+      "matches": [
+        "*://*.andisearch.com/*"
+      ],
+      "include_globs": [
+        "*://*.andisearch.com*"
+      ],
+      "css": [
+        "modules/andi_ai/andi_ai_cleanup.css"
+      ],
+      "js": [
+        "modules/andi_ai/andi_ai_resizer.js"
+      ],
+      "run_at": "document_start",
+      "all_frames": true
+    }
+  ],
+  "content_security_policy": {
+    "extension_pages": "script-src 'self'; object-src 'self';"
+  },
+  "declarative_net_request": {
+    "rule_resources": [
+      {
+        "id": "google_ai_bypass_rules",
+        "enabled": true,
+        "path": "modules/google_ai/google_ai_rules.json"
+      },
+      {
+        "id": "brave_ai_bypass_rules",
+        "enabled": true,
+        "path": "modules/brave_ai/brave_ai_rules.json"
+      },
+      {
+        "id": "phind_ai_bypass_rules",
+        "enabled": true,
+        "path": "modules/phind_ai/phind_ai_rules.json"
+      },
+      {
+        "id": "andi_ai_bypass_rules",
+        "enabled": true,
+        "path": "modules/andi_ai/andi_ai_rules.json"
+      }
+    ]
+  }
+}

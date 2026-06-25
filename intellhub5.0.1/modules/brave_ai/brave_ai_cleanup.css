@@ -1,0 +1,56 @@
+/* Brave AI Clean View for IntelHub Extension */
+
+/* Hide headers, footers, and side navs */
+header, 
+footer, 
+nav, 
+#header, 
+#footer, 
+.header,
+.footer,
+#side-right {
+    display: none !important;
+}
+
+/* Ensure root level is responsive and cannot scroll horizontally */
+html,
+body {
+    overflow: hidden !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    height: auto !important;
+    min-height: 0 !important;
+    box-sizing: border-box !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+/* Add some padding so the chat isn't glued to the edges */
+body {
+    padding-top: 15px !important;
+    padding-bottom: 120px !important;
+}
+
+/* Kill ALL internal scrolling */
+div,
+section,
+main,
+article,
+aside {
+    overflow: visible !important;
+    height: auto !important;
+    min-height: 0 !important;
+    max-height: none !important;
+    contain: none !important;
+}
+
+/* Preserve scrolling/sizing for text inputs */
+textarea,
+input,
+select,
+[contenteditable="true"],
+[role="textbox"] {
+    overflow: auto !important;
+    height: revert !important;
+    max-height: revert !important;
+}

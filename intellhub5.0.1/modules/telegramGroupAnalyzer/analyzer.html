@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Telegram Export Analyzer</title>
+    <meta name="description" content="Analyze your Telegram chat exports with beautiful visualizations">
+    <script src="../../libs/jszip.min.js"></script>
+    <script src="../../libs/chart.min.js"></script>
+    <script src="../../libs/date-fns.min.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>💬 Telegram Export Analyzer</h1>
+            <p class="subtitle">Analyze standard Telegram chat export folders with beautiful insights</p>
+        </div>
+
+        <div class="instructions">
+            <h3>📋 How to Use This Tool</h3>
+            <ol>
+                <li><strong>Export from Telegram Desktop:</strong> Open the desired group/chat → Click the three dots (⋮) → 'Export chat history'.</li>
+                <li><strong>Select Settings:</strong> Make sure to check 'Photos', 'Videos', 'Files', etc. The format must be 'HTML'.</li>
+                <li><strong>Compress the Folder:</strong> Once the export is complete, find the folder on your computer. Right-click it and compress it into a single <strong>.zip</strong> file.</li>
+                <li><strong>Upload the .zip File:</strong> Click the button below or drag & drop the .zip file you just created.</li>
+            </ol>
+        </div>
+
+        <div class="upload-section">
+            <div class="upload-icon">📦</div>
+            <div class="file-input">
+                <label for="fileInput" class="file-label">📤 Upload .zip File</label>
+                <input type="file" id="fileInput" accept=".zip" style="display: none;" />
+            </div>
+            <p class="upload-hint">or drag and drop your file here</p>
+        </div>
+        
+        <div id="loading" class="loading hidden">
+            <div class="spinner"></div>
+            <p id="loading-text">Processing data...</p>
+        </div>
+
+        <div id="errorAlert" class="alert hidden"></div>
+        
+        <div id="results" class="hidden">
+            <!-- Basic Stats -->
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div id="totalMessages" class="stat-value">0</div>
+                    <div class="stat-label">Total Messages</div>
+                </div>
+                <div class="stat-card">
+                    <div id="uniqueUsers" class="stat-value">0</div>
+                    <div class="stat-label">Unique Users</div>
+                </div>
+                <div class="stat-card">
+                    <div id="dateRange" class="stat-value">-</div>
+                    <div class="stat-label">Date Range</div>
+                </div>
+                <div class="stat-card">
+                    <div id="avgMessagesPerDay" class="stat-value">0</div>
+                    <div class="stat-label">Avg Messages/Day</div>
+                </div>
+            </div>
+
+            <!-- Main Charts -->
+            <div class="charts-grid">
+                <div class="chart-container">
+                    <div class="chart-title">📈 Activity Over Time</div>
+                    <canvas id="timelineChart"></canvas>
+                </div>
+                <div class="chart-container">
+                    <div class="chart-title">👥 Activity by User</div>
+                    <canvas id="chatsChart"></canvas>
+                </div>
+                <div class="chart-container">
+                    <div class="chart-title">🕐 Activity by Hour</div>
+                    <canvas id="hoursChart"></canvas>
+                </div>
+                <div class="chart-container">
+                    <div class="chart-title">📅 Activity by Weekday</div>
+                    <canvas id="weekdayChart"></canvas>
+                </div>
+            </div>
+
+            <!-- New Advanced Charts -->
+            <div class="section-title">📊 Advanced Analytics</div>
+            <div class="charts-grid">
+                <div class="chart-container">
+                    <div class="chart-title">📏 Message Length Distribution</div>
+                    <canvas id="messageLengthChart"></canvas>
+                </div>
+                <div class="chart-container">
+                    <div class="chart-title">⚡ Response Time Distribution</div>
+                    <canvas id="responseTimeChart"></canvas>
+                </div>
+                <div class="chart-container">
+                    <div class="chart-title">😊 Most Used Emojis</div>
+                    <canvas id="emojiChart"></canvas>
+                </div>
+            </div>
+
+            <!-- Insights Section -->
+            <div class="insights-section">
+                <h3 class="insights-title">💡 Key Insights</h3>
+                <div id="insightsContainer"></div>
+            </div>
+
+            <!-- Regex Patterns Section -->
+            <div class="regex-section">
+                <h3 class="regex-title">🎯 Identified Patterns</h3>
+                <div id="regexContainer"></div>
+            </div>
+
+            <!-- Word Cloud Section -->
+            <div class="word-cloud">
+                <h3 class="chart-title">☁️ Common Words</h3>
+                <div id="wordCloudContainer"></div>
+            </div>
+
+            <!-- Timeline Section -->
+            <div class="timeline">
+                <h3 class="chart-title">⏰ Message Explorer</h3>
+                <div class="timeline-filters">
+                    <select id="chatFilter" aria-label="Filter by user">
+                        <option value="all">All Users</option>
+                    </select>
+                    <select id="contentTypeFilter" aria-label="Filter by content type">
+                        <option value="all">All Content</option>
+                        <option value="text">💬 Text Only</option>
+                        <option value="media">📷 All Media</option>
+                        <option value="photos">🖼️ Photos</option>
+                        <option value="videos">🎥 Videos</option>
+                        <option value="files">📎 Files</option>
+                        <option value="stickers">🎭 Stickers</option>
+                        <option value="voice">🎤 Voice Messages</option>
+                    </select>
+                    <input type="date" id="startDateFilter" title="Start Date" aria-label="Start date">
+                    <input type="date" id="endDateFilter" title="End Date" aria-label="End date">
+                    <input type="text" id="searchFilter" placeholder="🔍 Search in messages..." aria-label="Search messages">
+                    <select id="pageSizeFilter" title="Messages per page" aria-label="Messages per page">
+                        <option value="50">50 per page</option>
+                        <option value="100" selected>100 per page</option>
+                        <option value="150">150 per page</option>
+                        <option value="200">200 per page</option>
+                    </select>
+                    <button id="filterButton" class="filter-btn">Apply Filters</button>
+                </div>
+                <div id="timelineContainer"></div>
+                <div id="paginationControls" class="pagination-controls"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal -->
+    <div id="modal" class="modal-overlay hidden" role="dialog" aria-modal="true">
+        <div class="modal-content">
+            <span class="modal-close-btn" aria-label="Close">&times;</span>
+            <div id="modal-body"></div>
+        </div>
+    </div>
+    
+    <!-- Hidden HTML Content Viewer -->
+    <div id="html-content-viewer" class="hidden" aria-hidden="true"></div>
+    
+    <script src="js/script.js"></script>
+</body>
+</html>

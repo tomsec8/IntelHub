@@ -1,0 +1,113 @@
+/* Google AI Clean View (udm=50) for IntelHub Extension */
+/* Injected as a content script into the Google AI iframe */
+
+/* ===== HIDE TOP HEADER ONLY ===== */
+/* #searchform: The main search bar at the top */
+/* #appbar: App bar below the search box */
+/* #hdtb: The tabs row (All, Images, Videos, News, AI Mode) */
+/* header: HTML5 header if used */
+
+#rhs,
+#searchform,
+#appbar,
+#hdtb,
+header,
+#sfcnt,
+#gb,
+.crJ18e,
+.nfXfB,
+#bqHHPb,
+.MUFPAc,
+div:has(> div > a[href*="udm=2"]),
+div:has(> div > a[href*="tbm=isch"]),
+div:has(> a[href*="tbm=vid"]) {
+    display: none !important;
+}
+
+/* Ensure root level is responsive and cannot scroll horizontally */
+html,
+body {
+    overflow: hidden !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    height: auto !important;
+    min-height: 0 !important;
+    box-sizing: border-box !important;
+    margin: 0 !important;
+}
+
+/* Ensure the first and last lines of AI responses aren't cut off and elements are fully responsive */
+#main,
+#cnt,
+#rcnt,
+#center_col,
+#wrap,
+.col,
+#botstuff {
+    padding-top: 25px !important;
+    width: 100% !important;
+    min-width: 0 !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+}
+
+body {
+    padding-bottom: 160px !important;
+}
+
+/* Removed fixed spacing adjustments so Google layout flows naturally */
+
+/* Hide footer */
+#fbar {
+    display: none !important;
+}
+
+
+
+/* ===== CRITICAL: Kill ALL internal scrolling ===== */
+/* Google uses deeply nested divs with overflow:auto/scroll and fixed heights.
+   We must neutralize ALL of them so the content expands to its full height,
+   allowing the extension's own container to handle scrolling. */
+
+/* Force every div/section to expand fully - no internal scrollbars */
+div,
+section,
+main,
+article,
+aside,
+nav {
+    overflow: visible !important;
+    height: auto !important;
+    min-height: 0 !important;
+    max-height: none !important;
+    contain: none !important;
+}
+
+/* Preserve scrolling/sizing for interactive elements that need it */
+textarea,
+input,
+select,
+[contenteditable="true"],
+[role="textbox"] {
+    overflow: auto !important;
+    height: revert !important;
+    max-height: revert !important;
+}
+
+/* ===== Kill Google's loading animation (spinning gradient colors) ===== */
+/* These animations cause layout chaos because our height:auto rule 
+   makes them expand wildly. Disable all animations site-wide. 
+   The actual text content still appears normally. */
+* {
+    animation-duration: 0s !important;
+    animation-delay: 0s !important;
+    transition-duration: 0s !important;
+}
+
+/* Hide Google's "thinking" gradient border/spinner overlay */
+div[style*="animation"],
+div[style*="gradient"] {
+    animation: none !important;
+}

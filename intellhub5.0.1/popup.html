@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>IntelHub</title>
+  <link id="theme-stylesheet" rel="stylesheet" href="styles/styles_old.css" />
+  <script src="theme-loader.js"></script>
+  <style>
+    .header-ai-button {
+      position: absolute;
+      top: 50px;
+      right: 15px;
+      left: auto;
+      background-color: transparent;
+      color: #e6e6e6;
+      border: 1px solid #6c4f93;
+      border-radius: 50%;
+      width: 30px;
+      height: 30px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 0;
+      cursor: pointer;
+      font-size: 14px;
+      font-weight: bold;
+      z-index: 10;
+      transition: background-color 0.3s;
+    }
+
+    .header-ai-button:hover {
+      background-color: #6c4f93;
+    }
+
+    .tab-bar {
+      display: none;
+      gap: 0;
+      margin-bottom: 10px;
+      border-bottom: 2px solid #333;
+    }
+
+    .tab-bar.visible {
+      display: flex;
+    }
+
+    .tab-bar button {
+      flex: 1;
+      padding: 10px 0;
+      background: transparent;
+      border: none;
+      border-bottom: 2px solid transparent;
+      color: #888;
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s;
+      margin-bottom: -2px;
+    }
+
+    .tab-bar button.active {
+      color: #a78bfa;
+      border-bottom-color: #a78bfa;
+    }
+
+    .tab-bar button:hover:not(.active) {
+      color: #ccc;
+    }
+
+    .tab-content {
+      display: none;
+    }
+
+    .tab-content.active {
+      display: block;
+    }
+
+    #aiTabContent {
+      display: none;
+    }
+
+    #aiTabContent.active {
+      display: block;
+    }
+
+    .ai-search-group {
+      display: flex;
+      gap: 8px;
+    }
+
+    .ai-search-group input {
+      flex: 1;
+      padding: 10px;
+      border-radius: 8px;
+      border: 1px solid #555;
+      background-color: #1a1a2e;
+      color: #fff;
+      font-size: 13px;
+    }
+
+    .ai-search-group button {
+      padding: 0 16px;
+      background: linear-gradient(135deg, #6366f1 0%, #4f46e5 100%);
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: bold;
+      font-size: 13px;
+    }
+
+    .ai-iframe-wrap {
+      overflow: hidden;
+      /* Height is managed dynamically via JS content script. Default to a reasonable minimum. */
+      min-height: 400px;
+      height: 600px;
+      /* Fallback height before JS loads */
+    }
+
+    .ai-iframe-wrap iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+
+    .ai-firefox-note {
+      font-size: 11px;
+      color: #94a3b8;
+      padding: 6px 0;
+    }
+
+    .ai-engine-selector {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+      margin-bottom: 15px;
+    }
+
+    .engine-btn {
+      background: transparent;
+      border: 1px solid #555;
+      color: #aaa;
+      padding: 6px 16px;
+      border-radius: 20px;
+      cursor: pointer;
+      font-size: 12px;
+      transition: all 0.2s;
+    }
+
+    .engine-btn:hover {
+      background: rgba(255, 255, 255, 0.1);
+      color: #fff;
+    }
+
+    .engine-btn.active {
+      background: #4f46e5;
+      color: #fff;
+      border-color: #4f46e5;
+      box-shadow: 0 0 10px rgba(79, 70, 229, 0.3);
+    }
+  </style>
+</head>
+
+<body>
+  <div id="initial-loader" class="loader-container">
+    <div class="loader-spinner"></div>
+  </div>
+
+  <div class="container">
+    <div class="top-left-container">
+      <button id="refreshButton" class="top-left-button">Refresh</button>
+      <button id="whatsNewBtn" class="top-left-button">What's New</button>
+      <button id="donateBtn" class="top-left-button">Donate ☕</button>
+    </div>
+    <button id="themeToggle" class="top-right-button" title="Switch Theme">🎨</button>
+    <button id="expandButton" class="header-expand-button" title="Open in New Window">❐</button>
+    <button id="sidePanelButton" class="header-sidepanel-button" title="Pin to Side Panel">📌</button>
+    <button id="aiChatButton" class="header-ai-button" title="Google AI Mode">🤖</button>
+    <img src="icons/icon.png" alt="IntelHub Logo" class="logo" />
+    <p id="versionNumber" class="version-text"></p>
+    <h1>IntelHub - OSINT</h1>
+    <input type="text" id="searchBox" placeholder="Search a tool..." />
+
+    <div id="tabBar" class="tab-bar">
+      <button id="tabTools" class="active">🔧 Tools</button>
+      <button id="tabAI">🤖 AI</button>
+    </div>
+
+    <div id="toolsTabContent" class="tab-content active">
+      <div id="categoryButtons" class="button-group"></div>
+    </div>
+
+    <div id="aiTabContent">
+      <div id="aiEngineSelector" class="ai-engine-selector">
+        <button id="engineGoogle" class="engine-btn active">Google AI</button>
+        <button id="engineBrave" class="engine-btn">Brave AI</button>
+        <button id="enginePhind" class="engine-btn">Phind AI</button>
+        <button id="engineAndi" class="engine-btn">Andi</button>
+      </div>
+      <div id="aiIframeContainer"></div>
+      <div id="braveIframeContainer" style="display: none;"></div>
+      <div id="phindIframeContainer" style="display: none;"></div>
+      <div id="andiIframeContainer" style="display: none;"></div>
+    </div>
+  </div>
+  <script src="libs/ExifReader.js"></script>
+  <script src="libs/pdf-lib.min.js"></script>
+  <script src="libs/jszip.min.js"></script>
+  <script src="libs/psl.min.js"></script>
+  <script src="libs/face_libs/face-api.min.js"></script>
+  <script src="libs/spark-md5.min.js"></script>
+  <script type="module" src="popup.js"></script>
+</body>
+
+</html>

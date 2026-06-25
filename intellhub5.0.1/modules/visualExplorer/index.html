@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IntelHub Visual Explorer</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <aside id="sidebar">
+        <div class="logo">
+            <span class="logo-icon">🔍</span>
+            <h1>IntelHub</h1>
+        </div>
+        <div class="search-box">
+            <input type="text" id="search-input" placeholder="Search tools...">
+        </div>
+        <nav id="category-list">
+            <!-- Categories will be injected here -->
+        </nav>
+    </aside>
+
+    <main id="content">
+        <header id="content-header">
+            <h2 id="current-category">Select a Category</h2>
+            <div class="header-actions">
+                <button id="check-availability" class="action-btn" disabled>🔍 Check Availability</button>
+                <span id="tool-count"></span>
+            </div>
+        </header>
+        <div id="tools-grid">
+            <!-- Tools cards will be injected here -->
+            <div class="placeholder-message">
+                <p>👈 Select a category from the sidebar to view tools.</p>
+            </div>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

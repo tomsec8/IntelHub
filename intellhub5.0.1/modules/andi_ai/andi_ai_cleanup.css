@@ -1,0 +1,54 @@
+/* Andi AI Clean View for IntelHub Extension */
+
+/* Hide headers, footers, sidebars, and promo banners if any */
+header, 
+footer, 
+nav, 
+#header, 
+#footer, 
+.header,
+.footer,
+aside {
+    display: none !important;
+}
+
+/* Andi is very clean, but ensure root level cannot scroll horizontally */
+html,
+body {
+    overflow: hidden !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    height: auto !important;
+    min-height: 0 !important;
+    box-sizing: border-box !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+/* Add some padding */
+body {
+    padding-top: 15px !important;
+    padding-bottom: 120px !important;
+}
+
+/* Kill vh loops and internal scrolling cautiously */
+/* We don't target divs to avoid breaking Andi's visual cards */
+main,
+article {
+    overflow: visible !important;
+    height: auto !important;
+    min-height: 0 !important;
+    max-height: none !important;
+    contain: none !important;
+}
+
+/* Preserve scrolling/sizing for text inputs */
+textarea,
+input,
+select,
+[contenteditable="true"],
+[role="textbox"] {
+    overflow: auto !important;
+    height: revert !important;
+    max-height: revert !important;
+}

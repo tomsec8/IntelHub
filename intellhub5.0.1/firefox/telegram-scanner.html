@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Telegram Deep Scan</title>
+    <style>
+        body { background-color: #1a132b; color: white; font-family: sans-serif; text-align: center; padding: 40px; }
+        .container { max-width: 500px; margin: 0 auto; background: #2c1e3f; padding: 30px; border-radius: 12px; border: 1px solid #444; }
+        h1 { color: #badc58; margin-bottom: 10px; }
+        .status { margin: 20px 0; font-size: 18px; color: #ccc; }
+        .loader { 
+            border: 4px solid #f3f3f3; border-top: 4px solid #badc58; 
+            border-radius: 50%; width: 40px; height: 40px; 
+            animation: spin 1s linear infinite; margin: 20px auto; 
+        }
+        @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+        
+        #result-box { display: none; text-align: left; background: #1a132b; padding: 15px; border-radius: 8px; margin-top: 20px; }
+        .row { display: flex; justify-content: space-between; margin-bottom: 10px; border-bottom: 1px solid #333; padding-bottom: 5px; }
+        .label { color: #aaa; }
+        .val { color: #0fbcf9; font-family: monospace; font-size: 1.1em; }
+        
+        .copy-btn { background: #0fbcf9; border: none; padding: 5px 10px; border-radius: 4px; cursor: pointer; color: white; font-size: 12px; }
+        .close-btn { background: #ff7675; border: none; padding: 10px 20px; border-radius: 6px; cursor: pointer; color: white; margin-top: 20px; font-weight: bold; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Telegram Deep Scan</h1>
+        <p id="target-user">Target: ...</p>
+        
+        <div id="loading-area">
+            <div class="loader"></div>
+            <p class="status" id="status-text">Initializing background scan...</p>
+            <p style="font-size: 12px; color: #777;">Don't close this tab until finished.</p>
+        </div>
+
+        <div id="result-box">
+            <div class="row">
+                <span class="label">Name:</span>
+                <span class="val" id="res-name" style="color: white; font-family: sans-serif;">-</span>
+            </div>
+            <div class="row">
+                <span class="label">Type:</span>
+                <span class="val" id="res-type" style="color: #ff9f43;">-</span>
+            </div>
+            <div class="row">
+                <span class="label">Status:</span>
+                <span class="val" id="res-status" style="color: #ccc; font-size: 0.9em;">-</span>
+            </div>
+            <div class="row" style="border: none;">
+                <span class="label">Numeric ID:</span>
+                <span class="val" id="res-id">-</span>
+            </div>
+            <div style="text-align: center; margin-top: 10px;">
+                <button class="copy-btn" id="copy-btn">Copy ID</button>
+            </div>
+        </div>
+
+        <button class="close-btn" style="display:none;" id="close-main">Close Page</button>
+    </div>
+
+    <script src="telegram-scanner.js"></script>
+</body>
+</html>

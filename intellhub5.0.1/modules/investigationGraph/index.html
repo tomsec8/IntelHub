@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OSINT Investigation Canvas</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div id="sidebar">
+        <div class="sidebar-header">
+            <h2>My Investigations</h2>
+            <button id="new-investigation-btn" class="btn" style="width: 100%;">+ New Investigation</button>
+        </div>
+        <div class="sidebar-content" id="investigationsList"></div>
+    </div>
+
+    <button id="toggle-sidebar-btn" title="Toggle Sidebar">«</button>
+
+    <div id="toolbar">
+        <button id="add-card-btn" class="btn">➕ New Card</button>
+        <button id="delete-selected-btn" class="btn">🗑️ Delete</button>
+        <button id="undo-btn" class="btn" title="Undo (Ctrl+Z)">↶</button>
+        <button id="redo-btn" class="btn" title="Redo (Ctrl+Y)">↷</button>
+        <button id="group-mode-btn" class="btn" title="Draw Group">⬚</button>
+        <div class="toolbar-right-group">
+            <div class="dropdown">
+                <button id="export-menu-btn" class="btn">💾 Export</button>
+                <div class="dropdown-content">
+                    <a href="#" id="export-json-btn">Export to JSON</a>
+                    <a href="#" id="export-image-btn">Export as Image</a>
+                </div>
+            </div>
+            <button id="import-btn" class="btn">📂 Import</button>
+            <input type="file" id="importFile" accept=".json" style="display: none;">
+        </div>
+    </div>
+
+    <div id="canvas-container">
+        <div id="selection-box" class="selection-box"></div>
+        <canvas id="grid-canvas"></canvas>
+        <svg class="connection-svg">
+            <defs></defs>
+            <path id="preview-line" class="connection-line" style="stroke-dasharray: 5,5; display: none;"></path>
+        </svg>
+        <div id="canvas">
+        </div>
+    </div>
+
+    <div id="zoom-controls">
+        <button id="zoom-in-btn" class="btn">+</button>
+        <div id="zoom-level">100%</div>
+        <button id="zoom-out-btn" class="btn">−</button>
+        <button id="reset-zoom-btn" class="btn">⟲</button>
+    </div>
+
+    <div id="nodeModal" class="modal">
+        <div class="modal-content">
+            <h3 id="nodeModalTitle">New Card</h3>
+            <div class="form-group">
+                <label>Type:</label>
+                <select id="nodeType">
+                    <option value="person">Person</option>
+                    <option value="phone">Phone Number</option>
+                    <option value="email">Email</option>
+                    <option value="address">Address</option>
+                    <option value="company">Company</option>
+                    <option value="vehicle">Vehicle</option>
+                    <option value="website">Website</option>
+                    <option value="social">Social Network</option>
+                    <option value="document">Document</option>
+                    <option value="location">Location</option>
+                    <option value="event">Event</option>
+                    <option value="other">Other</option>
+                </select>
+            </div>
+            <div id="dynamic-fields-container"></div>
+            <div class="form-group sources-section">
+                <label>Sources:</label>
+                <div class="sources-list" id="sourcesList">
+                    </div>
+                <div class="add-source-form">
+                    <input type="text" id="sourceUrl" placeholder="URL or reference">
+                    <input type="text" id="sourceDesc" placeholder="Description (optional)">
+                    <button type="button" id="add-source-btn" class="btn">Add Source</button>
+                </div>
+            </div>
+            <div class="form-group">
+                <label>Card Color:</label>
+                <div class="color-picker-inline">
+                    <div class="color-option-small" style="background: #262626;" data-color="#262626"></div>
+                    <div class="color-option-small" style="background: #1e3a5f;" data-color="#1e3a5f"></div>
+                    <div class="color-option-small" style="background: #2d4a2d;" data-color="#2d4a2d"></div>
+                    <div class="color-option-small" style="background: #5a2d2d;" data-color="#5a2d2d"></div>
+                    <div class="color-option-small" style="background: #5a4a2d;" data-color="#5a4a2d"></div>
+                    <div class="color-option-small" style="background: #4a2d5a;" data-color="#4a2d5a"></div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label>Image (optional):</label>
+                <div style="display: flex; gap: 8px; align-items: center;">
+                    <label for="nodeImage" class="file-upload-btn">📎 Choose Image</label>
+                    <button type="button" id="removeImageBtn" class="btn" style="display: none; padding: 6px 12px;">✕ Remove</button>
+                </div>
+                <input type="file" id="nodeImage" accept="image/*">
+                <img id="imagePreview" class="image-preview">
+            </div>
+            <div class="modal-buttons">
+                <button id="cancel-node-modal-btn" class="btn">Cancel</button>
+                <button id="save-node-btn" class="btn active">Save</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="labelModal" class="modal">
+        <div class="modal-content">
+            <h3>Connection Label</h3>
+            <div class="form-group">
+                <label>Text:</label>
+                <input type="text" id="labelInput" placeholder="e.g., Partner of...">
+            </div>
+            <div class="form-group">
+                <label>Arrow Color:</label>
+                <div class="color-picker-inline">
+                    <div class="color-option-small" style="background: #6a6a6a;" data-color="#6a6a6a"></div>
+                    <div class="color-option-small" style="background: #1e3a5f;" data-color="#1e3a5f"></div>
+                    <div class="color-option-small" style="background: #2d4a2d;" data-color="#2d4a2d"></div>
+                    <div class="color-option-small" style="background: #5a2d2d;" data-color="#5a2d2d"></div>
+                    <div class="color-option-small" style="background: #5a4a2d;" data-color="#5a4a2d"></div>
+                    <div class="color-option-small" style="background: #4a2d5a;" data-color="#4a2d5a"></div>
+                </div>
+            </div>
+            <div class="modal-buttons">
+                <button id="cancel-label-modal-btn" class="btn">Cancel</button>
+                <button id="save-label-btn" class="btn active">Save</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="../../libs/html2canvas.min.js"></script>
+    <script src="js/main.js" type="module"></script>
+</body>
+</html>

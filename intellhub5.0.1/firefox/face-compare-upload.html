@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Face Comparison</title>
+    <link rel="stylesheet" href="../styles/styles.css">
+    <style>
+        body { width: auto; height: auto; text-align: center; padding: 20px; background-color: #1a132b; color: white; font-family: sans-serif; }
+        .upload-container { max-width: 900px; margin: 20px auto; padding: 20px; background-color: #2c1e3f; border-radius: 12px; }
+        h1 { color: #ff8c42; }
+        .images-row { display: flex; gap: 20px; justify-content: center; margin-top: 20px; }
+        .slot { flex: 1; min-height: 200px; display: flex; flex-direction: column; align-items: center; justify-content: center; background: #1a1a2e; border: 2px dashed #555; border-radius: 12px; cursor: pointer; padding: 15px; transition: 0.3s; }
+        .slot:hover { border-color: #badc58; }
+        .sub-category-button { background: linear-gradient(135deg, #6366f1, #4f46e5); color: white; border: none; padding: 10px 20px; border-radius: 6px; cursor: pointer; font-weight: bold; margin-top: 20px; font-size: 16px; }
+        .sub-category-button:hover { opacity: 0.9; }
+        .sub-category-button:disabled { background: #555; cursor: not-allowed; }
+        canvas { max-width: 100%; border-radius: 8px; margin-top: 10px; }
+        .face-btn { margin: 4px; padding: 6px 12px; background: #2c3e50; border: 1px solid #555; color: white; border-radius: 4px; cursor: pointer; }
+    </style>
+</head>
+<body>
+    <div class="upload-container">
+        <h1>Face Comparison (Firefox Mode)</h1>
+        <p style="color: #ffcc99;">Upload two images to compare faces.</p>
+        <div id="statusDiv" style="font-size: 14px; color: #badc58; margin-top: 10px;">⏳ Loading models...</div>
+        
+        <div class="images-row">
+            <div id="slotA" class="slot">
+                <h3>Image A</h3>
+                <div id="uploadTextA">📤 Click to Upload</div>
+                <canvas id="previewA" style="display:none"></canvas>
+                <div id="faceInfoA" style="color:#badc58; font-size:12px; margin-top:10px; display:none"></div>
+                <div id="faceSelectA" style="margin-top:10px; display:none"></div>
+                <input type="file" id="inputA" accept="image/*" style="display:none">
+            </div>
+            
+            <div id="slotB" class="slot">
+                <h3>Image B</h3>
+                <div id="uploadTextB">📤 Click to Upload</div>
+                <canvas id="previewB" style="display:none"></canvas>
+                <div id="faceInfoB" style="color:#badc58; font-size:12px; margin-top:10px; display:none"></div>
+                <div id="faceSelectB" style="margin-top:10px; display:none"></div>
+                <input type="file" id="inputB" accept="image/*" style="display:none">
+            </div>
+        </div>
+        
+        <button id="compareBtn" class="sub-category-button" disabled>🔍 Compare Faces</button>
+        <div id="resultDiv" style="margin-top:20px; display:none;"></div>
+    </div>
+    
+    <script src="../libs/face_libs/face-api.min.js"></script>
+    <script src="face-compare-upload.js"></script>
+</body>
+</html>
