@@ -40,7 +40,6 @@
   "optional_permissions": [
     "privacy",
     "browsingData",
-    "webRequest",
     "cookies"
   ],
   "optional_host_permissions": [
