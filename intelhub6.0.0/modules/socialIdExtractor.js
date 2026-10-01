@@ -20,7 +20,7 @@ export async function extractSocialIdFromPage(tabId) {
             const isHost = (domain) => hostname === domain || hostname.endsWith('.' + domain);
             const firstSeg = (path.split('/').filter(Boolean)[0] || '').replace(/^@/, '');
             const decodeJson = (value) => {
-                try { return JSON.parse('"' + String(value).replace(/"/g, '\\"') + '"'); }
+                try { return JSON.parse(`"${String(value)}"`); }
                 catch { return value; }
             };
             const firstMatch = (patterns) => {

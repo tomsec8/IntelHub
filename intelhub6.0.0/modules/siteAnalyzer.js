@@ -37,7 +37,7 @@ function getRootDomain(hostname) {
 // Extracted internal core logic for non-UI usages (e.g., Copilot)
 export async function analyzeDomainAPI(domain) {
     if (!domain) return { success: false, reason: "No domain provided." };
-
+    
     domain = domain.replace(/^https?:\/\//, '').split('/')[0];
     domain = getRootDomain(domain);
 
@@ -158,21 +158,39 @@ function collectWebsiteIdentity() {
 
     const html = document.documentElement.innerHTML.slice(0, 180000).toLowerCase();
     const scriptBlob = scripts.join(' ').toLowerCase();
+    const foundHosts = new Set(scriptHosts.map((host) => host.toLowerCase()));
+    const rememberHost = (href) => {
+        const host = hostOf(href);
+        if (host) foundHosts.add(host.toLowerCase());
+    };
+    document.querySelectorAll('[href], [src]').forEach((node) => {
+        rememberHost(node.getAttribute('href') || node.getAttribute('src'));
+    });
+    (html.match(/https?:\/\/[^\s"'<>]+/gi) || []).forEach((match) => {
+        rememberHost(match.replace(/[),.;]+$/, ''));
+    });
+    const hostIs = (domain) => {
+        const needle = domain.toLowerCase();
+        for (const host of foundHosts) {
+            if (host === needle || host.endsWith(`.${needle}`)) return true;
+        }
+        return false;
+    };
 
     mark('WordPress', html.includes('wp-content') || html.includes('wp-includes') || html.includes('wp-json'));
     mark('Next.js', Boolean(window.__NEXT_DATA__) || html.includes('/_next/'));
     mark('Nuxt', Boolean(window.__NUXT__) || html.includes('/_nuxt/'));
     mark('Gatsby', Boolean(document.getElementById('___gatsby')));
-    mark('Shopify', Boolean(window.Shopify) || html.includes('cdn.shopify.com'));
+    mark('Shopify', Boolean(window.Shopify) || hostIs('cdn.shopify.com') || hostIs('shopify.com'));
     mark('Drupal', html.includes('drupal.settings') || html.includes('/sites/default/files')
         || cookieNames.some((n) => /^SESS[a-f0-9]{20,}$/i.test(n)));
     mark('Joomla', html.includes('/media/jui/') || html.includes('option=com_'));
-    mark('Wix', html.includes('static.wixstatic.com'));
-    mark('Squarespace', html.includes('squarespace.com') || html.includes('static.squarespace'));
-    mark('Webflow', html.includes('webflow'));
+    mark('Wix', hostIs('wixstatic.com') || hostIs('wix.com'));
+    mark('Squarespace', hostIs('squarespace.com'));
+    mark('Webflow', html.includes('webflow') || hostIs('webflow.com'));
     mark('Magento', html.includes('mage/') || html.includes('magento'));
     mark('PrestaShop', html.includes('prestashop') || html.includes('/modules/ps_'));
-    mark('Ghost', html.includes('ghost.org') || Boolean(document.querySelector('[data-ghost]')));
+    mark('Ghost', hostIs('ghost.org') || hostIs('ghost.io') || Boolean(document.querySelector('[data-ghost]')));
     mark('React', Boolean(document.querySelector('[data-reactroot], [data-reactid]')));
     mark('Vue', Boolean(window.__VUE__) || Boolean(document.querySelector('[data-v-app]')));
     mark('Angular', Boolean(document.querySelector('[ng-version]')));
@@ -185,25 +203,25 @@ function collectWebsiteIdentity() {
     mark('ASP.NET', cookieNames.some((n) => /asp\.net|ASPSESSION/i.test(n)));
     mark('Java', cookieNames.includes('JSESSIONID'));
     mark('Cloudflare', cookieNames.some((n) => n.startsWith('__cf') || n === 'cf_clearance')
-        || html.includes('cloudflareinsights') || html.includes('challenges.cloudflare.com'));
-    mark('Google Tag Manager', html.includes('googletagmanager.com'));
-    mark('Google Analytics', html.includes('google-analytics.com') || html.includes('gtag/js')
+        || hostIs('cloudflareinsights.com') || hostIs('cloudflare.com'));
+    mark('Google Tag Manager', hostIs('googletagmanager.com'));
+    mark('Google Analytics', hostIs('google-analytics.com') || html.includes('gtag/js')
         || cookieNames.includes('_ga') || cookieNames.includes('_gid'));
-    mark('Meta Pixel', html.includes('connect.facebook.net') || html.includes('fbevents.js') || cookieNames.includes('_fbp'));
-    mark('Hotjar', html.includes('static.hotjar.com') || cookieNames.some((n) => n.startsWith('_hj')));
-    mark('HubSpot', html.includes('js.hs-scripts.com') || html.includes('hs-analytics')
+    mark('Meta Pixel', hostIs('connect.facebook.net') || html.includes('fbevents.js') || cookieNames.includes('_fbp'));
+    mark('Hotjar', hostIs('hotjar.com') || cookieNames.some((n) => n.startsWith('_hj')));
+    mark('HubSpot', hostIs('hs-scripts.com') || hostIs('hs-analytics.net')
         || cookieNames.some((n) => n.startsWith('__hs') || n.startsWith('hubspot')));
-    mark('Intercom', html.includes('widget.intercom.io') || Boolean(window.Intercom));
-    mark('Segment', html.includes('cdn.segment.com'));
-    mark('Stripe', html.includes('js.stripe.com'));
-    mark('PayPal', html.includes('paypal.com/sdk') || html.includes('paypalobjects.com'));
-    mark('reCAPTCHA', html.includes('recaptcha'));
-    mark('Turnstile', html.includes('challenges.cloudflare.com') || html.includes('cf-turnstile'));
-    mark('hCaptcha', html.includes('hcaptcha.com'));
-    mark('Sentry', html.includes('sentry-cdn.com') || html.includes('sentry.io') || Boolean(window.Sentry));
-    mark('Google Fonts', html.includes('fonts.googleapis.com') || html.includes('fonts.gstatic.com'));
+    mark('Intercom', hostIs('intercom.io') || Boolean(window.Intercom));
+    mark('Segment', hostIs('segment.com'));
+    mark('Stripe', hostIs('stripe.com'));
+    mark('PayPal', hostIs('paypal.com') || hostIs('paypalobjects.com'));
+    mark('reCAPTCHA', html.includes('recaptcha') || hostIs('recaptcha.net'));
+    mark('Turnstile', hostIs('challenges.cloudflare.com') || html.includes('cf-turnstile'));
+    mark('hCaptcha', hostIs('hcaptcha.com'));
+    mark('Sentry', hostIs('sentry.io') || hostIs('sentry-cdn.com') || Boolean(window.Sentry));
+    mark('Google Fonts', hostIs('fonts.googleapis.com') || hostIs('fonts.gstatic.com'));
     mark('Font Awesome', html.includes('font-awesome') || html.includes('fontawesome'));
-    mark('Cloudflare Insights', html.includes('static.cloudflareinsights.com'));
+    mark('Cloudflare Insights', hostIs('cloudflareinsights.com'));
 
     cookieNames.forEach((name) => {
         if (name.startsWith('wordpress_') || name.startsWith('wp-settings')) mark('WordPress', true);
@@ -383,20 +401,30 @@ function inferHeaderTech(headers, tech) {
     if (headers['x-shopify-stage']) addTech(tech, 'Shopify');
 }
 
+function hostMatches(host, domain) {
+    const name = String(host || '').toLowerCase().replace(/\.$/, '');
+    const needle = String(domain || '').toLowerCase();
+    return name === needle || name.endsWith(`.${needle}`);
+}
+
 function inferCnameTech(targets, tech) {
+    const hints = [
+        [['shopify.com', 'myshopify.com'], 'Shopify'],
+        [['github.io'], 'GitHub Pages'],
+        [['vercel.app', 'vercel-dns.com'], 'Vercel'],
+        [['netlify.app', 'netlify.com'], 'Netlify'],
+        [['cloudfront.net'], 'CloudFront'],
+        [['fastly.net'], 'Fastly'],
+        [['akamai.net', 'akamaiedge.net', 'edgekey.net'], 'Akamai'],
+        [['wordpress.com'], 'WordPress.com'],
+        [['webflow.io', 'webflow.com'], 'Webflow'],
+        [['hubspot.com', 'hubspot.net'], 'HubSpot'],
+        [['squarespace.com'], 'Squarespace']
+    ];
     (targets || []).forEach((target) => {
-        const value = target.toLowerCase();
-        if (value.includes('shopify')) addTech(tech, 'Shopify');
-        if (value.includes('github.io')) addTech(tech, 'GitHub Pages');
-        if (value.includes('vercel')) addTech(tech, 'Vercel');
-        if (value.includes('netlify')) addTech(tech, 'Netlify');
-        if (value.includes('cloudfront')) addTech(tech, 'CloudFront');
-        if (value.includes('fastly')) addTech(tech, 'Fastly');
-        if (value.includes('akamai')) addTech(tech, 'Akamai');
-        if (value.includes('wordpress.com')) addTech(tech, 'WordPress.com');
-        if (value.includes('webflow')) addTech(tech, 'Webflow');
-        if (value.includes('hubspot')) addTech(tech, 'HubSpot');
-        if (value.includes('squarespace')) addTech(tech, 'Squarespace');
+        hints.forEach(([domains, name]) => {
+            if (domains.some((domain) => hostMatches(target, domain))) addTech(tech, name);
+        });
     });
 }
 

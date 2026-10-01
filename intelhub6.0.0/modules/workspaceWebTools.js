@@ -217,15 +217,23 @@ function paintDomain(wrap, onToolChange) {
 
     const links = el('div', 'ws-email-links');
     [
-      { href: `https://www.whois.com/whois/${domain}`, label: 'WHOIS' },
-      { href: `https://rdap.org/domain/${domain}`, label: 'RDAP' },
-      { href: `https://dnschecker.org/all-dns-records-of-domain.php?query=${domain}&rtype=ALL&dns=google`, label: 'All DNS records' },
-      { href: `https://w3techs.com/sites/info/${domain}`, label: 'Technology' },
+      { href: `https://www.whois.com/whois/${encodeURIComponent(domain)}`, label: 'WHOIS' },
+      { href: `https://rdap.org/domain/${encodeURIComponent(domain)}`, label: 'RDAP' },
+      { href: `https://dnschecker.org/all-dns-records-of-domain.php?query=${encodeURIComponent(domain)}&rtype=ALL&dns=google`, label: 'All DNS records' },
+      { href: `https://w3techs.com/sites/info/${encodeURIComponent(domain)}`, label: 'Technology' },
       { href: `https://www.virustotal.com/gui/domain/${encodeURIComponent(domain)}`, label: 'VirusTotal' },
       { href: `https://crt.sh/?q=${encodeURIComponent(domain)}`, label: 'Certificates' }
     ].forEach((item) => {
+      let href = '';
+      try {
+        const parsed = new URL(item.href);
+        if (parsed.protocol !== 'https:') return;
+        href = parsed.href;
+      } catch {
+        return;
+      }
       const link = el('a', 'ws-btn ws-btn-ghost', item.label);
-      link.href = item.href;
+      link.href = href;
       link.target = '_blank';
       link.rel = 'noopener';
       links.appendChild(link);

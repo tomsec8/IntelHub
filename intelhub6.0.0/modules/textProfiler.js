@@ -276,20 +276,52 @@ function looksLikeHtml(text) {
   return /<(?:html|head|body|div|article|section|table|ul|ol|nav|main|a)\b/i.test(head);
 }
 
+function decodeBasicEntities(text) {
+  return String(text || '')
+    .replace(/&lt;/gi, '<')
+    .replace(/&gt;/gi, '>')
+    .replace(/&quot;/gi, '"')
+    .replace(/&#(\d+);/g, (_, n) => {
+      const code = Number(n);
+      return code > 0 && code <= 0x10ffff ? String.fromCodePoint(code) : '';
+    })
+    .replace(/&#x([0-9a-f]+);/gi, (_, n) => {
+      const code = parseInt(n, 16);
+      return code > 0 && code <= 0x10ffff ? String.fromCodePoint(code) : '';
+    })
+    .replace(/&amp;/gi, '&');
+}
+
 export function harvestPageSignals(html) {
-  const doc = new DOMParser().parseFromString(String(html || ''), 'text/html');
+  const source = String(html || '').slice(0, 300000);
   const seen = new Set();
-  doc.querySelectorAll('a[href], area[href]').forEach((node) => {
-    const href = node.href || node.getAttribute('href') || '';
-    if (href && seen.size < 3000) seen.add(href);
-  });
-  const meta = [...doc.querySelectorAll('meta[name="description"], meta[property="og:description"]')]
-    .map((node) => node.getAttribute('content') || '')
-    .filter(Boolean);
-  const body = (doc.body && doc.body.innerText) || '';
-  const title = doc.title || '';
+  const hrefRe = /<(?:a|area)\b[^>]*\bhref\s*=\s*(?:"([^"]*)"|'([^']*)'|([^\s>]+))/gi;
+  let match;
+  while ((match = hrefRe.exec(source)) && seen.size < 3000) {
+    const raw = decodeBasicEntities(match[1] || match[2] || match[3] || '').trim();
+    try {
+      const url = new URL(raw, 'https://example.invalid');
+      if (url.protocol === 'http:' || url.protocol === 'https:') seen.add(url.href);
+    } catch {
+      /* skip non-urls */
+    }
+  }
+  const title = decodeBasicEntities((source.match(/<title[^>]*>([\s\S]*?)<\/title>/i) || [])[1] || '');
+  const meta = [];
+  const metaRe = /<meta\b[^>]*(?:name|property)\s*=\s*["'](?:description|og:description)["'][^>]*>/gi;
+  let metaTag;
+  while ((metaTag = metaRe.exec(source))) {
+    const content = (metaTag[0].match(/\bcontent\s*=\s*"([^"]*)"/i) || metaTag[0].match(/\bcontent\s*=\s*'([^']*)'/i) || [])[1];
+    if (content) meta.push(decodeBasicEntities(content));
+  }
+  const body = decodeBasicEntities(
+    source
+      .replace(/<script\b[^>]*>[\s\S]*?<\/script>/gi, ' ')
+      .replace(/<style\b[^>]*>[\s\S]*?<\/style>/gi, ' ')
+      .replace(/<[^>]+>/g, ' ')
+  );
   return {
-    text: [title, ...meta, body].join('\n').slice(0, 300000),
+    text: [title, ...meta, body].join('\n').replace(/[ \t]+\n/g, '\n').slice(0, 300000),
     links: [...seen]
   };
 }
