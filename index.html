@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>IntelHub — OSINT workstation</title>
+  <meta name="description" content="IntelHub is an OSINT workstation for Chrome and Firefox. Lookups, files, chat exports, and privacy guards, in the browser." />
+  <link rel="icon" href="icons/icon.png" />
+  <style>
+    :root {
+      --bg: #100c0a;
+      --bg-2: #1a1411;
+      --card: #1c1613;
+      --line: rgba(255, 176, 120, 0.16);
+      --text: #f7f1ea;
+      --muted: #c4b4a6;
+      --faint: #8d7c70;
+      --orange: #ff6a2a;
+      --orange-2: #ff8a4a;
+      --ink: #1a0d08;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      color: var(--text);
+      background:
+        radial-gradient(820px 460px at 85% -8%, rgba(255, 90, 30, 0.22), transparent 58%),
+        radial-gradient(640px 380px at -10% 20%, rgba(255, 120, 40, 0.08), transparent 50%),
+        var(--bg);
+      font-family: "Segoe UI", Inter, system-ui, sans-serif;
+      line-height: 1.5;
+    }
+    a { color: inherit; }
+    img { display: block; max-width: 100%; }
+
+    .wrap { width: min(1120px, calc(100% - 40px)); margin: 0 auto; }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 4;
+      background: rgba(16, 12, 10, 0.82);
+      backdrop-filter: blur(18px);
+      border-bottom: 1px solid var(--line);
+    }
+    .bar {
+      min-height: 72px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+    }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+    }
+    .brand img { width: 36px; height: 36px; border-radius: 9px; }
+    nav { display: flex; align-items: center; gap: 18px; font-size: 14px; }
+    nav a { color: var(--muted); text-decoration: none; }
+    nav a:hover { color: var(--text); }
+
+    .hero {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 48px;
+      align-items: center;
+      padding: 72px 0 28px;
+    }
+    .kicker {
+      margin: 0 0 16px;
+      color: var(--orange-2);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+    }
+    h1 {
+      margin: 0;
+      font-size: clamp(46px, 6.4vw, 78px);
+      line-height: 0.92;
+      letter-spacing: -0.055em;
+      font-weight: 680;
+    }
+    h1 span { color: #b9a89c; }
+    .lede {
+      max-width: 46ch;
+      margin: 22px 0 0;
+      color: var(--muted);
+      font-size: 18px;
+    }
+    .stores {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 30px;
+    }
+    .store {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      min-height: 58px;
+      padding: 8px 16px 8px 12px;
+      border-radius: 14px;
+      text-decoration: none;
+      border: 1px solid transparent;
+    }
+    .store small {
+      display: block;
+      font-size: 11px;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      opacity: 0.72;
+    }
+    .store b { display: block; font-size: 15px; font-weight: 700; letter-spacing: -0.02em; }
+    .store-chrome { background: var(--text); color: var(--ink); }
+    .store-chrome:hover { filter: brightness(1.05); }
+    .store-edge,
+    .store-firefox {
+      background: transparent;
+      color: var(--text);
+      border-color: rgba(255, 176, 120, 0.35);
+    }
+    .store-edge:hover,
+    .store-firefox:hover { background: rgba(255, 106, 42, 0.08); }
+    .mark {
+      width: 34px;
+      height: 34px;
+      border-radius: 9px;
+      display: grid;
+      place-items: center;
+      flex: none;
+    }
+    .mark-chrome { background: #fff; }
+    .mark-edge,
+    .mark-firefox { background: #201814; }
+    .fine {
+      margin: 16px 0 0;
+      color: var(--faint);
+      font-size: 14px;
+    }
+    .fine a { color: var(--orange-2); }
+
+    .panel {
+      background: linear-gradient(180deg, #241c18, #16110f);
+      border: 1px solid rgba(255, 150, 80, 0.28);
+      border-radius: 22px;
+      padding: 14px;
+      box-shadow: 0 30px 80px rgba(0, 0, 0, 0.35);
+    }
+    .panel-top {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 6px 8px 14px;
+    }
+    .panel-top img { width: 28px; height: 28px; border-radius: 7px; }
+    .panel-top strong { font-size: 14px; }
+    .panel-top span { display: block; color: var(--faint); font-size: 12px; }
+    .rows { display: grid; gap: 6px; }
+    .row {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      padding: 11px 12px;
+      border-radius: 12px;
+      background: rgba(255, 255, 255, 0.03);
+      color: var(--muted);
+      font-size: 14px;
+    }
+    .row em { font-style: normal; color: var(--faint); font-size: 12px; }
+    .row.on {
+      background: rgba(255, 106, 42, 0.16);
+      color: var(--text);
+    }
+    .row.on em { color: var(--orange-2); }
+
+    .band {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+      margin: 28px 0 10px;
+      background: var(--line);
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      overflow: hidden;
+    }
+    .band div { background: rgba(28, 22, 19, 0.92); padding: 18px 20px; }
+    .band strong { display: block; font-size: 15px; }
+    .band span { color: var(--muted); font-size: 13px; }
+
+    section { padding: 64px 0; }
+    h2 {
+      margin: 0 0 8px;
+      font-size: clamp(28px, 4vw, 40px);
+      letter-spacing: -0.04em;
+    }
+    .section-note { margin: 0 0 22px; max-width: 58ch; color: var(--muted); }
+
+    .bento {
+      display: grid;
+      grid-template-columns: 1.3fr 1fr 1fr;
+      gap: 12px;
+    }
+    .card {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      padding: 22px;
+      min-height: 160px;
+    }
+    .card.wide { grid-column: span 1; }
+    .card h3 { margin: 0 0 8px; font-size: 18px; letter-spacing: -0.03em; }
+    .card p { margin: 0; color: var(--muted); font-size: 14.5px; }
+    .card .tag {
+      display: inline-block;
+      margin-bottom: 12px;
+      color: var(--orange-2);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
+
+    .policy {
+      background: #171310;
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      padding: 32px 32px 12px;
+    }
+    .policy h2 { font-size: 32px; }
+    .policy h3 { margin: 28px 0 8px; font-size: 18px; }
+    .policy p, .policy li { color: var(--muted); }
+    .policy ul { padding-left: 18px; }
+    .policy li { margin: 8px 0; }
+    .policy strong { color: var(--text); }
+    .dated { color: var(--faint); font-size: 13px; }
+
+    footer {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      flex-wrap: wrap;
+      padding: 8px 0 40px;
+      color: var(--faint);
+      font-size: 13px;
+    }
+    footer a { color: var(--orange-2); }
+
+    @media (max-width: 900px) {
+      .hero, .bento, .band { grid-template-columns: 1fr; }
+      .hide-sm { display: none; }
+      .hero { padding-top: 42px; }
+      .policy { padding: 22px 18px 8px; }
+      .wrap { width: min(1120px, calc(100% - 28px)); }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="wrap bar">
+      <a class="brand" href="#top"><img src="icons/icon.png" alt="" /> IntelHub</a>
+      <nav>
+        <a class="hide-sm" href="#capabilities">Capabilities</a>
+        <a class="hide-sm" href="#privacy">Privacy</a>
+        <a href="https://github.com/tomsec8/IntelHub">GitHub</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+    <div class="wrap hero">
+      <div>
+        <p class="kicker">Version 6 · Chrome, Edge, and Firefox</p>
+        <h1>Look it up<br />without leaving<br /><span>the tab.</span></h1>
+        <p class="lede">IntelHub is an OSINT workstation for investigators. Usernames, sites, files, wallets, and chat exports sit next to the page you are already reading.</p>
+        <div class="stores">
+          <a class="store store-chrome" href="https://chromewebstore.google.com/detail/intelhub/jfjpgfklmjdhabodgghmjclpgnpiejlh">
+            <span class="mark mark-chrome" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 22 22" fill="none">
+                <circle cx="11" cy="11" r="9.2" stroke="#1a0d08" stroke-width="1.4"/>
+                <circle cx="11" cy="11" r="3.3" fill="#1a73e8"/>
+                <path d="M11 7.7h8.1" stroke="#ea4335" stroke-width="2.2" stroke-linecap="round"/>
+                <path d="M7.4 14.1 3.3 7.2" stroke="#fbbc04" stroke-width="2.2" stroke-linecap="round"/>
+                <path d="M14.6 14.1 10.6 21" stroke="#34a853" stroke-width="2.2" stroke-linecap="round"/>
+              </svg>
+            </span>
+            <span><small>Install on</small><b>Chrome Web Store</b></span>
+          </a>
+          <a class="store store-edge" href="https://microsoftedge.microsoft.com/addons/detail/intelhub/mllimkjdpgenkhlnpmiploclgponggjg">
+            <span class="mark mark-edge" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 22 22" fill="none">
+                <path d="M4 13.2c1.4 3.2 4.6 5.2 8.1 4.6 3.2-.5 5.4-2.8 5.7-5.6.2-2.2-1-4-3.2-4.6-2.4-.6-3.4 1-1.6 2.2 1.2.8 1.6 1.5 1.2 2.3-.6 1.2-2.4 1.6-3.8 1.1-2.2-.8-3.2-3-2.6-5.4.8-3.4 4-5.6 7.6-5.2" stroke="#3aa0ff" stroke-width="1.7" stroke-linecap="round"/>
+              </svg>
+            </span>
+            <span><small>Install on</small><b>Microsoft Edge</b></span>
+          </a>
+          <a class="store store-firefox" href="https://addons.mozilla.org/en-US/firefox/addon/intelhub/">
+            <span class="mark mark-firefox" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 22 22" fill="none">
+                <circle cx="11" cy="11" r="8.5" stroke="#ff6a2a" stroke-width="1.6"/>
+                <path d="M6 13.5c1.2-3.6 3.4-6.2 7.8-7.2-1.2 2.2-.4 3.6.8 4.4-2.4.2-3.6 1.5-4.2 2.8 1.5-.3 2.6.2 3.2 1.2-3.2.6-5.4.2-7.6-1.2Z" fill="#ff6a2a"/>
+              </svg>
+            </span>
+            <span><small>Install on</small><b>Firefox Add-ons</b></span>
+          </a>
+        </div>
+        <p class="fine">Source and issues on <a href="https://github.com/tomsec8/IntelHub">GitHub</a>.</p>
+      </div>
+
+      <aside class="panel" aria-hidden="true">
+        <div class="panel-top">
+          <img src="icons/icon.png" alt="" />
+          <div><strong>IntelHub</strong><span>Workspace</span></div>
+        </div>
+        <div class="rows">
+          <div class="row on"><span>Username search</span><em>150+ sites</em></div>
+          <div class="row"><span>Domain and IP</span><em>DNS · RDAP</em></div>
+          <div class="row"><span>Security headers</span><em>CSP · HSTS</em></div>
+          <div class="row"><span>Telegram export</span><em>JSON · HTML</em></div>
+          <div class="row"><span>Wallet lookup</span><em>BTC · ETH</em></div>
+          <div class="row"><span>Privacy guards</span><em>Local</em></div>
+        </div>
+      </aside>
+    </div>
+
+    <div class="wrap">
+      <div class="band">
+        <div><strong>On your machine</strong><span>Hashes, metadata, encryption, and exports never leave the browser.</span></div>
+        <div><strong>Permission when needed</strong><span>A site is opened for reading only after you start that tool.</span></div>
+        <div><strong>Side panel</strong><span>Pin the workstation beside the page in Chrome or Firefox.</span></div>
+      </div>
+    </div>
+
+    <section id="capabilities">
+      <div class="wrap">
+        <h2>Built for a case, not a dashboard.</h2>
+        <p class="section-note">The popup works on the open page. The Workspace is where you paste, upload, or type.</p>
+        <div class="bento">
+          <article class="card">
+            <span class="tag">Identity</span>
+            <h3>People and accounts</h3>
+            <p>Username search, Google ID, breach and infostealer checks, Gravatar, Social ID, and public Telegram profiles.</p>
+          </article>
+          <article class="card">
+            <span class="tag">Web</span>
+            <h3>Sites</h3>
+            <p>Domains, IPs, subdomains, archives, certificates, security headers, short links, and DoH.</p>
+          </article>
+          <article class="card">
+            <span class="tag">Files</span>
+            <h3>Documents and images</h3>
+            <p>EXIF, PDF and Office properties, tracker removal, hashes, face comparison, and AES-256-GCM.</p>
+          </article>
+          <article class="card">
+            <span class="tag">Chats</span>
+            <h3>Exports</h3>
+            <p>A zipped Telegram JSON or HTML export, or a Funstat report, with search and identifiers.</p>
+          </article>
+          <article class="card">
+            <span class="tag">Crypto</span>
+            <h3>Wallets</h3>
+            <p>Bitcoin on blockchain.info. Ethereum on Ethplorer, with Blockscout as the fallback.</p>
+          </article>
+          <article class="card">
+            <span class="tag">OPSEC</span>
+            <h3>Guards</h3>
+            <p>WebRTC, camera, microphone, location, clipboard, cookies, HTTPS upgrade, and your proxy.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="privacy">
+      <div class="wrap">
+        <article class="policy">
+          <p class="kicker">Privacy policy</p>
+          <h2>What leaves the browser</h2>
+          <p class="dated">Effective June 25, 2026</p>
+          <p>IntelHub does not collect, record, or track personal data, browsing history, or analytics. It runs on your machine. A tool sends only the value you submit, and only when you run it.</p>
+          <h3>Stays on this device</h3>
+          <p>Metadata, hashing, encryption, text profiling, and Telegram or Funstat analysis are local.</p>
+          <h3>Sent only when you run the tool</h3>
+          <ul>
+            <li><strong>Reverse image search.</strong> A public image URL is opened in the engines you pick. A local image is posted to catbox.moe so those engines can fetch it. Consent is required before a local image leaves the device.</li>
+            <li><strong>Short link tracer.</strong> Hops are followed on your machine. No unshortener service is used.</li>
+            <li><strong>IP lookup.</strong> The address goes to ip-api.com and RDAP. AbuseIPDB is only a link.</li>
+            <li><strong>DNS and domains.</strong> Resolution uses Google DNS-over-HTTPS. Registration data comes from rdap.org. Subdomain search queries public certificate, archive, and passive-DNS sources.</li>
+            <li><strong>Wallets.</strong> Bitcoin goes to blockchain.info. Ethereum goes to api.ethplorer.io, then eth.blockscout.com if needed.</li>
+            <li><strong>Email lookups.</strong> Breaches go to api.xposedornot.com. Infostealers go to cavalier.hudsonrock.com. Gravatar hashes the email locally and requests the public profile.</li>
+            <li><strong>OSINT catalog.</strong> The public awesome-osint list is sometimes downloaded from GitHub. That request has no personal data.</li>
+          </ul>
+          <h3>Permissions</h3>
+          <ul>
+            <li><strong>activeTab</strong> reads the tab you are on when you start a page tool.</li>
+            <li><strong>storage</strong> keeps preferences and investigations in this browser.</li>
+            <li><strong>scripting</strong> reads a page only after you start a tool that needs it.</li>
+            <li><strong>downloads</strong> saves files you export.</li>
+          </ul>
+          <p>Questions: <a href="https://github.com/tomsec8/IntelHub">github.com/tomsec8/IntelHub</a>.</p>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <div class="wrap">
+    <footer>
+      <span>IntelHub 6.0.0</span>
+      <span>
+        <a href="https://chromewebstore.google.com/detail/intelhub/jfjpgfklmjdhabodgghmjclpgnpiejlh">Chrome</a>
+        ·
+        <a href="https://microsoftedge.microsoft.com/addons/detail/intelhub/mllimkjdpgenkhlnpmiploclgponggjg">Edge</a>
+        ·
+        <a href="https://addons.mozilla.org/en-US/firefox/addon/intelhub/">Firefox</a>
+        ·
+        <a href="https://github.com/tomsec8/IntelHub">GitHub</a>
+      </span>
+    </footer>
+  </div>
+</body>
+</html>
