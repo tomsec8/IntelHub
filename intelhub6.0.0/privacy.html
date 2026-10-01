@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>IntelHub - Privacy Policy</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      padding: 40px;
+      background-color: #f9f9f9;
+      color: #222;
+      max-width: 800px;
+      margin: auto;
+    }
+    h1, h2 {
+      color: #e74c3c;
+    }
+    a {
+      color: #3498db;
+    }
+    .warning-box {
+      background-color: #fff3cd;
+      border-left: 5px solid #ffecb5;
+      padding: 15px;
+      margin: 15px 0;
+      color: #856404;
+    }
+  </style>
+</head>
+<body>
+  <h1>Privacy Policy – IntelHub</h1>
+  <p><strong>Effective Date:</strong> June 25, 2026</p>
+
+  <p>IntelHub is an Open Source Intelligence (OSINT) workstation extension designed to help researchers aggregate public tools. Because we serve the investigative community, transparency regarding data transmission is our highest priority.</p>
+
+  <h2>1. Data Collection & Processing</h2>
+  <p>IntelHub <strong>does not actively collect, record, or track</strong> your personal data, browsing history, or analytics. The extension operates locally on your machine. However, to provide OSINT functionalities, specific features intentionally transmit user-provided data (e.g., URLs, usernames, or images) to specific third-party services as detailed below.</p>
+
+  <p><strong>Local Processing:</strong> Features like Metadata Extraction (EXIF, PDF, Office) and File Hashing are performed strictly locally on your device without communicating with any external servers.</p>
+
+  <h2>2. Third-Party Data Transmission</h2>
+  <p>If you choose to use the following specific features, IntelHub will transmit your input to the corresponding third-party services:</p>
+  <ul>
+    <li><strong>Reverse Image Search:</strong> If you paste an image URL that is already public, IntelHub opens the selected engines with that URL and does not upload the file. If you upload or paste a local image, it is posted to a public file host (<strong>catbox.moe</strong>) — not a proxy — so Google, Yandex, Bing, and TinEye can fetch it. Catbox can see the file and usually your IP; the link is public and may remain after the search. <em>Consent is required before a local image leaves the device.</em></li>
+    <li><strong>Short Link Tracer:</strong> In the Workspace Web tools, the extension follows a shortened or redirected URL locally and records each hop until the final destination. <strong>No third-party proxy or external URL unshortener is used.</strong></li>
+    <li><strong>IP Lookup:</strong> In the Workspace Web tools, an IP address or hostname you submit is sent to <strong>ip-api.com</strong> (HTTP JSON API) to retrieve geolocation, ISP, ASN, and proxy/hosting flags. Empty queries send your current public IP as seen by that service. Rate-limited to 45 requests per minute by ip-api. The same IP is also queried via <strong>RDAP</strong> (<strong>rdap.org</strong>, which redirects to the relevant RIR such as ARIN, RIPE, APNIC, LACNIC, or AFRINIC) for allocation, CIDR, and abuse contacts. An AbuseIPDB button opens their public check page in a new tab; IntelHub does not call the AbuseIPDB API and does not use an API key.</li>
+    <li><strong>DNS & OSINT Lookups:</strong> Resolving IP addresses relies on the <strong>Google DoH API (dns.google)</strong>. Domain Lookup also queries <strong>rdap.org</strong> (and the registry it redirects to, commonly Verisign for .com/.net) for registrar and registration dates. Subdomain Finder queries public datasets with the target domain: Certificate Transparency (<strong>crt.sh</strong>, <strong>Cert Spotter</strong>), the Wayback Machine CDX API, AlienVault OTX passive DNS, Anubis, HackerTarget, and urlscan.io. A subset of discovered names is then resolved via Google DoH. Other investigation buttons open new tabs to third-party services (e.g., VirusTotal, W3Techs, WHOIS) with the target domain as a URL parameter.</li>
+    <li><strong>Crypto lookups:</strong> The Workspace Crypto tool sends Bitcoin addresses (and Bitcoin transaction IDs pasted in the same box) to <strong>blockchain.info</strong> (Blockchain Data API: rawaddr, rawtx, unspent, balance) to retrieve balances, transfers, UTXOs, and transaction details. Ethereum addresses and 0x transaction hashes are sent to <strong>api.ethplorer.io</strong> (Ethplorer, public freekey) for ETH balance, token holdings, and recent transfers, with <strong>eth.blockscout.com</strong> as a fallback. Address type detection is performed locally. Other chains and Bitcoin testnet addresses are not queried live.</li>
+    <li><strong>Email lookups:</strong> Breach lookup sends an email you submit to <strong>api.xposedornot.com</strong>. Infostealer lookup sends an email, username, or domain to Hudson Rock's free Cavalier API (<strong>cavalier.hudsonrock.com</strong>). Gravatar lookup hashes the email locally with SHA-256 and requests the public profile/avatar from <strong>gravatar.com</strong>. None of these features use an API key. Results stay in this browser unless you copy them elsewhere.</li>
+    <li><strong>OSINT Tools catalog:</strong> The extension occasionally fetches the public <strong>awesome-osint</strong> list from <strong>raw.githubusercontent.com</strong> (jivoi/awesome-osint, CC BY-SA 4.0) to populate tool categories. No personal data is sent in that request.</li>
+  </ul>
+
+  <h2>3. Permissions Explanation</h2>
+  <ul>
+    <li><strong>activeTab</strong>: Used to detect the currently active tab when the user explicitly clicks features like "Save Page Offline" or "Site Analyzer."</li>
+    <li><strong>storage & unlimitedStorage</strong>: Used to save user preferences, custom graph nodes, and UI configurations <strong>locally</strong> in your browser.</li>
+    <li><strong>scripting</strong>: Required to inject scripts into pages when you explicitly run features such as Google ID Scanner, Social ID Extractor, Site Analyzer, and Telegram tools.</li>
+    <li><strong>downloads</strong>: Used exclusively to save generated reports, graphs, or offline evidence HTML files directly to your local machine.</li>
+  </ul>
+
+  <h2>4. Contact & Support</h2>
+  <p>If you have any questions or concerns about this policy or the extension's data flows, please review our open-source code or open an issue on GitHub:</p>
+  <p><a href="https://github.com/tomsec8/IntelHub" target="_blank">https://github.com/tomsec8/IntelHub</a></p>
+</body>
+</html>

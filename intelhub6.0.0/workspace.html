@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en" class="workspace-page">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>IntelHub Workspace</title>
+  <link rel="stylesheet" href="modules/investigationGraph/css/style.css" />
+  <link rel="stylesheet" href="modules/investigationGraph/css/embed.css" />
+  <link rel="stylesheet" href="styles/workspace.css" />
+  <link rel="stylesheet" href="modules/opsecHub/optional-permissions.css" />
+</head>
+
+<body>
+  <header class="ws-topbar">
+    <div class="ws-top-left">
+      <div class="ws-brand">
+        <img src="icons/icon.png" alt="" />
+        <div class="ws-brand-text">
+          <strong>IntelHub</strong>
+          <span>Workspace</span>
+        </div>
+      </div>
+      <button class="ws-btn ws-btn-ghost ws-icon-btn" id="sidebarToggleBtn" type="button" title="Hide menu">Hide menu</button>
+      <span id="wsDate"></span>
+    </div>
+    <button class="ws-time" id="wsTime" type="button" title="Switch 12/24 hour format">00:00</button>
+    <div class="ws-top-actions">
+      <button class="ws-btn ws-btn-ghost ws-icon-btn" id="refreshToolsBtn" type="button" title="Clear all tool results">Refresh</button>
+      <button class="ws-btn ws-btn-ghost ws-icon-btn" id="helpBtn" type="button" title="Open the user guide">Help</button>
+      <button class="ws-btn ws-btn-ghost ws-icon-btn" id="whatsNewBtn" type="button" title="See recent changes">What's new</button>
+    </div>
+  </header>
+
+  <div class="ws-body">
+  <aside class="ws-sidebar">
+    <nav class="ws-nav" id="workspaceNav">
+      <div class="ws-sidebar-head">
+        <strong>Case files</strong>
+        <span>Investigations and folders</span>
+      </div>
+      <div class="ws-nav-actions">
+        <button class="ws-btn" id="new-investigation-btn" type="button">New investigation</button>
+        <button class="ws-btn ws-btn-ghost" id="new-folder-btn" type="button">New folder</button>
+        <input class="ws-sidebar-search" id="sidebarSearch" type="search" placeholder="Search cases" />
+      </div>
+      <div id="investigationsList"></div>
+    </nav>
+  </aside>
+
+  <div class="ws-main">
+    <section class="ws-case" id="casePanel" aria-label="Open investigation">
+      <div class="ws-case-copy">
+        <div class="ws-case-id">
+          <p class="ws-kicker">Open investigation</p>
+          <h1 id="caseTitle">No investigation</h1>
+          <p id="caseMeta">Create one from the sidebar.</p>
+        </div>
+        <div class="ws-case-actions">
+          <button class="ws-btn" id="toggleGraphBtn" type="button">Open graph</button>
+          <button class="ws-btn ws-btn-ghost" id="fullscreenGraphBtn" type="button">Full screen</button>
+          <button class="ws-btn ws-btn-ghost" id="toggleCaseBtn" type="button">Hide panel</button>
+        </div>
+        <p class="ws-graph-hint" id="graphHint">Preview only. Open the graph to edit cards and connections.</p>
+      </div>
+      <div class="ws-graph-host">
+        <button class="ws-fullscreen-exit" id="exitFullscreenBtn" type="button">Exit full screen</button>
+        <div class="ws-graph-summary" id="wsGraphSummary">
+          <div class="ws-summary-bar">
+            <button class="ws-summary-mode is-active" type="button" data-summary-mode="cards" title="Cards view">
+              <svg viewBox="0 0 16 16" width="14" height="14" aria-hidden="true">
+                <rect x="1.2" y="1.2" width="5.6" height="5.6" rx="1.2"></rect>
+                <rect x="9.2" y="1.2" width="5.6" height="5.6" rx="1.2"></rect>
+                <rect x="1.2" y="9.2" width="5.6" height="5.6" rx="1.2"></rect>
+                <rect x="9.2" y="9.2" width="5.6" height="5.6" rx="1.2"></rect>
+              </svg>
+              Cards
+            </button>
+            <button class="ws-summary-mode" type="button" data-summary-mode="tree" title="Tree view">
+              <svg viewBox="0 0 16 16" width="14" height="14" aria-hidden="true">
+                <rect x="0.8" y="5.4" width="4.6" height="5.2" rx="1.1"></rect>
+                <rect x="10.6" y="1" width="4.6" height="5.2" rx="1.1"></rect>
+                <rect x="10.6" y="9.8" width="4.6" height="5.2" rx="1.1"></rect>
+                <path d="M5.4 8H8.4M8.4 8V3.6H10.6M8.4 8v4.4H10.6" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"></path>
+              </svg>
+              Tree
+            </button>
+            <button class="ws-summary-expand" id="expandSummaryBtn" type="button">Expand preview</button>
+          </div>
+          <div class="ws-summary-body" id="wsGraphSummaryBody"></div>
+        </div>
+        <div id="toolbar">
+          <button id="add-card-btn" class="btn">New card</button>
+          <button id="delete-selected-btn" class="btn">Delete</button>
+          <button id="undo-btn" class="btn" title="Undo (Ctrl+Z)">Undo</button>
+          <button id="redo-btn" class="btn" title="Redo (Ctrl+Y)">Redo</button>
+          <button id="group-mode-btn" class="btn" title="Draw Group">Group</button>
+          <div class="toolbar-right-group">
+            <div class="dropdown">
+              <button id="export-menu-btn" class="btn">Export</button>
+              <div class="dropdown-content">
+                <a href="#" id="export-json-btn">Export to JSON</a>
+                <a href="#" id="export-image-btn">Export as Image</a>
+              </div>
+            </div>
+            <button id="import-btn" class="btn">Import</button>
+            <input type="file" id="importFile" accept=".json">
+          </div>
+        </div>
+
+        <div id="canvas-container">
+          <div id="selection-box" class="selection-box"></div>
+          <canvas id="grid-canvas"></canvas>
+          <svg class="connection-svg">
+            <defs></defs>
+            <path id="preview-line" class="connection-line" style="stroke-dasharray: 5,5; display: none;"></path>
+          </svg>
+          <div id="canvas"></div>
+        </div>
+
+        <div id="zoom-controls">
+          <button id="zoom-out-btn" class="btn" type="button" title="Zoom out">
+            <svg viewBox="0 0 16 16" width="14" height="14" aria-hidden="true"><path fill="currentColor" d="M3 7.25h10v1.5H3z"></path></svg>
+          </button>
+          <div id="zoom-level">100%</div>
+          <button id="zoom-in-btn" class="btn" type="button" title="Zoom in">
+            <svg viewBox="0 0 16 16" width="14" height="14" aria-hidden="true"><path fill="currentColor" d="M7.25 3h1.5v4.25H13v1.5H8.75V13h-1.5V8.75H3v-1.5h4.25z"></path></svg>
+          </button>
+          <button id="reset-zoom-btn" class="btn" type="button" title="Reset view">
+            <svg viewBox="0 0 16 16" width="14" height="14" aria-hidden="true"><path fill="currentColor" d="M8 2.5a5.5 5.5 0 1 0 5.15 3.6h-1.62A4 4 0 1 1 8 4v1.75L11.1 3.8 8 1.85z"></path></svg>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <section class="ws-tools" id="toolsPanel">
+      <div class="ws-tools-head">
+        <div class="ws-cats" id="categoryTabs">
+          <button class="ws-cat is-active-cat" type="button" data-category="overview">Overview</button>
+          <button class="ws-cat" type="button" data-category="osint">Online Shortcuts</button>
+          <button class="ws-cat" type="button" data-category="username">Username</button>
+          <button class="ws-cat" type="button" data-category="email">Email</button>
+          <button class="ws-cat" type="button" data-category="image">Image</button>
+          <button class="ws-cat" type="button" data-category="files">Files</button>
+          <button class="ws-cat" type="button" data-category="web">Web</button>
+          <button class="ws-cat" type="button" data-category="crypto">Crypto</button>
+          <button class="ws-cat" type="button" data-category="dorks">Google Dorks</button>
+          <button class="ws-cat" type="button" data-category="extra">Extra tools</button>
+          <button class="ws-cat" type="button" data-category="opsec">OPSEC</button>
+        </div>
+        <p id="categoryHint">Choose a category, then a tool card.</p>
+      </div>
+      <div class="ws-cards" id="toolCards"></div>
+    </section>
+  </div>
+
+  </div>
+
+  <div id="namePromptModal" class="modal ws-dialog">
+    <div class="modal-content">
+      <h3 data-dialog-title>New investigation</h3>
+      <div class="form-group">
+        <label data-dialog-label>Investigation name</label>
+        <input data-dialog-input type="text" maxlength="80" />
+      </div>
+      <div class="form-group" data-dialog-folder-wrap hidden>
+        <label>Folder</label>
+        <select data-dialog-folder></select>
+      </div>
+      <div class="modal-buttons">
+        <button type="button" class="ws-btn ws-btn-ghost" data-dialog-cancel>Cancel</button>
+        <button type="button" class="ws-btn" data-dialog-save>Create</button>
+      </div>
+    </div>
+  </div>
+
+  <div id="favoriteToolModal" class="modal ws-dialog">
+    <div class="modal-content">
+      <h3 data-fav-title>New tool</h3>
+      <div class="form-group">
+        <label>Name</label>
+        <input data-fav-name type="text" maxlength="80" />
+      </div>
+      <div class="form-group">
+        <label>URL</label>
+        <input data-fav-url type="url" placeholder="https://..." />
+      </div>
+      <div class="form-group">
+        <label>Description</label>
+        <input data-fav-desc type="text" placeholder="Optional" />
+      </div>
+      <div class="form-group">
+        <label>Category</label>
+        <div class="ws-osint-picker ws-fav-picker" data-fav-cat-picker>
+          <button type="button" class="ws-osint-picker-btn" data-fav-cat-btn>Choose category</button>
+          <div class="ws-osint-menu" data-fav-cat-menu></div>
+        </div>
+        <input data-fav-new-cat type="text" placeholder="New category name" maxlength="40" hidden />
+      </div>
+      <p class="ws-fav-form-msg" data-fav-error hidden></p>
+      <div class="modal-buttons">
+        <button type="button" class="ws-btn ws-btn-ghost" data-fav-cancel>Cancel</button>
+        <button type="button" class="ws-btn" data-fav-save>Save</button>
+      </div>
+    </div>
+  </div>
+
+  <div id="confirmPromptModal" class="modal ws-dialog">
+    <div class="modal-content">
+      <h3 data-dialog-title>Are you sure?</h3>
+      <div class="modal-buttons">
+        <button type="button" class="ws-btn ws-btn-ghost" data-dialog-cancel>Cancel</button>
+        <button type="button" class="ws-btn" data-dialog-save>Delete</button>
+      </div>
+    </div>
+  </div>
+
+  <div id="nodeModal" class="modal ws-dialog">
+    <div class="modal-content">
+      <h3 id="nodeModalTitle">New Card</h3>
+      <div class="form-group">
+        <label>Type:</label>
+        <select id="nodeType">
+          <option value="person">Person</option>
+          <option value="phone">Phone Number</option>
+          <option value="email">Email</option>
+          <option value="address">Address</option>
+          <option value="company">Company</option>
+          <option value="vehicle">Vehicle</option>
+          <option value="website">Website</option>
+          <option value="social">Social Network</option>
+          <option value="document">Document</option>
+          <option value="location">Location</option>
+          <option value="event">Event</option>
+          <option value="other">Other</option>
+        </select>
+      </div>
+      <div id="dynamic-fields-container"></div>
+      <details class="ws-card-extra">
+        <summary>Sources, color and image</summary>
+        <div class="form-group sources-section">
+          <label>Sources:</label>
+          <div class="sources-list" id="sourcesList"></div>
+          <div class="add-source-form">
+            <input type="text" id="sourceUrl" placeholder="URL or reference">
+            <input type="text" id="sourceDesc" placeholder="Description (optional)">
+            <button type="button" id="add-source-btn" class="ws-btn ws-btn-ghost">Add source</button>
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Card color:</label>
+          <div class="color-picker-inline">
+            <div class="color-option-small" style="background: #262626;" data-color="#262626"></div>
+            <div class="color-option-small" style="background: #1e3a5f;" data-color="#1e3a5f"></div>
+            <div class="color-option-small" style="background: #2d4a2d;" data-color="#2d4a2d"></div>
+            <div class="color-option-small" style="background: #5a2d2d;" data-color="#5a2d2d"></div>
+            <div class="color-option-small" style="background: #5a4a2d;" data-color="#5a4a2d"></div>
+            <div class="color-option-small" style="background: #4a2d5a;" data-color="#4a2d5a"></div>
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Image (optional):</label>
+          <div style="display: flex; gap: 8px; align-items: center;">
+            <label for="nodeImage" class="file-upload-btn">Choose image</label>
+            <button type="button" id="removeImageBtn" class="ws-btn ws-btn-ghost" style="display: none;">Remove</button>
+          </div>
+          <input type="file" id="nodeImage" accept="image/*">
+          <img id="imagePreview" class="image-preview">
+        </div>
+      </details>
+      <div class="modal-buttons">
+        <button id="cancel-node-modal-btn" class="ws-btn ws-btn-ghost">Cancel</button>
+        <button id="save-node-btn" class="ws-btn">Save</button>
+      </div>
+    </div>
+  </div>
+
+  <div id="labelModal" class="modal ws-dialog">
+    <div class="modal-content">
+      <h3>Connection Label</h3>
+      <div class="form-group">
+        <label>Text:</label>
+        <input type="text" id="labelInput" placeholder="e.g., Partner of...">
+      </div>
+      <div class="form-group">
+        <label>Arrow Color:</label>
+        <div class="color-picker-inline">
+          <div class="color-option-small" style="background: #6a6a6a;" data-color="#6a6a6a"></div>
+          <div class="color-option-small" style="background: #1e3a5f;" data-color="#1e3a5f"></div>
+          <div class="color-option-small" style="background: #2d4a2d;" data-color="#2d4a2d"></div>
+          <div class="color-option-small" style="background: #5a2d2d;" data-color="#5a2d2d"></div>
+          <div class="color-option-small" style="background: #5a4a2d;" data-color="#5a4a2d"></div>
+          <div class="color-option-small" style="background: #4a2d5a;" data-color="#4a2d5a"></div>
+        </div>
+      </div>
+      <div class="form-group">
+        <label>Line style:</label>
+        <div class="ws-line-styles" id="labelStyleOptions">
+          <button type="button" class="ws-line-style" data-style="solid">Solid</button>
+          <button type="button" class="ws-line-style" data-style="dashed">Dashed</button>
+          <button type="button" class="ws-line-style" data-style="dotted">Dotted</button>
+        </div>
+      </div>
+      <div class="modal-buttons">
+        <button id="cancel-label-modal-btn" class="ws-btn ws-btn-ghost">Cancel</button>
+        <button id="save-label-btn" class="ws-btn">Save</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="libs/html2canvas.min.js"></script>
+  <script src="libs/ExifReader.js"></script>
+  <script src="libs/pdf-lib.min.js"></script>
+  <script src="libs/jszip.min.js"></script>
+  <script src="libs/chart.min.js"></script>
+  <script src="libs/spark-md5.min.js"></script>
+  <script src="libs/psl.min.js"></script>
+  <script src="libs/face_libs/face-api.min.js"></script>
+  <script type="module" src="workspace.js"></script>
+</body>
+
+</html>

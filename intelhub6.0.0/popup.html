@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>IntelHub</title>
+  <link rel="stylesheet" href="styles/styles.css" />
+  <link rel="stylesheet" href="modules/opsecHub/optional-permissions.css" />
+  <script src="popup-boot.js"></script>
+</head>
+
+<body>
+  <div id="initial-loader" class="loader-container">
+    <div class="loader-spinner"></div>
+  </div>
+
+  <div class="container">
+    <header class="popup-header">
+      <div class="popup-brand">
+        <img src="icons/icon.png" alt="" class="logo" />
+        <div class="popup-brand-text">
+          <h1>IntelHub</h1>
+          <p id="versionNumber" class="version-text"></p>
+        </div>
+      </div>
+      <div class="popup-top-icons">
+        <button id="workspaceLaunch" class="header-workspace-btn" type="button" title="Open Workspace">Workspace</button>
+        <button id="helpButton" class="header-icon-btn" type="button" title="Help / Guide" aria-label="Help">?</button>
+        <button id="sidePanelButton" class="header-icon-btn" type="button" title="Pin to Side Panel" aria-label="Pin to side panel">📌</button>
+      </div>
+    </header>
+
+    <nav class="popup-meta-links" aria-label="Extension links">
+      <button id="refreshButton" class="top-link" type="button">Refresh</button>
+      <span class="meta-sep" aria-hidden="true">·</span>
+      <button id="whatsNewBtn" class="top-link" type="button">What's New</button>
+      <span class="meta-sep" aria-hidden="true">·</span>
+      <button id="donateBtn" class="top-link" type="button">Donate</button>
+    </nav>
+
+        <div id="tabBar" class="tab-bar" role="tablist">
+          <button id="tabTools" class="active" type="button" role="tab" aria-selected="true">Tools</button>
+          <button id="tabCases" type="button" role="tab" aria-selected="false">Cases</button>
+          <button id="tabOpsec" type="button" role="tab" aria-selected="false">OPSEC</button>
+        </div>
+
+    <div id="toolsTabContent" class="tab-content active">
+      <input type="search" id="searchBox" placeholder="Search online shortcuts…" autocomplete="off" />
+      <div id="categoryButtons" class="button-group"></div>
+    </div>
+
+    <div id="casesTabContent" class="tab-content cases-panel"></div>
+    <div id="opsecHubContainer" class="tab-content opsec-panel"></div>
+  </div>
+  <script src="libs/ExifReader.js"></script>
+  <script src="libs/pdf-lib.min.js"></script>
+  <script src="libs/jszip.min.js"></script>
+  <script src="libs/psl.min.js"></script>
+  <script src="libs/spark-md5.min.js"></script>
+  <script type="module" src="popup.js"></script>
+</body>
+
+</html>

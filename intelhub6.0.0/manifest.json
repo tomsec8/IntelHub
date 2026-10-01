@@ -1,0 +1,140 @@
+{
+  "manifest_version": 3,
+  "name": "IntelHub",
+  "description": "Your personal OSINT toolkit inside the browser.",
+  "version": "6.0.0",
+  "icons": {
+    "128": "icons/icon.png"
+  },
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "128": "icons/icon.png"
+    }
+  },
+  "side_panel": {
+    "default_path": "sidepanel.html"
+  },
+  "sidebar_action": {
+    "default_panel": "popup.html?mode=sidepanel",
+    "open_at_install": false
+  },
+  "background": {
+    "scripts": ["background.js"],
+    "service_worker": "background.js",
+    "type": "module"
+  },
+  "permissions": [
+    "storage",
+    "unlimitedStorage",
+    "scripting",
+    "tabs",
+    "clipboardRead",
+    "downloads",
+    "activeTab",
+    "declarativeNetRequest",
+    "declarativeNetRequestWithHostAccess",
+    "proxy",
+    "sidePanel"
+  ],
+  "optional_permissions": [
+    "privacy",
+    "browsingData",
+    "webRequest",
+    "cookies"
+  ],
+  "optional_host_permissions": [
+    "<all_urls>",
+    "https://*.google.com/*",
+    "https://people-pa.clients6.google.com/*",
+    "https://clients6.google.com/*"
+  ],
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"],
+      "run_at": "document_start",
+      "all_frames": false
+    }
+  ],
+  "host_permissions": [
+    "https://t.me/*",
+    "https://web.telegram.org/*",
+    "https://mail.google.com/*",
+    "https://catbox.moe/*",
+    "https://dns.google/*",
+    "http://ip-api.com/*",
+    "https://rdap.org/*",
+    "https://rdap.arin.net/*",
+    "https://rdap.db.ripe.net/*",
+    "https://rdap.apnic.net/*",
+    "https://rdap.lacnic.net/*",
+    "https://rdap.afrinic.net/*",
+    "https://rdap.verisign.com/*",
+    "https://blockchain.info/*",
+    "https://eth.blockscout.com/*",
+    "https://api.ethplorer.io/*",
+    "https://blockstream.info/*",
+    "https://mempool.space/*",
+    "https://raw.githubusercontent.com/*",
+    "https://www.youtube.com/*",
+    "https://www.facebook.com/*",
+    "https://www.instagram.com/*",
+    "https://www.pinterest.com/*",
+    "https://www.reddit.com/*",
+    "https://www.snapchat.com/*",
+    "https://shadowban-api.yuzurisa.com/*",
+    "https://www.threads.net/*",
+    "https://www.tiktok.com/*",
+    "https://*.tumblr.com/*",
+    "https://www.twitch.tv/*",
+    "https://github.com/*",
+    "https://networkcalc.com/*",
+    "https://api.certspotter.com/*",
+    "https://crt.sh/*",
+    "https://web.archive.org/*",
+    "https://otx.alienvault.com/*",
+    "https://jldc.me/*",
+    "https://api.hackertarget.com/*",
+    "https://urlscan.io/*",
+    "https://api.xposedornot.com/*",
+    "https://cavalier.hudsonrock.com/*",
+    "https://gravatar.com/*",
+    "https://*.gravatar.com/*"
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": [
+        "libs/single-file.js",
+        "libs/chart.min.js",
+        "firefox/import-favorites.html",
+        "firefox/import-favorites.js",
+        "modules/telegramScraper.js",
+        "modules/investigationGraph/*",
+        "libs/face_libs/face-api.min.js",
+        "libs/face_libs/tiny_face_detector_model-weights_manifest.json",
+        "libs/face_libs/tiny_face_detector_model-shard1",
+        "libs/face_libs/face_landmark_68_tiny_model-weights_manifest.json",
+        "libs/face_libs/face_landmark_68_tiny_model-shard1",
+        "libs/face_libs/face_recognition_model-weights_manifest.json",
+        "libs/face_libs/face_recognition_model-shard1",
+        "libs/face_libs/face_recognition_model-shard2"
+      ],
+      "matches": [
+        "https://web.telegram.org/*"
+      ]
+    }
+  ],
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "addon@intelhub.osint",
+      "strict_min_version": "128.0",
+      "data_collection_permissions": {
+        "required": ["none"]
+      }
+    }
+  },
+  "content_security_policy": {
+    "extension_pages": "script-src 'self'; object-src 'self';"
+  }
+}
