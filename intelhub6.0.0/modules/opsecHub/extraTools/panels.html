@@ -1,0 +1,168 @@
+<div id="panel-opt-tool-doc-tracker">
+  <div class="opsec-tool-desc">
+    Documents like PDFs, MS Word (.docx), and HTML files often contain hidden "Canary Tokens" or tracking pixels (1×1 transparent images) that send silent HTTP callbacks to remote servers when opened, leaking your IP address and physical location. This tool inspects files locally in your browser and strips all remote web references.
+  </div>
+  <p class="ws-image-note">Upload a PDF, Word (.docx), or text document to audit and sanitize:</p>
+  <input type="file" id="input-doc-tracker" accept=".docx,.pdf,.xml,.txt,.html" style="display:none;">
+  <div id="dropzone-doc-tracker" class="opsec-dropzone" role="button" tabindex="0">
+    <p class="opsec-dropzone-title">Drag &amp; drop document here</p>
+    <span class="opsec-dropzone-hint">Supports .docx, .pdf, .xml, .html — 100% offline</span>
+    <span class="opsec-dropzone-chip">Choose file</span>
+  </div>
+  <div id="result-doc-tracker" class="opsec-result" style="display:none;">
+    <h4 id="status-doc-tracker">Audit Status</h4>
+    <p id="details-doc-tracker" class="opsec-details"></p>
+    <button id="btn-download-sanitized-doc" class="ws-btn" type="button" style="display:none;">Download Sanitized Document</button>
+  </div>
+  <div class="opsec-tool-tip">
+    <h4>How to Test &amp; Verify Protection</h4>
+    <p>Generate a test tracking document on <a href="https://canarytokens.org/" target="_blank" rel="noopener">CanaryTokens.org</a>, upload it here to sanitize, then open the sanitized file — you should get zero alerts on CanaryTokens.</p>
+  </div>
+</div>
+
+<div id="panel-opt-tool-metadata">
+  <div class="opsec-tool-desc">
+    Files and documents carry hidden metadata headers (EXIF camera serials, GPS location tags, MS Word author names, revision history, PDF creator tags). This tool processes images, Word documents (.docx), PDFs, and text files locally in your browser, stripping 100% of metadata tags offline.
+  </div>
+  <p class="ws-image-note">Upload an Image (.jpg, .png, .webp), Word Document (.docx), PDF, or Text file:</p>
+  <input type="file" id="input-metadata-cleaner" accept="image/*,.docx,.pdf,.xml,.txt,.json,.html" style="display:none;">
+  <div id="dropzone-metadata-cleaner" class="opsec-dropzone is-green" role="button" tabindex="0">
+    <p class="opsec-dropzone-title">Drag &amp; drop file here</p>
+    <span class="opsec-dropzone-hint">Images, Word (.docx), PDF, XML/HTML — 100% client-side</span>
+    <span class="opsec-dropzone-chip">Choose file</span>
+  </div>
+  <div id="result-metadata-cleaner" class="opsec-result" style="display:none;">
+    <h4 id="status-metadata-cleaner">Metadata Analysis</h4>
+    <div class="opsec-meta-row">
+      <img id="preview-metadata-cleaner" alt="" style="max-width:150px;max-height:150px;display:none;border-radius:8px;">
+      <div style="flex:1;min-width:220px;">
+        <p id="details-metadata-cleaner" class="opsec-details"></p>
+        <button id="btn-download-clean-image" class="ws-btn" type="button">Download Sanitized File</button>
+        <h5 class="opsec-subhead">Detected Metadata Fields</h5>
+        <div id="table-metadata-fields" class="opsec-mono-box"></div>
+        <div id="meta-editor-form" style="display:none;margin-top:12px;">
+          <h5 class="opsec-subhead">Edit &amp; Spoof Metadata</h5>
+          <input type="text" id="edit-meta-author" placeholder="Author / Creator">
+          <input type="text" id="edit-meta-title" placeholder="Document Title">
+          <input type="text" id="edit-meta-subject" placeholder="Subject">
+          <input type="text" id="edit-meta-producer" placeholder="Creator Tool / Model">
+          <button id="btn-save-spoofed-meta" class="ws-btn" type="button">Apply &amp; Download Spoofed File</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="opsec-tool-tip">
+    <h4>100% Local Verification Test</h4>
+    <p>Upload a file and inspect the detected fields. Download the sanitized version, then upload that sanitized file again — the metadata fields table should be empty.</p>
+  </div>
+</div>
+
+<div id="panel-opt-tool-file-hash">
+  <div class="opsec-tool-desc">
+    Computes cryptographic checksums (MD5, SHA-1, SHA-256) for any file 100% locally in your browser. Verify downloaded executable integrity, detect altered files, or compare two files side-by-side to verify exact byte matching.
+  </div>
+  <div class="opsec-grid-2">
+    <div>
+      <h4>Primary File (File A)</h4>
+      <input type="file" id="input-hash-file-a" class="file-input">
+      <div id="out-hashes-a" class="opsec-mono-box" style="display:none;">
+        <div><strong>MD5:</strong> <span id="hash-md5-a">-</span></div>
+        <div><strong>SHA-1:</strong> <span id="hash-sha1-a">-</span></div>
+        <div><strong>SHA-256:</strong> <span id="hash-sha256-a">-</span></div>
+        <button id="btn-vt-lookup-a" class="ws-btn ws-btn-ghost" type="button" style="display:none;">Check Hash on VirusTotal</button>
+      </div>
+    </div>
+    <div>
+      <h4>Comparison File (File B — Optional)</h4>
+      <input type="file" id="input-hash-file-b" class="file-input">
+      <div id="out-hashes-b" class="opsec-mono-box" style="display:none;">
+        <div><strong>MD5:</strong> <span id="hash-md5-b">-</span></div>
+        <div><strong>SHA-1:</strong> <span id="hash-sha1-b">-</span></div>
+        <div><strong>SHA-256:</strong> <span id="hash-sha256-b">-</span></div>
+        <button id="btn-vt-lookup-b" class="ws-btn ws-btn-ghost" type="button" style="display:none;">Check Hash on VirusTotal</button>
+      </div>
+    </div>
+  </div>
+  <div id="out-hash-compare-match" class="opsec-result" style="display:none;"></div>
+</div>
+
+<div id="panel-opt-tool-doc-encryptor">
+  <div class="opsec-tool-desc">
+    Securely encrypts and decrypts files of any type (PDF, Word, TXT, Images) using military-grade <strong>AES-256-GCM</strong> encryption. All operations are done entirely in your browser memory — no files are uploaded or sent over the network.
+  </div>
+  <label>1. Select File to Encrypt or Decrypt</label>
+  <input type="file" id="input-enc-file" class="file-input">
+  <label>2. Enter Encryption Password</label>
+  <input type="password" id="txt-enc-password" placeholder="Enter strong password...">
+  <label class="opsec-check"><input type="checkbox" id="chk-show-enc-password"> Show Password</label>
+  <div class="ws-image-actions">
+    <button id="btn-encrypt-file" class="ws-btn" type="button">Encrypt &amp; Download (.enc)</button>
+    <button id="btn-decrypt-file" class="ws-btn ws-btn-ghost" type="button">Decrypt &amp; Download</button>
+  </div>
+  <div id="status-enc-tool" class="opsec-status">Waiting for file and password...</div>
+</div>
+
+<div id="panel-opt-tool-link-tracer">
+  <div class="opsec-tool-desc">
+    Trace HTTP redirect hops (301, 302, 307, 308) for shortened links such as <code>bit.ly</code>, <code>t.co</code>, and <code>tinyurl.com</code> before you open them. JavaScript or meta-refresh jumps are not followed.
+  </div>
+  <label>Enter short URL to trace</label>
+  <div class="ws-image-actions">
+    <input type="text" id="txt-tracer-url" placeholder="e.g. bit.ly/example-link" style="flex:1;min-width:180px;">
+    <button id="btn-trace-url" class="ws-btn" type="button">Trace Redirections</button>
+  </div>
+  <div id="result-link-tracer" class="opsec-result" style="display:none;">
+    <h4 id="status-link-tracer">Trace Log</h4>
+    <ol id="list-tracer-hops"></ol>
+  </div>
+</div>
+
+<div id="panel-opt-tool-virustotal">
+  <div class="opsec-tool-desc">
+    Look up a URL, domain, IP, or file hash on VirusTotal. Files are hashed locally (SHA-256) — the file itself is never uploaded. Opening the report sends only the hash or the pasted indicator to VirusTotal.
+  </div>
+  <label>Option A: Select a file to hash locally</label>
+  <input type="file" id="input-vt-file" class="file-input">
+  <label>Option B: Or paste a URL, domain, IP, or file hash</label>
+  <input type="text" id="txt-vt-hash" placeholder="https://example.com/file.exe  or  example.com  or  hash">
+  <button id="btn-vt-search" class="ws-btn" type="button">Check on VirusTotal</button>
+  <div id="status-vt-tool" class="opsec-status">Waiting for input...</div>
+</div>
+
+<div id="panel-opt-tool-ssl-checker">
+  <div class="opsec-tool-desc">
+    Inspect SSL/TLS certificates, cipher suites, key lengths, expiration health, and certificate chain hierarchy for any target domain or active tab.
+  </div>
+  <div class="ws-image-actions">
+    <input type="text" id="inp-ssl-domain" placeholder="e.g. google.com or https://example.com" style="flex:1;min-width:180px;">
+    <button id="btn-ssl-analyze" class="ws-btn" type="button">Inspect Target Domain</button>
+  </div>
+  <div id="ssl-results-container" class="opsec-result" style="display:none;"></div>
+</div>
+
+<div id="panel-opt-tool-header-analyzer">
+  <div class="opsec-tool-desc">
+    Audit HTTP security headers, Content Security Policy (CSP) directives, Clickjacking defense, HSTS encryption, and server information leaks for any website.
+  </div>
+  <div class="ws-image-actions">
+    <input type="text" id="inp-header-domain" placeholder="e.g. google.com or github.com" style="flex:1;min-width:180px;">
+    <button id="btn-check-headers" class="ws-btn" type="button">Analyze Security Headers</button>
+  </div>
+  <div id="result-header-analyzer" style="display:none;">
+    <div id="badge-header-score" class="opsec-badge"></div>
+    <div id="text-header-summary" class="opsec-status"></div>
+    <div id="container-header-table"></div>
+  </div>
+</div>
+
+<div id="panel-opt-tool-doh-checker">
+  <div class="opsec-tool-desc">
+    Probe encrypted DNS-over-HTTPS (DoH) endpoints, audit your active DNS resolver operator (EDNS), and test for unencrypted ISP DNS leaks.
+  </div>
+  <button id="btn-run-doh-test" class="ws-btn" type="button">Run DNS-over-HTTPS Leak &amp; Resolver Probe</button>
+  <div id="result-doh-checker" style="display:none;">
+    <div id="badge-doh-status" class="opsec-badge"></div>
+    <div id="text-doh-summary" class="opsec-status"></div>
+    <div id="container-doh-details"></div>
+  </div>
+</div>

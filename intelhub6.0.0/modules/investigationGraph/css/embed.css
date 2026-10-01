@@ -1,0 +1,40 @@
+html.workspace-page #sidebar,
+html.workspace-page #toggle-sidebar-btn {
+  display: none;
+}
+
+html.workspace-page #toolbar {
+  position: relative;
+  top: auto;
+  left: auto;
+  right: auto;
+  justify-content: flex-start;
+  padding: 8px 12px;
+  flex-wrap: wrap;
+  flex-shrink: 0;
+}
+
+html.workspace-page #canvas-container {
+  position: relative;
+  top: auto;
+  left: auto;
+  right: auto;
+  bottom: auto;
+  flex: 1;
+  min-height: 0;
+}
+
+html.workspace-page #zoom-controls {
+  position: absolute;
+  bottom: 12px;
+  left: 12px;
+}
+
+html.workspace-page .toolbar-right-group {
+  position: static;
+  margin-left: auto;
+}
+
+html.workspace-page .modal {
+  position: fixed;
+}
